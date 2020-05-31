@@ -1,20 +1,24 @@
 # NLPer-Arsenal
-NLP人军火库，主要收录NLP相关竞赛经验贴，通用工具等
+NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果你觉得有什么好的资讯应该放在这个项目里，欢迎通过blueghost.contact@foxmail.com联系我。
+另外，NLP竞赛非常多，个人整理竞赛经验的话，耗时耗力，如果您现在正在参加NLP竞赛，已经整理了一些竞赛经验，非常希望您能将其分享在本项目中，
+方便后来者学习，我为人人，人人为我。
 
 ## 目录  
-> 1.[著名会议](#1)  
-> 2.[综述论文](#2)  
-> 3.[竞赛平台](#3)  
-> 4.[公号推荐](#4)  
-> 5.[通用工具](#5)  
-> 6.[其它资源](#6)  
-> 7.[实体链指](#7)  
-> 8.[情感分析](#8)  
-> 
+> 1.**著名会议**  
+> 2.**综述论文**  
+> 3.**竞赛平台**  
+> 4.**公号推荐**  
+> 5.**通用工具**  
+> 6.**其它资源**  
+> 7.**实体链指**  # 以下为竞赛经验  
+> 8.**情感分析**  
 
 ##Top
 > 记录一些值得关注的资讯
-* [《Science：有调查有真相！某些AI领域多年无实际进展》](https://mp.weixin.qq.com/s?__biz=MzA5ODEzMjIyMA==&mid=2247502265&idx=1&sn=a173d8b0348e742c4e8f348ba7eff0db&chksm=9094c02aa7e3493c7f209257423ccad044a1cccb3f709610b9961ae5e0ef23b1eb76f448da15&mpshare=1&scene=1&srcid=05293A5iouOKYQkpIKnWt8dN&sharer_sharetime=1590810206875&sharer_shareid=037d23747b3bede93fc3360a18aa2a62&key=14e356dd93ee9f3f1c5398fc5afc8fe2a19f43b553ec33f032f48b86e019a0836ab6c874948fae1a47e51d9d28a9fa64b21bbea1479fb65dc380867e9c344ca4e3064f16840a84a2351c5f2997da4ca9&ascene=1&uin=NTMxMzg0OTA5&devicetype=Windows+10+x64&version=6209007b&lang=zh_CN&exportkey=AwRM%2F%2FFD0VBNxVn4dUbjxbc%3D&pass_ticket=3hDJLZ6cAXJeJh0ya8ykeu3OYoquIOCF0VnX5Kfmt3YtNOU4Nu%2FHjahOkvmZItIJ): 包括神经网络剪枝、神经网络推荐算法、深度度量学习、对抗性训练、语言模型
+* 2020/04[《Science：有调查有真相！某些AI领域多年无实际进展》](https://mp.weixin.qq.com/s?__biz=MzA5ODEzMjIyMA==&mid=2247502265&idx=1&sn=a173d8b0348e742c4e8f348ba7eff0db&chksm=9094c02aa7e3493c7f209257423ccad044a1cccb3f709610b9961ae5e0ef23b1eb76f448da15&mpshare=1&scene=1&srcid=05293A5iouOKYQkpIKnWt8dN&sharer_sharetime=1590810206875&sharer_shareid=037d23747b3bede93fc3360a18aa2a62&key=14e356dd93ee9f3f1c5398fc5afc8fe2a19f43b553ec33f032f48b86e019a0836ab6c874948fae1a47e51d9d28a9fa64b21bbea1479fb65dc380867e9c344ca4e3064f16840a84a2351c5f2997da4ca9&ascene=1&uin=NTMxMzg0OTA5&devicetype=Windows+10+x64&version=6209007b&lang=zh_CN&exportkey=AwRM%2F%2FFD0VBNxVn4dUbjxbc%3D&pass_ticket=3hDJLZ6cAXJeJh0ya8ykeu3OYoquIOCF0VnX5Kfmt3YtNOU4Nu%2FHjahOkvmZItIJ): 包括神经网络剪枝、神经网络推荐算法、深度度量学习、对抗性训练、语言模型
+* 2019/12[《Gary Marcus 对 AI 领域开炮：踏踏实实做研究，不要净吹牛逼》](https://mp.weixin.qq.com/s?__biz=MzI4MDYzNzg4Mw==&mid=2247490762&idx=2&sn=1357f6d2a1dae3e47d5e98dae1528de7&chksm=ebb4241edcc3ad084206371fb39fb078d8715b5677c7ef6e6464f2586d7ec07e1eb1ef7a81b3&mpshare=1&scene=1&srcid=05314pRZ5VYaRe1azJcCAQwa&sharer_sharetime=1590854944756&sharer_shareid=037d23747b3bede93fc3360a18aa2a62&key=1b3349e4088abda066b6a0ef972699e2f6d27d83b5e0f552f7488373451de1928d4dc957a38db94f7d323f0b8fc4f33b08708233f23fdd2ccde2ecfe102de1fa25fb2a945c73f3dae6da26a75049ec29&ascene=1&uin=NTMxMzg0OTA5&devicetype=Windows+10+x64&version=6209007b&lang=zh_CN&exportkey=A7vbGGmvUfp13E7RPxjbomw%3D&pass_ticket=3hDJLZ6cAXJeJh0ya8ykeu3OYoquIOCF0VnX5Kfmt3YtNOU4Nu%2FHjahOkvmZItIJ)
+* 2019/09[《AI 竞赛没有意义：模型根本没用，冠军全凭运气？》](https://www.infoq.cn/article/rlxe9VmwWK3zjjGL2Vgg)
+* 2019/08[《如何正确地做误差分析，NLP研究人员们需要学习一下》](https://mp.weixin.qq.com/s?__biz=MzA5ODEzMjIyMA==&mid=2247495892&amp;idx=1&amp;sn=3643c07d8ea53c605189f847b754cba7&source=41#wechat_redirect)
 
 ## 1.著名会议  
 > [中国计算机学会推荐国际学术会议和期刊目录-2019](https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=99185)  
@@ -64,6 +68,7 @@ NLP人军火库，主要收录NLP相关竞赛经验贴，通用工具等
 * 2020年《**异构网络表示学习**》([《Heterogeneous Network Representation Learning: Survey, Benchmark, Evaluation, and Beyond》](https://arxiv.org/abs/2004.00216))
 * 2020年《**元学习综述**》([《A Comprehensive Overview and Survey of Recent Advances on Meta-Learnig》](https://arxiv.org/abs/2004.11149))
 * 2020年《**元学习综述**》([《Meta-Learning in Neural Networks: A Survey》](https://arxiv.org/abs/2004.05439))
+* 2019年《**自动机器学习**》([《AutoML：A survey of State-of-the-art》](https://arxiv.org/abs/1908.00709))
 * 2020年《**生成式对抗网络：挑战、解决方案、未来方向**》([《Generative Adversarial Networks(GANs):Challenges,Solutions,and Future Directions》](https://arxiv.org/abs/2005.00065))
 * 2020年《**GANs生成式对抗网络综述：算法、理论与应用**》([《A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications》](https://arxiv.org/abs/2001.06937))
 * 2020年《**可解释深度学习**》([《Explainable Deep Learning: A Field Guide for the Uninitiated》](https://arxiv.org/abs/2004.14545))
@@ -166,3 +171,12 @@ NLP人军火库，主要收录NLP相关竞赛经验贴，通用工具等
    [第十名](https://github.com/renjunxiang/ccks2019_el)|BERT+RNN+指针网络|预训练词向量+CNN+二分类器 | 0.78450
    
 ## 8.情感分析
+* AI Challenger 2018 细粒度用户评论情感分析
+    * 任务描述：
+    * 数据格式：
+    * 数据说明：
+    * 竞赛经验：
+    
+    |名次|模型|指标|
+    |:---:|:---:|:---:|
+    
