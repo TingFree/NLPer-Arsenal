@@ -40,20 +40,20 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 
 |会议| 级别| 截稿时间| 开会时间|说明|
 |:---:| :---:|  :---:|  :---:|  :---:|
-|ACL([官网](https://www.aclweb.org/portal/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/)))|CCF-A|~~2021.2.1~~|2021，8.1~8.6|Bangkok, Thailand|
+|ACL([官网](https://www.aclweb.org/portal/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/))|CCF-A|~~2021.2.1~~|2021，8.1~8.6|Bangkok, Thailand|
 |AAAI([官网](https://www.aaai.org)、[dblp](http://dblp.uni-trier.de/db/conf/aaai/))|CCF-A|2021.9.9|2022，2.2~2.9|Vancouver, British Columbia, Canada|
-|NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/)))|CCF-A|2021.5.26|2021，12.6~12.14|Online|
+|NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/))|CCF-A|2021.5.26|2021，12.6~12.14|Online|
 |IJCAI([官网](https://www.ijcai.org)、[dblp](http://dblp.uni-trier.de/db/conf/ijcai/))|CCF-A|~~2021.2.18~~|2021，8.21~8.26|Montreal, Canada|
-|EMNLP([官网](https://2021.emnlp.org/)、[dblp](http://dblp.uni-trier.de/db/conf/emnlp/)))|CCF-B|2021.5.17|2021，11.7~11.11|Punta Cana, Dominican Republic|
-|COLING([官网](https://coling2022.org/)、[dblp](http://dblp.uni-trier.de/db/conf/coling/)))|CCF-B|2021.7.1|2022，12.8~12.13|Gyeongju, Korea|
-|CoNLL([官网](https://www.conll.org/2020)、[dblp](http://dblp.uni-trier.de/db/conf/conll)))|CCF-C|2021.7.17|2021，11.10~11.11|*|
-|NLPCC([官网](http://tcci.ccf.org.cn/conference/2021/)、[dblp](https://dblp.uni-trier.de/db/conf/nlpcc/)))|CCF-C|2021.7.1|2021，10.16~10.17|青岛|
-|NAACL([官网](http://naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/)))|CCF-C|2020.11.23|2021，6.6~6.11|Mexico City, Mexico|
+|EMNLP([官网](https://2021.emnlp.org/)、[dblp](http://dblp.uni-trier.de/db/conf/emnlp/))|CCF-B|2021.5.17|2021，11.7~11.11|Punta Cana, Dominican Republic|
+|COLING([官网](https://coling2022.org/)、[dblp](http://dblp.uni-trier.de/db/conf/coling/))|CCF-B|2021.7.1|2022，12.8~12.13|Gyeongju, Korea|
+|CoNLL([官网](https://www.conll.org/2020)、[dblp](http://dblp.uni-trier.de/db/conf/conll))|CCF-C|2021.7.17|2021，11.10~11.11|*|
+|NLPCC([官网](http://tcci.ccf.org.cn/conference/2021/)、[dblp](https://dblp.uni-trier.de/db/conf/nlpcc/))|CCF-C|2021.7.1|2021，10.16~10.17|青岛|
+|NAACL([官网](http://naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/))|CCF-C|2020.11.23|2021，6.6~6.11|Mexico City, Mexico|
 |AACL([官网](http://aacl2020.org/))|*|*|*|今年合并至ACL|
-|EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/)))|*|~~2020.10.7~~|2021，4.19~4.23|online|
-|CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/)))|*|2021.4.1|2021，8.13~8.15|呼和浩特|
-|CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/)))|*|2021.5.10|2021，8.18~8.21|广州|
-|SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/)))|*|2021.5.1|2021，9.3~9.5|北京|
+|EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/))|*|~~2020.10.7~~|2021，4.19~4.23|online|
+|CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|2021.4.1|2021，8.13~8.15|呼和浩特|
+|CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|2021.5.10|2021，8.18~8.21|广州|
+|SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|2021.5.1|2021，9.3~9.5|北京|
 
 ## 4.竞赛平台
 * [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：奖金丰厚  
