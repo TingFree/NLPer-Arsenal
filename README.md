@@ -32,11 +32,11 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 
 ## 3.会议时间
 
-> [中国计算机学会推荐国际学术会议和期刊目录-2019](https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=99185)
+> [中国计算机学会推荐国际学术会议和期刊目录-2019](https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=99185)  
 > [中国计算机学会推荐中文科技期刊目录](https://www.ccf.org.cn/ccftjgjxskwml/)  
 > [dblp](https://dblp.org)：计算机科学文献库  
 > [AI会议deadline](https://aideadlin.es/?sub=ML,CV,NLP,RO,SP,DM) ：会议倒计时  
-> [会议时间记录表](https://jackietseng.github.io/conference_call_for_paper/conferences.html) ：Updated by Jackie Tseng, Tsinghua Computer Vision and Intelligent Learning Lab
+> [会议时间记录表](https://jackietseng.github.io/conference_call_for_paper/conferences.html) ：Updated by Jackie Tseng, Tsinghua Computer Vision and Intelligent Learning Lab  
 
 |会议| 级别| 截稿时间| 开会时间|说明|
 |:---:| :---:|  :---:|  :---:|  :---:|
