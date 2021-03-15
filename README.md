@@ -20,7 +20,9 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 | 领域     | 竞赛                                                         | 开始时间 | 结束时间 |
 | -------- | ------------------------------------------------------------ | -------- | -------- |
 | 文本匹配 | [**小布助手对话短文本语义匹配**](https://tianchi.aliyun.com/competition/entrance/531851/introduction) | 2021.3   | 2021.5   |
-|          |                                                              |          |          |
+| 阅读理解 | [2021语言与智能技术竞赛：机器阅读理解任务](https://aistudio.baidu.com/aistudio/competition/detail/66) | 2021.3   | 2021.5   |
+| 信息抽取 | [2021语言与智能技术竞赛：多形态信息抽取任务](https://aistudio.baidu.com/aistudio/competition/detail/65) | 2021.3   | 2021.5   |
+| 对话     | [2021语言与智能技术竞赛：多技能对话任务](https://aistudio.baidu.com/aistudio/competition/detail/67) | 2021.3   | 2021.5   |
 
 ## 2.竞赛收录
 
@@ -61,7 +63,8 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 |SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|2021.5.1|2021，9.3~9.5|北京|
 
 ## 4.竞赛平台
-* [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：奖金丰厚  
+* [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
+* [AiStudio](https://aistudio.baidu.com/aistudio/competition) ：百度
 * [DataFountain](https://www.datafountain.cn/competitions): CCF指定专业大数据及人工智能竞赛平台  
 * [**biendata**](https://www.biendata.com/): 国内领先的人工智能竞赛平台，包含大量NLP学术评测  
 * [**FlyAI-AI竞赛服务平台**](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
