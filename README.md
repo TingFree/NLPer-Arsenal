@@ -33,6 +33,7 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 | -------- | ------------------------------------------------------------ |
 | 文本分类 | [smp2020微博情绪分析评测](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/smp2020%E5%BE%AE%E5%8D%9A%E6%83%85%E7%BB%AA%E5%88%86%E6%9E%90%E8%AF%84%E6%B5%8B%EF%BC%88EWECT%EF%BC%89.md) |
 | 实体链指 | [2019ccks中文短文本实体链指](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87/ccks2019%E4%B8%AD%E6%96%87%E7%9F%AD%E6%96%87%E6%9C%AC%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87.md) |
+| 实体识别 | [2020中药说明书实体识别挑战](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/2020%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98.md) |
 | 问题生成 | [2020中医文献问题生成挑战](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90/2020%E4%B8%AD%E5%8C%BB%E6%96%87%E7%8C%AE%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90%E6%8C%91%E6%88%98.md) |
 | 文本匹配 | [2019大数据挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2019%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8C%91%E6%88%98%E8%B5%9B.md) |
 
@@ -66,9 +67,9 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 ## 4.竞赛平台
 * [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
 * [AiStudio](https://aistudio.baidu.com/aistudio/competition) ：百度
-* [DataFountain](https://www.datafountain.cn/competitions): CCF指定专业大数据及人工智能竞赛平台  
-* [**biendata**](https://www.biendata.com/): 国内领先的人工智能竞赛平台，包含大量NLP学术评测  
-* [**FlyAI-AI竞赛服务平台**](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
+* [DataFountain](https://www.datafountain.cn/competitions) ： CCF指定专业大数据及人工智能竞赛平台  
+* [biendata](https://www.biendata.com/) ： 国内领先的人工智能竞赛平台，包含大量NLP学术评测  
+* [FlyAI-AI竞赛服务平台](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
 * [和鲸社区](https://www.kesci.com/home/competition) ：一个综合的学习平台  
 * NLPCC、CCKS、SMP等会议每年都会举办相关学术评测  
 
@@ -83,7 +84,6 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 | BiliBili   | 前沿论坛 | 智源社区                                                     |
 
 ## 6.通用工具
-* 华为提出Disout，对标Dropout。([Github](https://github.com/huawei-noah/Disout)、[Paper](https://arxiv.org/abs/2002.11022))
 * NLP中的数据增强，包含常见的数据扩充方法。([网页1](https://zhuanlan.zhihu.com/p/122445216)、[网页2](https://zhuanlan.zhihu.com/p/142168215))
 * NLP中的对抗训练，提供插件式的pytorch实现，随拿随用。([网页](https://fyubang.com/2019/10/15/adversarial-train/))
 * 混合精度训练，加速模型学习，适用于pytorch、TensorFlow、PaddlePaddle。([网页](https://mp.weixin.qq.com/s/zBtpwrQ5HtI6uzYOx5VsCQ))
