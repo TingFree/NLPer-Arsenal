@@ -101,6 +101,9 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | [沣云平台](https://www.fenghub.com/) |ML270|￥2.8/h| 一站式AI计算平台，按运行时间收取费用 |
 | [AI Studio](https://aistudio.baidu.com/aistudio/index)|V100|基本免费|由百度开发, 偶尔申请不到V100，主要使用PaddlePaddle框架，其它框架好像也可以用(请自行搜索使用方法)|
 | [1024LAB](https://www.1024gpu.top/home) |1080Ti、P102-100、2080Ti、2080、T4、2070、P100、XP、3080等|￥1/h ~ ￥6/h之间不等|这个是直接租用服务器的，有独立IP，使用虚拟货币DBC支付(可以用支付宝购买)，DBC汇率波动较大，请谨慎持有|
+| [天池DSW](https://dsw-dev.data.aliyun.com/#/) |p100|免费，单次限时8小时，不限次数|阿里的一个在线平台，运行时不能关闭|
+| [Kaggle](https://www.kaggle.com/dansbecker/running-kaggle-kernels-with-a-gpu) |k80|免费，每周限时30小时|外网访问|
+| [Google Colab](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjlws2zvLzvAhULPnAKHUKCAQAQFjAAegQIBhAD&url=https%3A%2F%2Fcolab.research.google.com%2F&usg=AOvVaw3A5aPK2kLFzKOzb6sOckVw) |k80、T4、P4、P100|免费，单次限时12小时|外网访问，无法指定具体GPU，未订阅Colab Pro用户多数时间下估计会被分配k80|
 
 * [Paper With Code](https://paperswithcode.com/) ：除了搜索论文代码，还可以很方便地找到任务SOTA模型
 * [GLUE](https://gluebenchmark.com/) ：一个多任务自然语言理解基准和分析平台,目前已经成为衡量模型在语言理解方面最为重要的评价体系之一
@@ -110,5 +113,5 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 ## TODO 
 
-- [ ] 添加入门、进修资料
+- [ ] 添加NLP入门、进修资料
 
