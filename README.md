@@ -35,7 +35,7 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 | 实体链指 | [2019ccks中文短文本实体链指](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87/ccks2019%E4%B8%AD%E6%96%87%E7%9F%AD%E6%96%87%E6%9C%AC%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87.md) |
 | 实体识别 | [2020中药说明书实体识别挑战](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/2020%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98.md) |
 | 问题生成 | [2020中医文献问题生成挑战](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90/2020%E4%B8%AD%E5%8C%BB%E6%96%87%E7%8C%AE%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90%E6%8C%91%E6%88%98.md) |
-| 文本匹配 | [2019大数据挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2019%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8C%91%E6%88%98%E8%B5%9B.md) |
+| 文本匹配 | [2019大数据挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2019%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8C%91%E6%88%98%E8%B5%9B.md) <br> [2020“公益AI之星”挑战赛-新冠疫情相似句对判定大赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2020%E2%80%9C%E5%85%AC%E7%9B%8AAI%E4%B9%8B%E6%98%9F%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9B-%E6%96%B0%E5%86%A0%E7%96%AB%E6%83%85%E7%9B%B8%E4%BC%BC%E5%8F%A5%E5%AF%B9%E5%88%A4%E5%AE%9A%E5%A4%A7%E8%B5%9B.md) |
 | 信息抽取 | [2020科大讯飞事件抽取挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/2020%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E4%BA%8B%E4%BB%B6%E6%8A%BD%E5%8F%96%E6%8C%91%E6%88%98%E8%B5%9B.md) |
 
 
@@ -68,6 +68,7 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 ## 4.竞赛平台
 * [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
 * [AiStudio](https://aistudio.baidu.com/aistudio/competition) ：百度
+* [讯飞开发平台](http://challenge.xfyun.cn/) ：科大讯飞
 * [DataFountain](https://www.datafountain.cn/competitions) ： CCF指定专业大数据及人工智能竞赛平台  
 * [biendata](https://www.biendata.com/) ： 国内领先的人工智能竞赛平台，包含大量NLP学术评测  
 * [FlyAI-AI竞赛服务平台](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
@@ -103,4 +104,9 @@ NLP人军火库，主要收录NLP竞赛经验贴，通用工具等，如果对�
 * [GLUE](https://gluebenchmark.com/) ：一个多任务自然语言理解基准和分析平台,目前已经成为衡量模型在语言理解方面最为重要的评价体系之一
 * [CLUE](https://www.cluebenchmarks.com/index.html) ：中文版GLUE，一个统一的测试平台，以准确评价模型的**中文**理解能力
 
+
+
+## TODO 
+
+- [ ] 添加入门、进修资料
 
