@@ -21,9 +21,20 @@
 
   * 每条微博被标注为以下六个类别之一：neutral（无情绪）、happy（积极）、angry（愤怒）、sad（悲伤）、fear（恐惧）、surprise（惊奇）。
 
-  * |      | Train | Dev  | Test |
-    | ---- | ----- | ---- | ---- |
-    | 通用 | 27768 | 2000 | 5000 |
-    | 疫情 | 8606  | 2000 | 5000 |
+  * |      | Train | Dev  | Test |                           开放获取                           |
+    | ---- | ----- | ---- | ---- | :----------------------------------------------------------: |
+    | 通用 | 27768 | 2000 | 5000 | [是](https://pan.baidu.com/s/1JeKK1dNlKFzbk_TXuOdCVw) ，提取密码：isp0，解压密码：smp2020ewect |
+    | 疫情 | 8606  | 2000 | 5000 |                           是，同上                           |
 
-* 参赛方案：[微博情绪分析评测（SMP2020-EWECT）参赛总结](https://zhuanlan.zhihu.com/p/222138885)
+* 参赛方案：
+
+|                             方案                             |                            代码                            |
+| :----------------------------------------------------------: | :--------------------------------------------------------: |
+| [top1](https://github.com/smp2020ewect/smp2020ewect.github.io/blob/master/reports/Tencent-SMP2020-EWECT%E8%AF%84%E6%B5%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A.pdf) |                             ×                              |
+| [top2](https://github.com/smp2020ewect/smp2020ewect.github.io/blob/master/reports/%E6%B8%85%E5%8D%9A%E5%A4%A7%E6%95%B0%E6%8D%AE-SMP2020-EWECT%E8%AF%84%E6%B5%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A.pdf) |                             ×                              |
+| [top3](https://github.com/smp2020ewect/smp2020ewect.github.io/blob/master/reports/%E6%8B%BF%E7%AC%AC%E4%B8%80%E5%AF%BC%E5%B8%88%E8%AF%B7%E5%90%83%E8%82%AF%E5%BE%B7%E5%9F%BA-SMP2020EWECT%E8%AF%84%E6%B5%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A.pdf) |                             ×                              |
+| [top4](https://github.com/smp2020ewect/smp2020ewect.github.io/blob/master/reports/BERT%204EVER-SMP2020-EWECT%E8%AF%84%E6%B5%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A.pdf) |                             ×                              |
+| [top5](https://github.com/smp2020ewect/smp2020ewect.github.io/blob/master/reports/SYS1874-SMP2020-EWECT%E8%AF%84%E6%B5%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A.pdf) |                             ×                              |
+| [top6](https://github.com/smp2020ewect/smp2020ewect.github.io/blob/master/reports/%E7%82%AC%E7%81%AB-SMP2020-EWECT%E8%AF%84%E6%B5%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A.pdf) | [√](https://github.com/thinkingmanyangyang/smp-ewect-code) |
+| [微博情绪分析评测（SMP2020-EWECT）参赛总结](https://zhuanlan.zhihu.com/p/222138885) |                             ×                              |
+
