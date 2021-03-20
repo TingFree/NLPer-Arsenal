@@ -39,6 +39,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | 问题生成 | [2020中医文献问题生成挑战](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90/2020%E4%B8%AD%E5%8C%BB%E6%96%87%E7%8C%AE%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90%E6%8C%91%E6%88%98.md) |
 | 文本匹配 | [2019大数据挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2019%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8C%91%E6%88%98%E8%B5%9B.md) <br> [2020“公益AI之星”挑战赛-新冠疫情相似句对判定大赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2020%E2%80%9C%E5%85%AC%E7%9B%8AAI%E4%B9%8B%E6%98%9F%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9B-%E6%96%B0%E5%86%A0%E7%96%AB%E6%83%85%E7%9B%B8%E4%BC%BC%E5%8F%A5%E5%AF%B9%E5%88%A4%E5%AE%9A%E5%A4%A7%E8%B5%9B.md) |
 | 信息抽取 | [2020科大讯飞事件抽取挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/2020%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E4%BA%8B%E4%BB%B6%E6%8A%BD%E5%8F%96%E6%8C%91%E6%88%98%E8%B5%9B.md) |
+| 其它     | [2020NLP中文预训练模型泛化能力挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/Competition/%E5%85%B6%E5%AE%83/2020NLP%E4%B8%AD%E6%96%87%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B%E6%8C%91%E6%88%98%E8%B5%9B.md) |
 
 
 
@@ -50,28 +51,28 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 > [AI会议deadline](https://aideadlin.es/?sub=ML,CV,NLP,RO,SP,DM) ：会议倒计时  
 > [会议时间记录表](https://jackietseng.github.io/conference_call_for_paper/conferences.html) ：Updated by Jackie Tseng, Tsinghua Computer Vision and Intelligent Learning Lab  
 
-|会议| 级别| 截稿时间| 开会时间|说明|
-|:---:| :---:|  :---:|  :---:|  :---:|
-|ACL([官网](https://www.aclweb.org/portal/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/))|CCF-A|~~2021.2.1~~|2021，8.1~8.6|Bangkok, Thailand|
-|AAAI([官网](https://www.aaai.org)、[dblp](http://dblp.uni-trier.de/db/conf/aaai/))|CCF-A|2021.9.9|2022，2.2~2.9|Vancouver, British Columbia, Canada|
-|NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/))|CCF-A|2021.5.26|2021，12.6~12.14|Online|
-|IJCAI([官网](https://www.ijcai.org)、[dblp](http://dblp.uni-trier.de/db/conf/ijcai/))|CCF-A|~~2021.2.18~~|2021，8.21~8.26|Montreal, Canada|
-|EMNLP([官网](https://2021.emnlp.org/)、[dblp](http://dblp.uni-trier.de/db/conf/emnlp/))|CCF-B|2021.5.17|2021，11.7~11.11|Punta Cana, Dominican Republic|
-|COLING([官网](https://coling2022.org/)、[dblp](http://dblp.uni-trier.de/db/conf/coling/))|CCF-B|2021.7.1|2022，12.8~12.13|Gyeongju, Korea|
-|CoNLL([官网](https://www.conll.org/2020)、[dblp](http://dblp.uni-trier.de/db/conf/conll))|CCF-C|2021.7.17|2021，11.10~11.11|*|
-|NLPCC([官网](http://tcci.ccf.org.cn/conference/2021/)、[dblp](https://dblp.uni-trier.de/db/conf/nlpcc/))|CCF-C|2021.7.1|2021，10.16~10.17|青岛|
-|NAACL([官网](http://naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/))|CCF-C|2020.11.23|2021，6.6~6.11|Mexico City, Mexico|
-|AACL([官网](http://aacl2020.org/))|*|*|*|今年合并至ACL|
-|EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/))|*|~~2020.10.7~~|2021，4.19~4.23|online|
-|CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|2021.4.1|2021，8.13~8.15|呼和浩特|
-|CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|2021.5.10|2021，8.18~8.21|广州|
-|SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|2021.5.1|2021，9.3~9.5|北京|
+|会议| 级别| 摘要截稿 | 原文截稿 | 审稿通知 | 开会时间|说明|
+|:---:| :---:|  :---:|  :---:|  :---: |  :---: |  :---: |
+|ACL([官网](https://2021.aclweb.org/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/))|CCF-A|~~2021.1.25~~|~~2021.2.2~~|2021.5.5|2021，8.1~8.6|Bangkok, Thailand|
+|AAAI([官网](https://aaai.org/Conferences/AAAI-21/)、[dblp](http://dblp.uni-trier.de/db/conf/aaai/))|CCF-A|~~2020.9.1~~|~~2020.9.9~~|~~2020.12.1~~|~~2021，2.2~2.9~~|Vancouver, British Columbia, Canada|
+|NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/))|CCF-A|2021.5.19|2021.5.26|2021.9.28|2021，12.6~12.14|Online|
+|IJCAI([官网](https://ijcai-21.org/)、[dblp](http://dblp.uni-trier.de/db/conf/ijcai/))|CCF-A|~~2021.1.13~~|~~2021.1.20~~|2021.4.30|2021，8.21~8.26|Montreal, Canada|
+|EMNLP([官网](https://2021.emnlp.org/)、[dblp](http://dblp.uni-trier.de/db/conf/emnlp/))|CCF-B|2021.5.10|2021.5.17|2021.8.25|2021，11.7~11.11|Punta Cana, Dominican Republic|
+|COLING([官网](https://coling2022.org/)、[dblp](http://dblp.uni-trier.de/db/conf/coling/))|CCF-B|*|2021.7.1(?)|*|2022，10.9~10.15|Gyeongju, Korea|
+|CoNLL([官网](https://www.conll.org/2021)、[dblp](http://dblp.uni-trier.de/db/conf/conll))|CCF-C|*|2021.6.14|2021.8.31|2021，11.10~11.11|*|
+|NLPCC([官网](http://tcci.ccf.org.cn/conference/2021/)、[dblp](https://dblp.uni-trier.de/db/conf/nlpcc/))|CCF-C|*|2021.6.1|*|2021，10.13~10.17|青岛|
+|NAACL([官网](https://2021.naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/))|CCF-C|*|~~2020.11.23~~|~~2021.3.10~~|2021，6.6~6.11|Mexico City, Mexico|
+|AACL([官网](http://aacl2020.org/))|*|*|*||*|今年合并至ACL|
+|EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/))|*|*|~~2020.10.7~~|~~2021.1.11~~|2021，4.19~4.23|online|
+|CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|*|2021.4.1|2021.5.15|2021，8.13~8.15|呼和浩特|
+|CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|*|2021.5.10|2021.7.2|2021，8.18~8.21|广州|
+|SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|*|2021.5.1|2021.6.20|2021，9.3~9.5|北京|
 
 ## 4.竞赛平台
 * [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
 * [AiStudio](https://aistudio.baidu.com/aistudio/competition) ：百度
 * [讯飞开发平台](http://challenge.xfyun.cn/) ：科大讯飞
-* [DataFountain](https://www.datafountain.cn/competitions) ： CCF指定专业大数据及人工智能竞赛平台  
+* [DataFountain](https://www.datafountain.cn/competitions) ： CCF指定专业大数据及人工智能竞赛平台，有很多训练赛  
 * [biendata](https://www.biendata.com/) ： 国内领先的人工智能竞赛平台，包含大量NLP学术评测  
 * [FlyAI-AI竞赛服务平台](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
 * [和鲸社区](https://www.kesci.com/home/competition) ：一个综合的学习平台  
@@ -80,7 +81,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 ## 5.自媒体推荐  
 > 学界、业界、理论、实践以及时事动态，NLPer都应该有所了解  
 
-| 平台       | 主要领域 | 公号                                                         |
+| 平台       | 主要领域 | 自媒体                                                       |
 | ---------- | -------- | ------------------------------------------------------------ |
 | 微信公众号 | 技术     | Coggle数据科学                                               |
 |            | 行业信息 | 机器之心、机器之能、AI报道、AI前线、AI科技评论、机器学习研究组订阅 |
