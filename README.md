@@ -23,7 +23,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 | 领域     | 竞赛                                                         | 开始时间           | 结束时间           |
 | -------- | ------------------------------------------------------------ | ------------------ | ------------------ |
-| 文本匹配 | [**小布助手对话短文本语义匹配**](https://tianchi.aliyun.com/competition/entrance/531851/introduction) <br> [2021搜狐校园文本匹配算法大赛](https://www.biendata.xyz/competition/sohu_2021/) | 2021.3<br> 2021.3  | 2021.5<br> 2021.5  |
+| 文本匹配 | [小布助手对话短文本语义匹配](https://tianchi.aliyun.com/competition/entrance/531851/introduction) <br> [2021搜狐校园文本匹配算法大赛](https://www.biendata.xyz/competition/sohu_2021/) | 2021.3<br> 2021.3  | 2021.5<br> 2021.5  |
 | 阅读理解 | [2021语言与智能技术竞赛：机器阅读理解任务](https://aistudio.baidu.com/aistudio/competition/detail/66) <br> 2021海华AI挑战赛·中文阅读理解（[技术组](https://www.biendata.xyz/competition/haihua_2021/) 、[中学组](https://www.biendata.xyz/competition/haihua2021_k12/) ） | 2021.3 <br> 2021.2 | 2021.5 <br> 2021.5 |
 | 信息抽取 | [2021语言与智能技术竞赛：多形态信息抽取任务](https://aistudio.baidu.com/aistudio/competition/detail/65) | 2021.3             | 2021.5             |
 | 对话     | [2021语言与智能技术竞赛：多技能对话任务](https://aistudio.baidu.com/aistudio/competition/detail/67) <br> [心理对话问答挑战赛](https://www.flyai.com/d/319) | 2021.3 <br> 2021.2 | 2021.5 <br> 2021.4 |
@@ -80,7 +80,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |NAACL([官网](https://2021.naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/))|CCF-C|*|~~2020.11.23~~|~~2021.3.10~~|2021，6.6~6.11|Mexico City, Mexico|
 |AACL([官网](http://aacl2020.org/))|*|*|*||*|今年合并至ACL|
 |EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/))|*|*|~~2020.10.7~~|~~2021.1.11~~|2021，4.19~4.23|online|
-|CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|*|2021.4.1|2021.5.15|2021，8.13~8.15|呼和浩特|
+|CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|*|2021.4.15|2021.5.29|2021，8.13~8.15|呼和浩特|
 |CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|*|2021.5.10|2021.7.2|2021，8.18~8.21|广州|
 |SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|*|2021.5.1|2021.6.20|2021，9.3~9.5|北京|
 |CCMT([官网](http://sc.cipsc.org.cn/mt/conference/2021/))|*|*|2021.5.25|2021.7.1|2021，8.6~8.8|青海西宁|
