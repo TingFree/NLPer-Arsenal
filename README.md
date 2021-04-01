@@ -70,14 +70,17 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |会议| 级别| 摘要截稿 | 原文截稿 | 审稿通知 | 开会时间|说明|
 |:---:| :---:|  :---:|  :---:|  :---: |  :---: |  :---: |
 |ACL([官网](https://2021.aclweb.org/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/))|CCF-A|~~2021.1.25~~|~~2021.2.2~~|2021.5.5|2021，8.1~8.6|Bangkok, Thailand|
-|AAAI([官网](https://aaai.org/Conferences/AAAI-21/)、[dblp](http://dblp.uni-trier.de/db/conf/aaai/))|CCF-A|~~2020.9.1~~|~~2020.9.9~~|~~2020.12.1~~|~~2021，2.2~2.9~~|Vancouver, British Columbia, Canada|
-|NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/))|CCF-A|2021.5.19|2021.5.26|2021.9.28|2021，12.6~12.14|Online|
+|AAAI([官网](https://aaai.org)、[dblp](http://dblp.uni-trier.de/db/conf/aaai/))|CCF-A||预计2021.9||||
+|NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/))|CCF-A|2021.5.19|2021.5.26|2021.9.28|2021，12.6~12.14|online|
 |IJCAI([官网](https://ijcai-21.org/)、[dblp](http://dblp.uni-trier.de/db/conf/ijcai/))|CCF-A|~~2021.1.13~~|~~2021.1.20~~|2021.4.30|2021，8.21~8.26|Montreal, Canada|
+|ICML([官网](https://icml.cc/Conferences/2021)、[dblp](https://dblp.uni-trier.de/db/conf/icml/index.html))|CCF-A|~~2021.1.28~~|~~2021.2.4~~|2021.5.8|2021，7.18~7.24|online|
+|SIGIR([官网](https://sigir.org/sigir2021)、[dblp](https://dblp.uni-trier.de/db/conf/sigir/index.html))|CCF-A|~~2021.1.28~~|~~2021.2.4~~|2021.4.14|2021，7.11~7.15|online|
 |EMNLP([官网](https://2021.emnlp.org/)、[dblp](http://dblp.uni-trier.de/db/conf/emnlp/))|CCF-B|2021.5.10|2021.5.17|2021.8.25|2021，11.7~11.11|Punta Cana, Dominican Republic|
 |COLING([官网](https://coling2022.org/)、[dblp](http://dblp.uni-trier.de/db/conf/coling/))|CCF-B|*|2021.7.1(?)|*|2022，10.9~10.15|Gyeongju, Korea|
 |CoNLL([官网](https://www.conll.org/2021)、[dblp](http://dblp.uni-trier.de/db/conf/conll))|CCF-C|*|2021.6.14|2021.8.31|2021，11.10~11.11|same as emnlp|
 |NLPCC([官网](http://tcci.ccf.org.cn/conference/2021/)、[dblp](https://dblp.uni-trier.de/db/conf/nlpcc/))|CCF-C|*|2021.6.1|*|2021，10.13~10.17|青岛|
 |NAACL([官网](https://2021.naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/))|CCF-C|*|~~2020.11.23~~|~~2021.3.10~~|2021，6.6~6.11|Mexico City, Mexico|
+|ICLR([官网](https://iclr.cc/)、[dblp](https://dblp.uni-trier.de/db/conf/iclr/index.html))|||预计2021.10||||
 |AACL([官网](http://aacl2020.org/))|*|*|*||*|今年合并至ACL|
 |EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/))|*|*|~~2020.10.7~~|~~2021.1.11~~|2021，4.19~4.23|online|
 |CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|*|2021.4.15|2021.5.29|2021，8.13~8.15|呼和浩特|
