@@ -75,13 +75,13 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |IJCAI([官网](https://ijcai-21.org/)、[dblp](http://dblp.uni-trier.de/db/conf/ijcai/))|CCF-A|~~2021.1.13~~|~~2021.1.20~~|2021.4.30|2021，8.21~8.26|Montreal, Canada|
 |EMNLP([官网](https://2021.emnlp.org/)、[dblp](http://dblp.uni-trier.de/db/conf/emnlp/))|CCF-B|2021.5.10|2021.5.17|2021.8.25|2021，11.7~11.11|Punta Cana, Dominican Republic|
 |COLING([官网](https://coling2022.org/)、[dblp](http://dblp.uni-trier.de/db/conf/coling/))|CCF-B|*|2021.7.1(?)|*|2022，10.9~10.15|Gyeongju, Korea|
-|CoNLL([官网](https://www.conll.org/2021)、[dblp](http://dblp.uni-trier.de/db/conf/conll))|CCF-C|*|2021.6.14|2021.8.31|2021，11.10~11.11|*|
+|CoNLL([官网](https://www.conll.org/2021)、[dblp](http://dblp.uni-trier.de/db/conf/conll))|CCF-C|*|2021.6.14|2021.8.31|2021，11.10~11.11|same as emnlp|
 |NLPCC([官网](http://tcci.ccf.org.cn/conference/2021/)、[dblp](https://dblp.uni-trier.de/db/conf/nlpcc/))|CCF-C|*|2021.6.1|*|2021，10.13~10.17|青岛|
 |NAACL([官网](https://2021.naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/))|CCF-C|*|~~2020.11.23~~|~~2021.3.10~~|2021，6.6~6.11|Mexico City, Mexico|
 |AACL([官网](http://aacl2020.org/))|*|*|*||*|今年合并至ACL|
 |EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/))|*|*|~~2020.10.7~~|~~2021.1.11~~|2021，4.19~4.23|online|
 |CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|*|2021.4.15|2021.5.29|2021，8.13~8.15|呼和浩特|
-|CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|*|2021.5.10|2021.7.2|2021，8.18~8.21|广州|
+|CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|*|2021.5.20|2021.7.2|2021，8.18~8.21|广州|
 |SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|*|2021.5.1|2021.6.20|2021，9.3~9.5|北京|
 |CCMT([官网](http://sc.cipsc.org.cn/mt/conference/2021/))|*|*|2021.5.25|2021.7.1|2021，8.6~8.8|青海西宁|
 
@@ -117,8 +117,9 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | :---:|:---:|:---:|:---:|
 | [BitaHub](https://www.bitahub.com/)|1080Ti、Titan xp、V100|1080Ti(￥0.7/h)、Titan xp(￥1/h)、V100(￥9/h)| 中科大先研院的平台，价格实惠，但一块GPU只搭配2核CPU，通过提交任务，按运行时间收取费用 |
 | [沣云平台](https://www.fenghub.com/) |ML270|￥2.8/h| 一站式AI计算平台，按运行时间收取费用 |
-| [AI Studio](https://aistudio.baidu.com/aistudio/index)|V100|基本免费|由百度开发, 偶尔申请不到V100，主要使用PaddlePaddle框架，其它框架好像也可以用(请自行搜索使用方法)|
+|               [恒源云](https://gpushare.com/)                |               1080Ti、2080Ti、rtx5000、3090                |                 ￥2/h~￥4.5/h                 | 可以搭配完整的CPU和硬盘，相比bithub有更高的自由度，目前处于推广期，有很多优惠 |
 | [1024LAB](https://www.1024gpu.top/home) |1080Ti、P102-100、2080Ti、2080、T4、2070、P100、XP、3080等|￥1/h ~ ￥6/h之间不等|这个是直接租用服务器的，有独立IP，使用虚拟货币DBC支付(可以用支付宝购买)，DBC汇率波动较大，请谨慎持有|
+| [AI Studio](https://aistudio.baidu.com/aistudio/index) |V100|基本免费|由百度开发, 偶尔申请不到V100，主要使用PaddlePaddle框架，其它框架好像也可以用(请自行搜索使用方法)|
 | [天池DSW](https://dsw-dev.data.aliyun.com/#/) |p100|免费，单次限时8小时，不限次数|阿里的一个在线平台，运行时不能关闭|
 | [Kaggle](https://www.kaggle.com/dansbecker/running-kaggle-kernels-with-a-gpu) |k80|免费，每周限时30小时|外网访问|
 | [Google Colab](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjlws2zvLzvAhULPnAKHUKCAQAQFjAAegQIBhAD&url=https%3A%2F%2Fcolab.research.google.com%2F&usg=AOvVaw3A5aPK2kLFzKOzb6sOckVw) |k80、T4、P4、P100|免费，单次限时12小时|外网访问，无法指定具体GPU，未订阅Colab Pro用户多数时间下估计会被分配k80|
