@@ -50,7 +50,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | 目录     | 赛事                                                         |
 | -------- | ------------------------------------------------------------ |
 | 文本分类 | [smp2020微博情绪分析评测](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/smp2020%E5%BE%AE%E5%8D%9A%E6%83%85%E7%BB%AA%E5%88%86%E6%9E%90%E8%AF%84%E6%B5%8B%EF%BC%88EWECT%EF%BC%89.md) <br> [2020百度人工智能开源大赛-观点阅读理解任务](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/2020%E7%99%BE%E5%BA%A6%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%BC%80%E6%BA%90%E5%A4%A7%E8%B5%9B-%E8%A7%82%E7%82%B9%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E4%BB%BB%E5%8A%A1.md) |
-| 实体链指 | [2019ccks中文短文本实体链指](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87/ccks2019%E4%B8%AD%E6%96%87%E7%9F%AD%E6%96%87%E6%9C%AC%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87.md) |
+| 实体链指 | [2019ccks中文短文本实体链指](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87/ccks2019%E4%B8%AD%E6%96%87%E7%9F%AD%E6%96%87%E6%9C%AC%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87.md) <br> 2020ccks面向中文短文本的实体链指任务 <br> [2020千言数据集：面向中文短文本的实体链指任务](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87/2020%E5%8D%83%E8%A8%80%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%9A%E9%9D%A2%E5%90%91%E4%B8%AD%E6%96%87%E7%9F%AD%E6%96%87%E6%9C%AC%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87%E4%BB%BB%E5%8A%A1.md) |
 | 实体识别 | [2020中药说明书实体识别挑战](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/2020%E4%B8%AD%E8%8D%AF%E8%AF%B4%E6%98%8E%E4%B9%A6%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB%E6%8C%91%E6%88%98.md) <br> [2020中文医学文本命名实体识别](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/2020%E4%B8%AD%E6%96%87%E5%8C%BB%E5%AD%A6%E6%96%87%E6%9C%AC%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB.md) |
 | 问题生成 | [2020中医文献问题生成挑战](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90/2020%E4%B8%AD%E5%8C%BB%E6%96%87%E7%8C%AE%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90%E6%8C%91%E6%88%98.md) |
 | 文本匹配 | [2019大数据挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2019%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8C%91%E6%88%98%E8%B5%9B.md) <br> [2020“公益AI之星”挑战赛-新冠疫情相似句对判定大赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2020%E2%80%9C%E5%85%AC%E7%9B%8AAI%E4%B9%8B%E6%98%9F%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9B-%E6%96%B0%E5%86%A0%E7%96%AB%E6%83%85%E7%9B%B8%E4%BC%BC%E5%8F%A5%E5%AF%B9%E5%88%A4%E5%AE%9A%E5%A4%A7%E8%B5%9B.md) <br> [2020房产行业聊天匹配问答](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2020%E6%88%BF%E4%BA%A7%E8%A1%8C%E4%B8%9A%E8%81%8A%E5%A4%A9%E5%8C%B9%E9%85%8D%E9%97%AE%E7%AD%94.md) <br> |
@@ -70,7 +70,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |会议| 级别| 摘要截稿 | 原文截稿 | 审稿通知 | 开会时间|说明|
 |:---:| :---:|  :---:|  :---:|  :---: |  :---: |  :---: |
 |ACL([官网](https://2021.aclweb.org/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/))|CCF-A|~~2021.1.25~~|~~2021.2.2~~|2021.5.5|2021，8.1~8.6|Bangkok, Thailand|
-|AAAI([官网](https://aaai.org)、[dblp](http://dblp.uni-trier.de/db/conf/aaai/))|CCF-A||预计2021.9||||
+|AAAI([官网](https://aaai.org)、[dblp](http://dblp.uni-trier.de/db/conf/aaai/))|CCF-A|?|预计2021.9|?|?|?|
 |NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/))|CCF-A|2021.5.19|2021.5.26|2021.9.28|2021，12.6~12.14|online|
 |IJCAI([官网](https://ijcai-21.org/)、[dblp](http://dblp.uni-trier.de/db/conf/ijcai/))|CCF-A|~~2021.1.13~~|~~2021.1.20~~|2021.4.30|2021，8.21~8.26|Montreal, Canada|
 |ICML([官网](https://icml.cc/Conferences/2021)、[dblp](https://dblp.uni-trier.de/db/conf/icml/index.html))|CCF-A|~~2021.1.28~~|~~2021.2.4~~|2021.5.8|2021，7.18~7.24|online|
@@ -80,8 +80,8 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |CoNLL([官网](https://www.conll.org/2021)、[dblp](http://dblp.uni-trier.de/db/conf/conll))|CCF-C|*|2021.6.14|2021.8.31|2021，11.10~11.11|same as emnlp|
 |NLPCC([官网](http://tcci.ccf.org.cn/conference/2021/)、[dblp](https://dblp.uni-trier.de/db/conf/nlpcc/))|CCF-C|*|2021.6.1|*|2021，10.13~10.17|青岛|
 |NAACL([官网](https://2021.naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/))|CCF-C|*|~~2020.11.23~~|~~2021.3.10~~|2021，6.6~6.11|Mexico City, Mexico|
-|ICLR([官网](https://iclr.cc/)、[dblp](https://dblp.uni-trier.de/db/conf/iclr/index.html))|||预计2021.10||||
-|AACL([官网](http://aacl2020.org/))|*|*|*||*|今年合并至ACL|
+|ICLR([官网](https://iclr.cc/)、[dblp](https://dblp.uni-trier.de/db/conf/iclr/index.html))|*|?|预计2021.10|?|?|?|
+|AACL([官网](http://aacl2020.org/))|*|*|*|*|*|今年合并至ACL|
 |EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/))|*|*|~~2020.10.7~~|~~2021.1.11~~|2021，4.19~4.23|online|
 |CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|*|2021.4.15|2021.5.29|2021，8.13~8.15|呼和浩特|
 |CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|*|2021.5.20|2021.7.2|2021，8.18~8.21|广州|
