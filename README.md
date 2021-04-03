@@ -56,7 +56,9 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | 问题生成 | [2020中医文献问题生成挑战](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90/2020%E4%B8%AD%E5%8C%BB%E6%96%87%E7%8C%AE%E9%97%AE%E9%A2%98%E7%94%9F%E6%88%90%E6%8C%91%E6%88%98.md) |
 | 阅读理解 | [2020语言与智能技术竞赛：机器阅读理解任务](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3/2020%E8%AF%AD%E8%A8%80%E4%B8%8E%E6%99%BA%E8%83%BD%E6%8A%80%E6%9C%AF%E7%AB%9E%E8%B5%9B%EF%BC%9A%E6%9C%BA%E5%99%A8%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E4%BB%BB%E5%8A%A1.md) |
 | 文本匹配 | [2019大数据挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2019%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8C%91%E6%88%98%E8%B5%9B.md) <br> [2020“公益AI之星”挑战赛-新冠疫情相似句对判定大赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2020%E2%80%9C%E5%85%AC%E7%9B%8AAI%E4%B9%8B%E6%98%9F%E2%80%9D%E6%8C%91%E6%88%98%E8%B5%9B-%E6%96%B0%E5%86%A0%E7%96%AB%E6%83%85%E7%9B%B8%E4%BC%BC%E5%8F%A5%E5%AF%B9%E5%88%A4%E5%AE%9A%E5%A4%A7%E8%B5%9B.md) <br> [2020房产行业聊天匹配问答](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2020%E6%88%BF%E4%BA%A7%E8%A1%8C%E4%B8%9A%E8%81%8A%E5%A4%A9%E5%8C%B9%E9%85%8D%E9%97%AE%E7%AD%94.md) <br> |
+| 对话生成 | 2020千言：多技能对话                                         |
 | 信息抽取 | [2020科大讯飞事件抽取挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/2020%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E4%BA%8B%E4%BB%B6%E6%8A%BD%E5%8F%96%E6%8C%91%E6%88%98%E8%B5%9B.md) |
+| 机器翻译 | [2021NAACL同传Workshop：千言 - 机器同传](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91/2021NAACL%E5%90%8C%E4%BC%A0Workshop%EF%BC%9A%E5%8D%83%E8%A8%80%20-%20%E6%9C%BA%E5%99%A8%E5%90%8C%E4%BC%A0.md) |
 | 其它     | [2020NLP中文预训练模型泛化能力挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%85%B6%E5%AE%83/2020NLP%E4%B8%AD%E6%96%87%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B%E6%8C%91%E6%88%98%E8%B5%9B.md) <br> [2019中文NL2SQL挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%85%B6%E5%AE%83/2019%E4%B8%AD%E6%96%87NL2SQL%E6%8C%91%E6%88%98%E8%B5%9B.md) |
 
 
@@ -98,7 +100,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 * [biendata](https://www.biendata.com/) ： 国内领先的人工智能竞赛平台，包含大量NLP学术评测  
 * [FlyAI-AI竞赛服务平台](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
 * [和鲸社区](https://www.kesci.com/home/competition) ：一个综合的学习平台  
-* NLPCC、CCKS、SMP等会议每年都会举办相关学术评测  
+* NLPCC、CCL、CCKS、SMP等会议每年都会举办相关学术评测  
 
 ## 5.自媒体推荐  
 > 学界、业界、理论、实践以及时事动态，NLPer都应该有所了解  
