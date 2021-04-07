@@ -19,16 +19,17 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 ## 1.当前赛事
 
-### 大奖赛
+### 重点赛
 
-| 领域     | 竞赛                                                         | 开始时间           | 结束时间           |
-| -------- | ------------------------------------------------------------ | ------------------ | ------------------ |
-| 文本匹配 | [小布助手对话短文本语义匹配](https://tianchi.aliyun.com/competition/entrance/531851/introduction) （[攻略](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2021%E5%B0%8F%E5%B8%83%E5%8A%A9%E6%89%8B%E5%AF%B9%E8%AF%9D%E7%9F%AD%E6%96%87%E6%9C%AC%E8%AF%AD%E4%B9%89%E5%8C%B9%E9%85%8D.md) ）<br> [2021搜狐校园文本匹配算法大赛](https://www.biendata.xyz/competition/sohu_2021/) | 2021.3<br> 2021.3  | 2021.5<br> 2021.5  |
-| 阅读理解 | [NLPCC2021语言与智能技术竞赛：机器阅读理解任务](https://aistudio.baidu.com/aistudio/competition/detail/66) <br> 2021海华AI挑战赛·中文阅读理解（[技术组](https://www.biendata.xyz/competition/haihua_2021/) 、[中学组](https://www.biendata.xyz/competition/haihua2021_k12/) ） | 2021.3 <br> 2021.2 | 2021.5 <br> 2021.5 |
-| 信息抽取 | [NLPCC2021语言与智能技术竞赛：多形态信息抽取任务](https://aistudio.baidu.com/aistudio/competition/detail/65) | 2021.3             | 2021.5             |
-| 对话     | [NLPCC2021语言与智能技术竞赛：多技能对话任务](https://aistudio.baidu.com/aistudio/competition/detail/67) <br> [心理对话问答挑战赛](https://www.flyai.com/d/319) | 2021.3 <br> 2021.2 | 2021.5 <br> 2021.4 |
-| 实体识别 | [智能医疗决策](https://www.datafountain.cn/competitions/498) | 2021.2             | 2021.4             |
-| CCL2021  | [任务一：跨领域句法分析](http://hlt.suda.edu.cn/index.php/CCL2021)<br> [任务二：中文空间语义理解](https://github.com/2030NLP/SpaCE2021)<br> [任务三：智能医疗对话诊疗](http://www.fudan-disc.com/sharedtask/imcs21/index.html) <br> [任务四：图文多模态幽默识别](http://cips-cl.org/static/CCL2021/cclEval/humorcomputation/index.html)<br> [任务五：中译语通-Nihao无监督汉语分词](http://114.116.55.241/sharedTask-unsupervisedCWS) | 2021.4             | 2021.7             |
+| 领域                   | 竞赛                                                         | 开始时间           | 结束时间           |
+| ---------------------- | ------------------------------------------------------------ | ------------------ | ------------------ |
+| 文本匹配               | [小布助手对话短文本语义匹配](https://tianchi.aliyun.com/competition/entrance/531851/introduction) （[攻略](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E6%96%87%E6%9C%AC%E5%8C%B9%E9%85%8D/2021%E5%B0%8F%E5%B8%83%E5%8A%A9%E6%89%8B%E5%AF%B9%E8%AF%9D%E7%9F%AD%E6%96%87%E6%9C%AC%E8%AF%AD%E4%B9%89%E5%8C%B9%E9%85%8D.md) ）<br> [2021搜狐校园文本匹配算法大赛](https://www.biendata.xyz/competition/sohu_2021/) | 2021.3<br> 2021.3  | 2021.5<br> 2021.5  |
+| 阅读理解               | [NLPCC2021语言与智能技术竞赛：机器阅读理解任务](https://aistudio.baidu.com/aistudio/competition/detail/66) <br> 2021海华AI挑战赛·中文阅读理解（[技术组](https://www.biendata.xyz/competition/haihua_2021/) 、[中学组](https://www.biendata.xyz/competition/haihua2021_k12/) ） | 2021.3 <br> 2021.2 | 2021.5 <br> 2021.5 |
+| 信息抽取               | [NLPCC2021语言与智能技术竞赛：多形态信息抽取任务](https://aistudio.baidu.com/aistudio/competition/detail/65) | 2021.3             | 2021.5             |
+| 对话                   | [NLPCC2021语言与智能技术竞赛：多技能对话任务](https://aistudio.baidu.com/aistudio/competition/detail/67) <br> [心理对话问答挑战赛](https://www.flyai.com/d/319) | 2021.3 <br> 2021.2 | 2021.5 <br> 2021.4 |
+| 实体识别               | [智能医疗决策](https://www.datafountain.cn/competitions/498) | 2021.2             | 2021.4             |
+| CCL2021                | [任务一：跨领域句法分析](http://hlt.suda.edu.cn/index.php/CCL2021) <br> [任务二：中文空间语义理解](https://github.com/2030NLP/SpaCE2021) <br> [任务三：智能医疗对话诊疗](http://www.fudan-disc.com/sharedtask/imcs21/index.html) <br> [任务四：图文多模态幽默识别](http://cips-cl.org/static/CCL2021/cclEval/humorcomputation/index.html) <br> [任务五：中译语通-Nihao无监督汉语分词](http://114.116.55.241/sharedTask-unsupervisedCWS) | 2021.4             | 2021.7             |
+| 中文医疗信息处理挑战榜 | 目前任务包括医学文本信息抽取（实体识别、关系抽取）、医学术语归一化、医学文本分类、医学句子关系判定和医学QA共5大类任务8个子任务，-> [官网](https://tianchi.aliyun.com/specials/promotion/2021chinesemedicalnlpleaderboardchallenge) | 现在               | 暂无               |
 
 ### 训练赛
 
@@ -134,6 +135,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 * [Paper With Code](https://paperswithcode.com/) ：除了搜索论文代码，还可以很方便地找到任务SOTA模型
 * [GLUE](https://gluebenchmark.com/) ：一个多任务自然语言理解基准和分析平台,目前已经成为衡量模型在语言理解方面最为重要的评价体系之一
 * [CLUE](https://www.cluebenchmarks.com/index.html) ：中文版GLUE，一个统一的测试平台，以准确评价模型的**中文**理解能力
+* [TextFlint](https://github.com/textflint/textflint) ：复旦大学模型鲁棒性评测平台，快速便捷（[介绍](https://mp.weixin.qq.com/s/_-iMcA73OGcQSdMOxTRDZA) ）
 
 
 
