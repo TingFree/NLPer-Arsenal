@@ -132,6 +132,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | [Kaggle](https://www.kaggle.com/dansbecker/running-kaggle-kernels-with-a-gpu) |k80|免费，每周限时30小时|外网访问|
 | [Google Colab](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjlws2zvLzvAhULPnAKHUKCAQAQFjAAegQIBhAD&url=https%3A%2F%2Fcolab.research.google.com%2F&usg=AOvVaw3A5aPK2kLFzKOzb6sOckVw) |k80、T4、P4、P100|免费，单次限时12小时|外网访问，无法指定具体GPU，未订阅Colab Pro用户多数时间下估计会被分配k80|
 
+* [AMiner](https://www.aminer.cn/) ：学术头条，更全面地了解学术领域
 * [Paper With Code](https://paperswithcode.com/) ：除了搜索论文代码，还可以很方便地找到任务SOTA模型
 * [GLUE](https://gluebenchmark.com/) ：一个多任务自然语言理解基准和分析平台,目前已经成为衡量模型在语言理解方面最为重要的评价体系之一
 * [CLUE](https://www.cluebenchmarks.com/index.html) ：中文版GLUE，一个统一的测试平台，以准确评价模型的**中文**理解能力
