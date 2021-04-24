@@ -27,7 +27,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | 阅读理解                    | [NLPCC2021语言与智能技术竞赛：机器阅读理解任务](https://aistudio.baidu.com/aistudio/competition/detail/66) <br> 2021海华AI挑战赛·中文阅读理解（[技术组](https://www.biendata.xyz/competition/haihua_2021/) 、[中学组](https://www.biendata.xyz/competition/haihua2021_k12/) ） | 2021.3 <br> 2021.2 | 2021.5 <br> 2021.5 |
 | 信息抽取                    | [NLPCC2021语言与智能技术竞赛：多形态信息抽取任务](https://aistudio.baidu.com/aistudio/competition/detail/65) | 2021.3             | 2021.5             |
 | 对话                        | [NLPCC2021语言与智能技术竞赛：多技能对话任务](https://aistudio.baidu.com/aistudio/competition/detail/67) | 2021.3             | 2021.5             |
-| 实体识别                    |                                                              |                    |                    |
+| 实体识别                    | [互联网舆情企业风险事件的识别和预警](http://ailab.aiwin.org.cn/competitions/48) （[赛题解读与baseline](https://mp.weixin.qq.com/s/u1VCgEP-Fn6nQ7ObHMMkSg) 识别+分类） | 2021.4             | 2021.7             |
 | CCL2021                     | [任务一：跨领域句法分析](http://hlt.suda.edu.cn/index.php/CCL2021) <br> [任务二：中文空间语义理解](https://github.com/2030NLP/SpaCE2021) <br> [任务三：智能医疗对话诊疗](http://www.fudan-disc.com/sharedtask/imcs21/index.html) <br> [任务四：图文多模态幽默识别](http://cips-cl.org/static/CCL2021/cclEval/humorcomputation/index.html) <br> [任务五：中译语通-Nihao无监督汉语分词](http://114.116.55.241/sharedTask-unsupervisedCWS) | 2021.4             | 2021.7             |
 | CCKS2021                    | 官网：http://sigkg.cn/ccks2021/?page_id=27 <br> **主题一：领域信息抽取** <br> 任务一：地址文本分析<br> 任务二：面向通信领域的过程类知识抽取<br> 任务三：网页文件中学者画像任务<br> 任务四：面向中文电子病历的医疗实体及事件抽取<br> **主题二：篇章级信息抽取**<br> 任务五：通用细粒度事件检测<br> 任务六：面向金融领域的篇章级事件抽取和事件因果关系抽取<br> **主题三：链接预测**<br> 任务七：表型-药物-分子多层次知识图谱的链接预测<br> **主题四：知识图谱构建与问答**<br> 任务八：保险领域信息抽取和运营商知识图谱推理问答<br> 任务九：通用百科知识图谱实体类型推断<br> 任务十：面向军用无人机系统的军事垂直领域知识图谱构建<br> 任务十一：蕴含实体的中文医疗对话生成<br> 任务十二：面向中文医疗科普知识的内容理解<br> 任务十三：生活服务领域知识图谱问答<br> **主题五：多模态问答**<br> 任务十四：知识增强的视频语义理解 | 2021.4             | 2021.7             |
 | 中文医疗信息处理挑战榜CBLUE | 目前任务包括医学文本信息抽取（实体识别、关系抽取）、医学术语归一化、医学文本分类、医学句子关系判定和医学QA共5大类任务8个子任务，-> [官网](https://tianchi.aliyun.com/specials/promotion/2021chinesemedicalnlpleaderboardchallenge) | 现在               | 暂无               |
@@ -81,7 +81,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/))|CCF-A|2021.5.19|2021.5.26|2021.9.28|2021，12.6~12.14|online|
 |IJCAI([官网](https://ijcai-21.org/)、[dblp](http://dblp.uni-trier.de/db/conf/ijcai/))|CCF-A|~~2021.1.13~~|~~2021.1.20~~|2021.4.30|2021，8.21~8.26|Montreal, Canada|
 |ICML([官网](https://icml.cc/Conferences/2021)、[dblp](https://dblp.uni-trier.de/db/conf/icml/index.html))|CCF-A|~~2021.1.28~~|~~2021.2.4~~|2021.5.8|2021，7.18~7.24|online|
-|SIGIR([官网](https://sigir.org/sigir2021)、[dblp](https://dblp.uni-trier.de/db/conf/sigir/index.html))|CCF-A|~~2021.1.28~~|~~2021.2.4~~|2021.4.14|2021，7.11~7.15|online|
+|SIGIR([官网](https://sigir.org/sigir2021)、[dblp](https://dblp.uni-trier.de/db/conf/sigir/index.html))|CCF-A|~~2021.1.28~~|~~2021.2.4~~|~~2021.4.14~~|2021，7.11~7.15|online|
 |EMNLP([官网](https://2021.emnlp.org/)、[dblp](http://dblp.uni-trier.de/db/conf/emnlp/))|CCF-B|2021.5.10|2021.5.17|2021.8.25|2021，11.7~11.11|Punta Cana, Dominican Republic|
 |COLING([官网](https://coling2022.org/)、[dblp](http://dblp.uni-trier.de/db/conf/coling/))|CCF-B|*|2021.7.1(?)|*|2022，10.9~10.15|Gyeongju, Korea|
 |CoNLL([官网](https://www.conll.org/2021)、[dblp](http://dblp.uni-trier.de/db/conf/conll))|CCF-C|*|2021.6.14|2021.8.31|2021，11.10~11.11|same as emnlp|
@@ -104,6 +104,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 * [FlyAI-AI竞赛服务平台](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
 * [和鲸社区](https://www.kesci.com/home/competition) ：一个综合的学习平台  
 * NLPCC、CCL、CCKS、SMP等会议每年都会举办相关学术评测  
+* [Codalab](https://competitions.codalab.org/) ：一个可重复计算平台，很多国外的竞赛都会在上面提交代码用于检验
 
 ## 5.自媒体推荐  
 > 学界、业界、理论、实践以及时事动态，NLPer都应该有所了解  
