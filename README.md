@@ -5,7 +5,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 所有内容均由本人整理自网络公开资料，整理不易，转载时请务必备注本项目github链接，感谢您为维护良好的创作环境出一份力。
 
-项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言。
+项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言，或者填写[**问卷**](https://www.wjx.cn/vj/rr4Zqph.aspx) 反馈。<------  问卷
 
 ## 目录  
 
