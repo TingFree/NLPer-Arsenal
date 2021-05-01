@@ -28,6 +28,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | 信息抽取                    | [NLPCC2021语言与智能技术竞赛：多形态信息抽取任务](https://aistudio.baidu.com/aistudio/competition/detail/65) | 2021.3             | 2021.5             |
 | 对话                        | [NLPCC2021语言与智能技术竞赛：多技能对话任务](https://aistudio.baidu.com/aistudio/competition/detail/67) | 2021.3             | 2021.5             |
 | 实体识别                    | [互联网舆情企业风险事件的识别和预警](http://ailab.aiwin.org.cn/competitions/48) （[赛题解读与baseline](https://mp.weixin.qq.com/s/u1VCgEP-Fn6nQ7ObHMMkSg) 识别+分类） | 2021.4             | 2021.7             |
+| 机器翻译                    | [CCMT2021机器翻译评测](http://sc.cipsc.org.cn/mt/conference/2021/tech-eval/) （在线评测持续到12月份） | 2021.4             | 2021.5             |
 | CCL2021                     | [任务一：跨领域句法分析](http://hlt.suda.edu.cn/index.php/CCL2021) <br> [任务二：中文空间语义理解](https://github.com/2030NLP/SpaCE2021) <br> [任务三：智能医疗对话诊疗](http://www.fudan-disc.com/sharedtask/imcs21/index.html) <br> [任务四：图文多模态幽默识别](http://cips-cl.org/static/CCL2021/cclEval/humorcomputation/index.html) <br> [任务五：中译语通-Nihao无监督汉语分词](http://114.116.55.241/sharedTask-unsupervisedCWS) | 2021.4             | 2021.7             |
 | CCKS2021                    | 官网：http://sigkg.cn/ccks2021/?page_id=27 <br> **主题一：领域信息抽取** <br> 任务一：地址文本分析<br> 任务二：面向通信领域的过程类知识抽取<br> 任务三：网页文件中学者画像任务<br> 任务四：面向中文电子病历的医疗实体及事件抽取<br> **主题二：篇章级信息抽取**<br> 任务五：通用细粒度事件检测<br> 任务六：面向金融领域的篇章级事件抽取和事件因果关系抽取<br> **主题三：链接预测**<br> 任务七：表型-药物-分子多层次知识图谱的链接预测<br> **主题四：知识图谱构建与问答**<br> 任务八：保险领域信息抽取和运营商知识图谱推理问答<br> 任务九：通用百科知识图谱实体类型推断<br> 任务十：面向军用无人机系统的军事垂直领域知识图谱构建<br> 任务十一：蕴含实体的中文医疗对话生成<br> 任务十二：面向中文医疗科普知识的内容理解<br> 任务十三：生活服务领域知识图谱问答<br> **主题五：多模态问答**<br> 任务十四：知识增强的视频语义理解 | 2021.4             | 2021.7             |
 | 中文医疗信息处理挑战榜CBLUE | 目前任务包括医学文本信息抽取（实体识别、关系抽取）、医学术语归一化、医学文本分类、医学句子关系判定和医学QA共5大类任务8个子任务，-> [官网](https://tianchi.aliyun.com/specials/promotion/2021chinesemedicalnlpleaderboardchallenge) | 现在               | 暂无               |
@@ -92,8 +93,8 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |AACL([官网](http://aacl2020.org/))|*|*|*|*|*|今年合并至ACL|
 |EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/))|*|*|~~2020.10.7~~|~~2021.1.11~~|2021，4.19~4.23|online|
 |CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|*|~~2021.4.15~~|2021.5.29|2021，8.13~8.15|呼和浩特|
-|CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|*|2021.5.10|2021.7.2|2021，8.18~8.21|广州|
-|SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|*|2021.5.1|2021.6.20|2021，9.3~9.5|北京|
+|CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|*|2021.5.25|2021.7.2|2021，8.18~8.21|广州|
+|SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|*|2021.5.15|2021.6.20|2021，9.3~9.5|北京|
 |CCMT([官网](http://sc.cipsc.org.cn/mt/conference/2021/))|*|*|2021.5.25|2021.7.1|2021，8.6~8.8|青海西宁|
 
 ## 4.竞赛平台
