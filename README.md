@@ -101,7 +101,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |CCL([官网](http://cips-cl.org/static/CCL2021/index.html)、[dblp](https://dblp.uni-trier.de/db/conf/cncl/))|*|*|~~2021.4.15~~|2021.5.29|2021，8.13~8.15|呼和浩特|
 |CCKS([官网](www.sigkg.cn/ccks2021)、[dblp](https://dblp.uni-trier.de/db/conf/ccks/))|*|*|2021.5.25|2021.7.2|2021，8.18~8.21|广州|
 |SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|*|~~2021.5.15~~|2021.6.20|2021，9.3~9.5|北京|
-|CCMT([官网](http://sc.cipsc.org.cn/mt/conference/2021/))|*|*|2021.5.25|2021.7.1|2021，8.6~8.8|青海西宁|
+|CCMT([官网](http://sc.cipsc.org.cn/mt/conference/2021/))|*|*|2021.6.12|2021.7.10|2021，8.6~8.8|青海西宁|
 
 ## 4.竞赛平台
 * [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
