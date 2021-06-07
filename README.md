@@ -104,6 +104,11 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/))|*|*|~~2021.5.15~~|2021.6.20|2021，9.3~9.5|北京|
 |CCIR([官网](https://ccir2021.dlufl.edu.cn/index.html))|*|*|2021.6.10|2021.7.5|2021, 10.29~10.31|大连|
 |CCMT([官网](http://sc.cipsc.org.cn/mt/conference/2021/))|*|*|2021.6.12|2021.7.10|2021，8.6~8.8|青海西宁|
+|ACML([官网](http://www.acml-conf.org/2021/))|*|*|2021.6.26 14:59:00 | | | |
+|WISE([官网](http://www.wise-conferences.org/2021/))|*|*|2021.6.10 | | | |
+|ICONIP([官网](https://iconip2021.apnns.org/))|*|*|2021.6.30 | | | |
+
+
 
 ## 竞赛平台
 * [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
