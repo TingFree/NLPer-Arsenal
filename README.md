@@ -80,7 +80,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 > [dblp](https://dblp.org)：计算机科学文献库  
 > [AI会议deadline](https://aideadlin.es/?sub=ML,CV,NLP,RO,SP,DM) ：会议倒计时  
 > [会议时间记录表](https://jackietseng.github.io/conference_call_for_paper/conferences.html) ：Updated by Jackie Tseng, Tsinghua Computer Vision and Intelligent Learning Lab  
-> [ccf推荐会议倒计时](https://ccfddl.github.io/)
+> [ccf推荐会议倒计时](https://ccfddl.github.io/)：快速查找ccf推荐的会议
 |会议| 级别| 摘要截稿 | 原文截稿 | 审稿通知 | 开会时间|说明|
 |:---:| :---:|  :---:|  :---:|  :---: |  :---: |  :---: |
 |ACL([官网](https://2021.aclweb.org/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/))|CCF-A|~~2021.1.25~~|~~2021.2.2~~|~~2021.5.5~~|2021，8.1~8.6|Bangkok, Thailand|
