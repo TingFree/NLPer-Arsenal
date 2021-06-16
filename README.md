@@ -93,9 +93,11 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | SIGIR([官网](https://sigir.org/sigir2021)、[dblp](https://dblp.uni-trier.de/db/conf/sigir/index.html)) | CCF-A | ~~2021.1.28~~ |    ~~2021.2.4~~    |  ~~2021.4.14~~   |   2021，7.11~7.15   |             online             |
 | EMNLP([官网](https://2021.emnlp.org/)、[dblp](http://dblp.uni-trier.de/db/conf/emnlp/)) | CCF-B | ~~2021.5.10~~ |   ~~2021.5.17~~    |    2021.8.25     |  2021，11.7~11.11   | Punta Cana, Dominican Republic |
 | COLING([官网](https://coling2022.org/)、[dblp](http://dblp.uni-trier.de/db/conf/coling/)) | CCF-B |       *       |    2021.7.1(?)     |        *         |  2022，10.9~10.15   |        Gyeongju, Korea         |
-| CoNLL([官网](https://www.conll.org/2021)、[dblp](http://dblp.uni-trier.de/db/conf/conll)) | CCF-C |       *       |     2021.6.14      |    2021.8.31     |  2021，11.10~11.11  |         same as emnlp          |
+| CoNLL([官网](https://www.conll.org/2021)、[dblp](http://dblp.uni-trier.de/db/conf/conll)) | CCF-C |       *       |     ~~2021.6.14~~      |    2021.8.31     |  2021，11.10~11.11  |         same as emnlp          |
 | NLPCC([官网](http://tcci.ccf.org.cn/conference/2021/)、[dblp](https://dblp.uni-trier.de/db/conf/nlpcc/)) | CCF-C |       *       |    ~~2021.6.8~~    |    2021.7.30     |  2021，10.13~10.17  |              青岛              |
 | NAACL([官网](https://2021.naacl.org/)、[dblp](http://dblp.uni-trier.de/db/conf/naacl/)) | CCF-C |       *       |   ~~2020.11.23~~   |  ~~2021.3.10~~   | ~~2021，6.6~6.11~~  |      Mexico City, Mexico       |
+| ICONIP([官网](https://iconip2021.apnns.org/))         |   CCF-C   |       *       |     2021.6.30      | 2021.9.30(maybe) |    2021, 12.8~12    |        BALI, Indonesia         |
+| ACML([官网](http://www.acml-conf.org/2021/))         |   CCF-C   |       *       | 2021.6.26 14:59:00 |     2021.9.3     |   2021, 11.17~19    |             online             |
 | ICLR([官网](https://iclr.cc/)、[dblp](https://dblp.uni-trier.de/db/conf/iclr/index.html)) |   *   |       ?       |    预计2021.10     |        ?         |          ?          |               ?                |
 |              AACL([官网](http://aacl2020.org/))              |   *   |       *       |         *          |        *         |          *          |         今年合并至ACL          |
 | EACL([官网](https://2021.eacl.org/)、[dblp](https://dblp.uni-trier.de/db/conf/eacl/)) |   *   |       *       |   ~~2020.10.7~~    |  ~~2021.1.11~~   | ~~2021，4.19~4.23~~ |             online             |
@@ -104,9 +106,8 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | SMP([官网](https://conference.cipsc.org.cn/smp2021/)、[dblp](https://dblp.uni-trier.de/db/conf/smp/)) |   *   |       *       |   ~~2021.5.15~~    |    2021.6.20     |    2021，9.3~9.5    |              北京              |
 |    CCIR([官网](https://ccir2021.dlufl.edu.cn/index.html))    |   *   |       *       |     2021.6.10      |     2021.7.5     |  2021, 10.29~10.31  |              大连              |
 |   CCMT([官网](http://sc.cipsc.org.cn/mt/conference/2021/))   |   *   |       *       |     2021.6.12      |    2021.7.10     |    2021，8.6~8.8    |            青海西宁            |
-|         ACML([官网](http://www.acml-conf.org/2021/))         |   *   |       *       | 2021.6.26 14:59:00 |     2021.9.3     |   2021, 11.17~19    |             online             |
 |     WISE([官网](http://www.wise-conferences.org/2021/))      |   *   |   2021.6.10   |     2021.6.17      |    2021.6.30     |   2021, 10.26~29    |      Melbourne, Australia      |
-|        ICONIP([官网](https://iconip2021.apnns.org/))         |   *   |       *       |     2021.6.30      | 2021.9.30(maybe) |    2021, 12.8~12    |        BALI, Indonesia         |
+
 
 ## 竞赛平台
 
