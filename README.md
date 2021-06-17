@@ -1,18 +1,17 @@
 # NLPer-Arsenal
 
-NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料等，如果对你有帮助，请给我一个star，这是我更新的动力。
+NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料等，如果对你有帮助，请给我们一个star，这是我们更新的动力。
 
-2020年7月份我参加一次竞赛，但是找参考资料的时候遇到很多困难，包括内容分散、质量不高等。比赛结束后就开始做这个项目了，但是一个人搜集整理资料实在无趣，坚持一星期后就放弃了。2021年3月份，突然发现多了2个star，没想到仅凭之前微薄的工作量也能帮到大家，能获得认可，实在令我意外与感动，所以我打算继续更新下去。
+本项目源于2020年7月一次竞赛的经历，当时在找参考资料时遇到了很多困难，包括内容分散、质量不高等。2021年3月开始发力更新本项目，志在帮助NLPer提升模型性能。2021年6月开放本项目的[notion页面](https://www.notion.so/jjding/NLPer-Arsenal-Notion-9bc5e807983a47e6a2bd37afb6e3442d) ，内容实时更新，欢迎大家一起参与NLPer-Arsenal开源项目。
 
-所有内容均由本人整理自网络公开资料，整理不易，转载时请务必备注本项目github链接，感谢您为维护良好的创作环境出一份力。
+项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言，或填写[**问卷**](https://www.wjx.cn/vj/rr4Zqph.aspx) 反馈，或通过邮箱（receive@nlper-arsenal.cn）联系我们。
 
-项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言，或者填写[**问卷**](https://www.wjx.cn/vj/rr4Zqph.aspx) 反馈。
+所有内容均由我们整理自网络公开资料，整理不易，转载时请务必备注本项目github链接，感谢您为维护良好的创作环境出一份力。
 
-## TODO 
+## 重要事件 
 
-- [ ] 添加NLP入门、进修资料
-- [ ] 添加NLP竞赛教程、组建竞赛群
-- [ ] 发布竞赛baseline
+* 2021.3：开始更新项目
+* 2021.6：开放notion界面，[here](https://www.notion.so/jjding/NLPer-Arsenal-Notion-9bc5e807983a47e6a2bd37afb6e3442d) 
 
 ## 目录  
 
