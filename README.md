@@ -16,7 +16,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 ## 目录  
 
 * [当前赛事](#当前赛事)
-* [竞赛收录](#竞赛收录)
+* [往期竞赛](#往期竞赛)
 * [会议时间](#会议时间)
 * [竞赛平台](#竞赛平台)
 * [自媒体推荐](#自媒体推荐)
@@ -59,7 +59,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |   text2SQL   |         [耶鲁文本转SQL](https://www.flyai.com/d/302)         |                             现在                             |                             暂无                             |
 |   阅读理解   | [中文阅读理解练习赛 - FlyAI](https://www.flyai.com/d/161) <br> [RACE Dataset](https://www.biendata.xyz/competition/race/) <br> [RACE-C Dataset](https://www.biendata.xyz/competition/race_c/) <br>  [Dream Dataset](https://www.biendata.xyz/competition/dream/) <br> [C3 Dataset](https://www.biendata.xyz/competition/c3/) <br> [SciQ Dataset](https://www.biendata.xyz/competition/sciq/) <br> [LogiQA Dataset](https://www.biendata.xyz/competition/logiqa/) <br> [MCTest Dataset](https://www.biendata.xyz/competition/mctest/) | 现在<br> 现在<br> 现在<br>现在<br> 现在<br> 现在<br> 现在<br> 现在 | 暂无 <br> 2026.4.15 <br> 2026.4.15 <br>2026.4.15 <br>2026.4.15 <br>2026.4.15 <br>2026.4.15 <br>2026.4.15 |
 
-## 竞赛收录
+## 往期竞赛
 
 > 这里记录整理好的竞赛，包含数据下载以及竞赛方案
 
