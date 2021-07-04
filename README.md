@@ -4,13 +4,10 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 本项目源于2020年7月一次竞赛的经历，当时在找参考资料时遇到了很多困难，包括内容分散、质量不高等。2021年3月开始更新本项目，志在帮助NLPer提升模型性能。2021年6月开放本项目的notion页面，[NLPer-Arsenal-Notion](https://www.notion.so/jjding/NLPer-Arsenal-Notion-9bc5e807983a47e6a2bd37afb6e3442d) ，主要收录我们整理的trick说明与实验验证，内容实时更新，欢迎大家一起参与NLPer-Arsenal开源项目。
 
-项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言，或填写[**问卷**](https://www.wjx.cn/vj/rr4Zqph.aspx) 反馈，或通过邮箱（receive@nlper-arsenal.cn）联系我们。
-
-所有内容均由我们整理自网络公开资料，整理不易，转载时请务必备注本项目github链接，感谢您为维护良好的创作环境出一份力。
-
-下图是我们的项目导航图，以竞赛流程为主干，项目章节和notion对应的内容为分支。当您查看本项目时可以按序查看竞赛流程对应的项目章节，同时您也可以在我们的notion中查看一些竞赛相关的内容。
+下图是我们的项目导航图，以竞赛流程为主干，项目章节和notion对应的内容为分支。当您查看本项目时可以按序查看竞赛流程对应的项目章节，同时您也可以在我们的notion中查看一些竞赛相关的内容。项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言，或填写[问卷](https://www.wjx.cn/vj/rr4Zqph.aspx) 反馈，或通过邮箱（receive@nlper-arsenal.cn）联系我们。
 ![NLPer-Arsenal-Guide](./assets/nlper-arsenal-guide.svg?raw=true)
 
+所有内容均由我们从网络公开资料收集得到，版权归原作者所有，如有侵权请立即与我们联系,我们将及时处理。整理不易，转载时请务必备注本项目github链接，感谢您为维护良好的创作环境出一份力。
 
 ## 重要事件 
 
