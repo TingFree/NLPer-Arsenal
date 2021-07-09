@@ -18,11 +18,10 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 * [当前赛事](#当前赛事)
 * [往期竞赛](#往期竞赛)
-* [会议时间](#会议时间)
-* [竞赛平台](#竞赛平台)
 * [自媒体推荐](#自媒体推荐)
 * [算力推荐](#算力推荐)
-
+* [竞赛平台](#竞赛平台)
+* [会议时间](#会议时间)
 
 ## 当前赛事
 
@@ -77,7 +76,50 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 | 机器翻译 | [2021NAACL同传Workshop：千言 - 机器同传](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%BE%80%E6%9C%9F%E7%AB%9E%E8%B5%9B/%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91/2021NAACL%E5%90%8C%E4%BC%A0Workshop%EF%BC%9A%E5%8D%83%E8%A8%80%20-%20%E6%9C%BA%E5%99%A8%E5%90%8C%E4%BC%A0.md) |
 | 其它     | [2020NLP中文预训练模型泛化能力挑战赛](https://github.com/TingFree/NLPer-Arsenal/blob/master/%E5%BE%80%E6%9C%9F%E7%AB%9E%E8%B5%9B/%E5%85%B6%E5%AE%83/2020NLP%E4%B8%AD%E6%96%87%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B%E6%8C%91%E6%88%98%E8%B5%9B.md) <br> |
 
+## 自媒体推荐  
 
+> 学界、业界、理论、实践以及时事动态，NLPer都应该有所了解  
+
+| 平台       | 主要领域 | 自媒体                                                       |
+| ---------- | -------- | ------------------------------------------------------------ |
+| 微信公众号 | 技术     | Coggle数据科学、DataFunTalk                                  |
+|            | 行业信息 | 机器之心、机器之能、AI报道、AI前线、AI科技评论、机器学习研究组订阅 |
+|            | 理论     | 科学空间、PaperWeekly、智源社区、人工智能前沿讲习、专知、AINLP、AI TIME 论道 |
+| BiliBili   | 前沿论坛 | 智源社区、AITIME论道                                         |
+| 网站       | 竞赛     | [Coggle数据科学](https://coggle.club/)                       |
+|            | 学术     | [Paper With Code](https://paperswithcode.com/) 、[AMiner学术头条](https://www.aminer.cn/) |
+
+## 算力推荐
+
+> 结合个人情况使用不同的GPU平台
+
+|                             平台                             |                            算力                            |                     价格                      |                             说明                             |
+| :----------------------------------------------------------: | :--------------------------------------------------------: | :-------------------------------------------: | :----------------------------------------------------------: |
+|             [BitaHub](https://www.bitahub.com/)              |                   1080Ti、Titan xp、V100                   | 1080Ti(￥0.7/h)、Titan xp(￥1/h)、V100(￥9/h) | 中科大先研院的平台，价格实惠，但一块GPU只搭配2核CPU，通过提交任务，按运行时间收取费用 |
+|             [沣云平台](https://www.fenghub.com/)             |                           ML270                            |                    ￥2.8/h                    |    一站式AI计算平台，CPU可以增量配置，按运行时间收取费用     |
+|               [恒源云](https://gpushare.com/)                |                   2080Ti、rtx5000、3090                    |                 ￥3/h~￥4.5/h                 | 可以搭配完整的CPU和硬盘，相比bithub有更高的自由度，目前处于推广期，有很多优惠 |
+|        [并行云](https://www.paratera.com/index.html)         |                    V100、2080Ti、P100等                    |                     不明                      | 计算节点来自超算，可个性化定制CPU核数、GPU、存储空间，有非常简便的操作界面，并且提供远程linux桌面，灵活度优于以上三个平台。目前处于推广期，有很多优惠 |
+|           [1024LAB](https://www.1024gpu.top/home)            | 1080Ti、P102-100、2080Ti、2080、T4、2070、P100、XP、3080等 |             ￥1/h ~ ￥6/h之间不等             | 这个是直接租用服务器的，有独立IP，使用虚拟货币DBC支付(可以用支付宝购买)，DBC汇率波动较大，请谨慎持有 |
+|    [AI Studio](https://aistudio.baidu.com/aistudio/index)    |                            V100                            |                   基本免费                    | 由百度开发, 偶尔申请不到V100，主要使用PaddlePaddle框架，其它框架好像也可以用(请自行搜索使用方法) |
+|        [天池DSW](https://dsw-dev.data.aliyun.com/#/)         |                            p100                            |         免费，单次限时8小时，不限次数         |              阿里的一个在线平台，运行时不能关闭              |
+|     [天池实验室](https://tianchi.aliyun.com/notebook-ai)     |                            V100                            |                 免费，60h/年                  |      相比于AI Studio不限制深度学习框架，就是时间比较短       |
+| [Kaggle](https://www.kaggle.com/dansbecker/running-kaggle-kernels-with-a-gpu) |                            k80                             |             免费，每周限时30小时              |                           外网访问                           |
+| [Google Colab](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjlws2zvLzvAhULPnAKHUKCAQAQFjAAegQIBhAD&url=https%3A%2F%2Fcolab.research.google.com%2F&usg=AOvVaw3A5aPK2kLFzKOzb6sOckVw) |                     k80、T4、P4、P100                      |             免费，单次限时12小时              | 外网访问，无法指定具体GPU，未订阅Colab Pro用户多数时间下估计会被分配k80 |
+
+## 竞赛平台
+
+* [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
+* [AiStudio](https://aistudio.baidu.com/aistudio/competition) ：百度
+* [讯飞开发平台](http://challenge.xfyun.cn/) ：科大讯飞
+* [DataFountain](https://www.datafountain.cn/competitions) ： CCF指定专业大数据及人工智能竞赛平台，有很多训练赛  
+* [图灵联邦](https://www.turingtopia.com/competitionnew) ：NLP竞赛不多
+* [biendata](https://www.biendata.com/) ： 国内领先的人工智能竞赛平台，包含大量NLP学术评测  
+* [FlyAI-AI竞赛服务平台](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
+* [和鲸社区](https://www.kesci.com/home/competition) ：一个综合的学习平台  
+* NLPCC、CCL、CCKS、SMP等会议每年都会举办相关学术评测  
+* [Codalab](https://competitions.codalab.org/) ：一个可重复计算平台，很多国外的竞赛都会在上面提交代码用于检验
+* [DCLab](https://www.dclab.run/index.html) ：和天池比较像
+* [AI研习社](https://god.yanxishe.com/) ：很多很多NLP竞赛
 
 ## 会议时间
 
@@ -112,50 +154,3 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |    CCIR([官网](https://ccir2021.dlufl.edu.cn/index.html))    |   *   |       *       |     ~~2021.6.10~~     |     2021.7.5     |  2021, 10.29~10.31  |              大连              |
 |   CCMT([官网](http://sc.cipsc.org.cn/mt/conference/2021/))   |   *   |       *       |     ~~2021.6.12~~     |    2021.7.10     |    2021，8.6~8.8    |            青海西宁            |
 |     WISE([官网](http://www.wise-conferences.org/2021/))      |   *   |   ~~2021.6.10~~   |     ~~2021.6.17~~     |    ~~2021.6.30~~    |   2021, 10.26~10.29   |      Melbourne, Australia      |
-
-
-## 竞赛平台
-
-* [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
-* [AiStudio](https://aistudio.baidu.com/aistudio/competition) ：百度
-* [讯飞开发平台](http://challenge.xfyun.cn/) ：科大讯飞
-* [DataFountain](https://www.datafountain.cn/competitions) ： CCF指定专业大数据及人工智能竞赛平台，有很多训练赛  
-* [图灵联邦](https://www.turingtopia.com/competitionnew) ：NLP竞赛不多
-* [biendata](https://www.biendata.com/) ： 国内领先的人工智能竞赛平台，包含大量NLP学术评测  
-* [FlyAI-AI竞赛服务平台](https://www.flyai.com/c/nlp) ：难度分为新手、简单、中等、精英、困难，有大量GPU算力可供获取，奖金不多，但适合练手  
-* [和鲸社区](https://www.kesci.com/home/competition) ：一个综合的学习平台  
-* NLPCC、CCL、CCKS、SMP等会议每年都会举办相关学术评测  
-* [Codalab](https://competitions.codalab.org/) ：一个可重复计算平台，很多国外的竞赛都会在上面提交代码用于检验
-* [DCLab](https://www.dclab.run/index.html) ：和天池比较像
-* [AI研习社](https://god.yanxishe.com/) ：很多很多NLP竞赛
-
-## 自媒体推荐  
-
-> 学界、业界、理论、实践以及时事动态，NLPer都应该有所了解  
-
-| 平台       | 主要领域 | 自媒体                                                       |
-| ---------- | -------- | ------------------------------------------------------------ |
-| 微信公众号 | 技术     | Coggle数据科学、DataFunTalk                                  |
-|            | 行业信息 | 机器之心、机器之能、AI报道、AI前线、AI科技评论、机器学习研究组订阅 |
-|            | 理论     | 科学空间、PaperWeekly、智源社区、人工智能前沿讲习、专知、AINLP、AI TIME 论道 |
-| BiliBili   | 前沿论坛 | 智源社区、AITIME论道                                         |
-| 网站       | 竞赛     | [Coggle数据科学](https://coggle.club/)                       |
-|            | 学术     | [Paper With Code](https://paperswithcode.com/) 、[AMiner学术头条](https://www.aminer.cn/) |
-
-## 算力推荐
-
-> 结合个人情况使用不同的GPU平台
-
-|                             平台                             |                            算力                            |                     价格                      |                             说明                             |
-| :----------------------------------------------------------: | :--------------------------------------------------------: | :-------------------------------------------: | :----------------------------------------------------------: |
-|             [BitaHub](https://www.bitahub.com/)              |                   1080Ti、Titan xp、V100                   | 1080Ti(￥0.7/h)、Titan xp(￥1/h)、V100(￥9/h) | 中科大先研院的平台，价格实惠，但一块GPU只搭配2核CPU，通过提交任务，按运行时间收取费用 |
-|             [沣云平台](https://www.fenghub.com/)             |                           ML270                            |                    ￥2.8/h                    |    一站式AI计算平台，CPU可以增量配置，按运行时间收取费用     |
-|               [恒源云](https://gpushare.com/)                |                   2080Ti、rtx5000、3090                    |                 ￥3/h~￥4.5/h                 | 可以搭配完整的CPU和硬盘，相比bithub有更高的自由度，目前处于推广期，有很多优惠 |
-|        [并行云](https://www.paratera.com/index.html)         |                    V100、2080Ti、P100等                    |                     不明                      | 计算节点来自超算，可个性化定制CPU核数、GPU、存储空间，有非常简便的操作界面，并且提供远程linux桌面，灵活度优于以上三个平台。目前处于推广期，有很多优惠 |
-|           [1024LAB](https://www.1024gpu.top/home)            | 1080Ti、P102-100、2080Ti、2080、T4、2070、P100、XP、3080等 |             ￥1/h ~ ￥6/h之间不等             | 这个是直接租用服务器的，有独立IP，使用虚拟货币DBC支付(可以用支付宝购买)，DBC汇率波动较大，请谨慎持有 |
-|    [AI Studio](https://aistudio.baidu.com/aistudio/index)    |                            V100                            |                   基本免费                    | 由百度开发, 偶尔申请不到V100，主要使用PaddlePaddle框架，其它框架好像也可以用(请自行搜索使用方法) |
-|        [天池DSW](https://dsw-dev.data.aliyun.com/#/)         |                            p100                            |         免费，单次限时8小时，不限次数         |              阿里的一个在线平台，运行时不能关闭              |
-|     [天池实验室](https://tianchi.aliyun.com/notebook-ai)     |                            V100                            |                 免费，60h/年                  |      相比于AI Studio不限制深度学习框架，就是时间比较短       |
-| [Kaggle](https://www.kaggle.com/dansbecker/running-kaggle-kernels-with-a-gpu) |                            k80                             |             免费，每周限时30小时              |                           外网访问                           |
-| [Google Colab](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjlws2zvLzvAhULPnAKHUKCAQAQFjAAegQIBhAD&url=https%3A%2F%2Fcolab.research.google.com%2F&usg=AOvVaw3A5aPK2kLFzKOzb6sOckVw) |                     k80、T4、P4、P100                      |             免费，单次限时12小时              | 外网访问，无法指定具体GPU，未订阅Colab Pro用户多数时间下估计会被分配k80 |
-
