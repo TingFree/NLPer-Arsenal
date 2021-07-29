@@ -9,7 +9,9 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 为了帮助您快速地了解本项目的目录结构，我们上传了如下的思维导图。
 <!-- 在每一对应的章节您可以查看更加详细的思维导图。 -->
 <!-- ![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map.svg?raw=true) -->
-![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map-full.svg?raw=true)
+<!-- ![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map-full.svg?raw=true) -->
+
+<iframe id="embed_dom" name="embed_dom" frameborder="0" style="display:block;width:525px; height:245px;" src="https://www.processon.com/embed/61021b3d637689719d2e6da1"></iframe>
 
 
 项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言，或通过邮箱（receive@nlper-arsenal.cn）联系我们。
