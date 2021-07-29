@@ -6,8 +6,10 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 下图是我们的项目导航图，以竞赛流程为主干，项目章节和notion对应的内容为分支。当您查看本项目时可以按序查看竞赛流程对应的项目章节，同时您也可以在我们的notion中查看一些竞赛相关的内容。
 ![NLPer-Arsenal-Guide](./assets/nlper-arsenal-guide.svg?raw=true)
-为了帮助您快速地了解本项目的目录结构，我们上传了如下的思维导图。在每一对应的章节您可以查看更加详细的思维导图。
-![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map.svg?raw=true)
+为了帮助您快速地了解本项目的目录结构，我们上传了如下的思维导图。
+<!-- 在每一对应的章节您可以查看更加详细的思维导图。 -->
+<!-- ![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map.svg?raw=true) -->
+![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map-full.svg?raw=true)
 
 
 项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言，或通过邮箱（receive@nlper-arsenal.cn）联系我们。
@@ -33,7 +35,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 > 记录当前正在进行的竞赛，奖金丰厚，适合有一定基础的NLPer
 
-![important](./assets/imporant.svg?raw=true)
+<!-- ![important](./assets/imporant.svg?raw=true) -->
 
 | 领域                        | 竞赛                                                         | 开始时间                                        | 结束时间                                           |
 | --------------------------- | ------------------------------------------------------------ | ----------------------------------------------- | -------------------------------------------------- |
@@ -50,7 +52,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 > 记录长期进行的训练赛，有排行榜，方便刚入门的NLPer练手
 
-![regular](./assets/regular.svg?raw=true)
+<!-- ![regular](./assets/regular.svg?raw=true) -->
 
 |   领域   |                             竞赛                             |                           开始时间                           |                           结束时间                           |
 | :------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
@@ -71,7 +73,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 > 这里记录整理好的竞赛，包含数据下载以及竞赛方案
 
-![previous](./assets/previous.svg?raw=true)
+<!-- ![previous](./assets/previous.svg?raw=true) -->
 
 | 目录     | 赛事                                                         |
 | -------- | ------------------------------------------------------------ |
