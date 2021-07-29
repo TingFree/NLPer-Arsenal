@@ -6,12 +6,13 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 下图是我们的项目导航图，以竞赛流程为主干，项目章节和notion对应的内容为分支。当您查看本项目时可以按序查看竞赛流程对应的项目章节，同时您也可以在我们的notion中查看一些竞赛相关的内容。
 ![NLPer-Arsenal-Guide](./assets/nlper-arsenal-guide.svg?raw=true)
-为了帮助您快速地了解本项目的目录结构，我们上传了如下的思维导图。
+为了帮助您快速地了解本项目的目录结构，我们上传了如下的思维导图，您可以在[链接](https://www.processon.com/view/link/6102914b5653bb3ddc1bee00)处查看更多的细节。
 <!-- 在每一对应的章节您可以查看更加详细的思维导图。 -->
-<!-- ![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map.svg?raw=true) -->
+![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map.svg?raw=true)
 <!-- ![NLPer-Arsenal-mind-map](./assets/NLPer-Arsenal-mind-map-full.svg?raw=true) -->
 
-<iframe id="embed_dom" name="embed_dom" frameborder="0" style="display:block;width:525px; height:245px;" src="https://www.processon.com/embed/61021b3d637689719d2e6da1"></iframe>
+
+
 
 
 项目正在不断完善，如果您有什么建议，欢迎到[issue](https://github.com/TingFree/NLPer-Arsenal/issues) 留言，或通过邮箱（receive@nlper-arsenal.cn）联系我们。
