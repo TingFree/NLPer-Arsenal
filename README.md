@@ -147,10 +147,11 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 > [dblp](https://dblp.org)：计算机科学文献库  
 > [AI会议deadline](https://aideadlin.es/?sub=ML,CV,NLP,RO,SP,DM) ：会议倒计时  
 > [会议时间记录表](https://jackietseng.github.io/conference_call_for_paper/conferences.html) ：Updated by Jackie Tseng, Tsinghua Computer Vision and Intelligent Learning Lab  
+> note：以下时间为官网默认时间，暂未换算成北京时间
 
 |                             会议                             | 级别  |              摘要截稿              |   原文截稿    |                   审稿通知                   |      开会时间       |              说明              |
 | :----------------------------------------------------------: | :---: | :--------------------------------: | :-----------: | :------------------------------------------: | :-----------------: | :----------------------------: |
-| ACL([官网](https://www.2022.aclweb.org/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/)) | CCF-A | 2021.11.15(roling review deadline) |   2021.1.7    |                  2022.2.20                   |   2022，5.22~5.27   |        Dublin, Ireland         |
+| ACL([官网](https://www.2022.aclweb.org/)、[dblp](http://dblp.uni-trier.de/db/conf/acl/)) | CCF-A | 2021.11.15(roling review deadline) |   2022.1.7    |                  2022.2.20                   |   2022，5.22~5.27   |        Dublin, Ireland         |
 | AAAI([官网](https://aaai.org/Conferences/AAAI-22/)、[dblp](http://dblp.uni-trier.de/db/conf/aaai/)) | CCF-A |           ~~2021.8.30~~            |   2021.9.8    | 2021.10.15 (phase 1)<br> 2021.11.29 (final)  |   2022，2.22~3.1    |       Vancouver，Canada        |
 | NeurIPS([官网](https://nips.cc/)、[dblp](http://dblp.uni-trier.de/db/conf/nips/)) | CCF-A |           ~~2021.5.19~~            | ~~2021.5.26~~ |                  2021.9.28                   |  2021，12.6~12.14   |             online             |
 | IJCAI([官网](https://ijcai-21.org/)、[dblp](http://dblp.uni-trier.de/db/conf/ijcai/)) | CCF-A |           ~~2021.1.13~~            | ~~2021.1.20~~ |                ~~2021.4.30~~                 | ~~2021，8.21~8.26~~ |        Montreal, Canada        |
