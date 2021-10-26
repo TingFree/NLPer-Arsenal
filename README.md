@@ -125,7 +125,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 |               [恒源云](https://gpushare.com/)                |                   2080Ti、rtx5000、3090                    |                 ￥3/h~￥4.5/h                 | 可以搭配完整的CPU和硬盘，相比bithub有更高的自由度，目前处于推广期，有很多优惠 |
 |        [并行云](https://www.paratera.com/index.html)         |                    V100、2080Ti、P100等                    |                     不明                      | 计算节点来自超算，可个性化定制CPU核数、GPU、存储空间，有非常简便的操作界面，并且提供远程linux桌面，灵活度优于以上三个平台。目前处于推广期，有很多优惠 |
 |           [1024LAB](https://www.1024gpu.top/home)            | 1080Ti、P102-100、2080Ti、2080、T4、2070、P100、XP、3080等 |             ￥1/h ~ ￥6/h之间不等             | 这个是直接租用服务器的，有独立IP，使用虚拟货币DBC支付(可以用支付宝购买)，DBC汇率波动较大，请谨慎持有 |
-|    [AI Studio](https://aistudio.baidu.com/aistudio/index)    |                            V100                            |                   基本免费                    | 由百度开发, 偶尔申请不到V100，主要使用PaddlePaddle框架，其它框架好像也可以用(请自行搜索使用方法) |
+|    [AI Studio](https://aistudio.baidu.com/aistudio/index)    |                            V100                            |                   基本免费                    | 由百度开发, 偶尔申请不到V100，最高可免费8卡。主要使用飞桨PaddlePaddle框架，其它框架需自行折腾，也可用X2Paddle一键转为飞桨的代码和模型，大部分比赛参与即送算力卡。 |
 |        [天池DSW](https://dsw-dev.data.aliyun.com/#/)         |                            p100                            |         免费，单次限时8小时，不限次数         |              阿里的一个在线平台，运行时不能关闭              |
 |     [天池实验室](https://tianchi.aliyun.com/notebook-ai)     |                            V100                            |                 免费，60h/年                  |      相比于AI Studio不限制深度学习框架，就是时间比较短       |
 | [Kaggle](https://www.kaggle.com/dansbecker/running-kaggle-kernels-with-a-gpu) |                            k80                             |             免费，每周限时30小时              |                           外网访问                           |
@@ -134,7 +134,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 ## 竞赛平台
 
 * [阿里天池](https://tianchi.aliyun.com/competition/gameList/activeList) ：阿里，奖金丰厚  
-* [AiStudio](https://aistudio.baidu.com/aistudio/competition) ：百度
+* [AI Studio](https://aistudio.baidu.com/aistudio/competition) ：百度AI Studio深度学习社区，成绩优异可获得[飞桨开发者技术专家(PPDE)](https://www.paddlepaddle.org.cn/ppde)认证申请绿色通道。
 * [讯飞开发平台](http://challenge.xfyun.cn/) ：科大讯飞
 * [DataFountain](https://www.datafountain.cn/competitions) ： CCF指定专业大数据及人工智能竞赛平台，有很多训练赛  
 * [图灵联邦](https://www.turingtopia.com/competitionnew) ：NLP竞赛不多
