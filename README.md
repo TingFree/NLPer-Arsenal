@@ -19,6 +19,7 @@ NLP人军火库，主要收录NLP竞赛经验贴、通用工具、学习资料�
 
 * 2021.3：开始更新项目
 * 2021.6：开放notion界面，[NLPer-Arsenal-Notion](https://www.notion.so/jjding/NLPer-Arsenal-Notion-9bc5e807983a47e6a2bd37afb6e3442d) 
+* 2021.12：[NLPer-Arsenal-Code](codes/) 发布
 
 
 ## 目录  
