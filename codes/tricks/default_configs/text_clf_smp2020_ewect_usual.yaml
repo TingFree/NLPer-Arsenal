@@ -1,0 +1,44 @@
+task_name: 'text_clf'
+
+# data config
+dataset_name: smp2020-ewect-usual  # 对于标准数据集，仅用于标识
+use_convert: True  # 是否将数据转换成标准格式？对于非标准数据集，必须为True。标准数据格式可以参考data/example
+preprocess_method: None  # 是否对数据进行预处理，目前暂不支持
+num_class: 6
+train_file: '../data/smp2020-ewect/usual/train.tsv'
+val_file: '../data/smp2020-ewect/usual/dev.tsv'
+test_file: '../data/smp2020-ewect/usual/test.tsv'
+
+# model config
+model_type: 'bert'  # 选择dataset类时用到，非Bert类型时必须指定为None，否则指定为‘bert’
+pretrained_model: 'bert-base-chinese'  # plm需指定预训练模型
+whole_model: 'BertCLF'  # 指定完整的模型，目前只有BertCLF，在nlper/models/test_clf
+dropout: 0.1  # 目前指分类层的dropout
+component_model:  # 指定具体的模型组件，如果指定了完整模型，可忽略；ps：这个还没有实现
+  embedding: ''
+  encoder: ''
+  decoder: ''
+
+# other config
+is_train: True  # 是否在训练集和验证集上训练
+is_eval_test: True  # 是否对测试集计算metrics指标
+is_test: True  # 是否对测试集进行预测
+load_best: True  # 是否在测试集上使用最佳参数预测，False，使用最后epoch的参数
+max_len: 512
+seed: 1000  # None: cancel seed everything
+train_batch_size: 8
+val_batch_size: 8  # test_batch_size too
+lr: !!float 3e-5
+weight_decay: 0.01
+warmup_steps: 200
+metrics: [ 'P', 'R', 'F1' ]
+target_metric: 'F1'
+checkpoint: None
+out_dir: 'saved/'
+
+# mpl.trainer
+trainer_args:
+  gpus: [0]  # List[int], [-1] is cpu, we only support cpu and single gpu now
+  max_epochs: 100
+  early_stop: True
+  patience: 3

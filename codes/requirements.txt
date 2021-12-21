@@ -1,0 +1,10 @@
+torch >= 1.6
+transformers >= 4.5
+pyyaml
+pandas
+prettytable
+matplotlib
+SciencePlots
+seaborn
+pynvml
+psutil
