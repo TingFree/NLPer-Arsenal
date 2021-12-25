@@ -1,0 +1,5 @@
+.idea
+#.gitignore
+archive.md
+**/__pycache__
+codes/python_test.py

@@ -3,8 +3,8 @@ r"""
 """
 
 import torch
-from nlper.modules.metrics import Metrics
-from nlper.utils import Dict2Obj
+from codes.nlper.modules.metrics import Metrics
+from codes.nlper.utils import Dict2Obj
 
 
 class StandardModel(torch.nn.Module):

@@ -3,7 +3,7 @@ r"""
 """
 
 import torch
-from nlper.utils.io import create_parentDir
+from codes.nlper.utils.io import create_parentDir
 
 
 def load_model(model, model_path):

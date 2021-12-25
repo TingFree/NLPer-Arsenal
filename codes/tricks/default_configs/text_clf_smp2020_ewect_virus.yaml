@@ -1,13 +1,15 @@
 task_name: 'text_clf'
 
 # data config
-dataset_name: smp2020-ewect-virus  # 对于标准数据集，仅用于标识
+dataset_name: text_clf/smp2020-ewect-virus  # 如果这个数据集名字在codes.nlper.utils.supported_task_dataset_names中，
+                                            # 则当train_file、val_file、test_file不存在时，自动下载到dataset_cache_dir目录里
+dataset_cache_dir: '../data'
 use_convert: True  # 是否将数据转换成标准格式？对于非标准数据集，必须为True。标准数据格式可以参考data/example
 preprocess_method: None  # 是否对数据进行预处理，目前暂不支持
 num_class: 6
-train_file: '../data/smp2020-ewect/virus/train.tsv'
-val_file: '../data/smp2020-ewect/virus/dev.tsv'
-test_file: '../data/smp2020-ewect/virus/test.tsv'
+train_file: '../data/smp2020-ewect-virus/train.tsv'  # 如果找不到该文件，则尝试根据dataset_name自动下载
+val_file: '../data/smp2020-ewect-virus/dev.tsv'  # 同train_file
+test_file: '../data/smp2020-ewect-virus/test.tsv'  # 同train_file
 
 # model config
 model_type: 'bert'  # 选择dataset类时用到，非Bert类型时必须指定为None，否则指定为‘bert’

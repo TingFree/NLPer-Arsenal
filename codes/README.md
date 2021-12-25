@@ -38,7 +38,9 @@
 
 ## 使用实例
 
-> 如果想要进一步修改本项目代码，请参考`Developer.md`（开发者指南），包括设置个性化数据集、迁移竞赛策略、提交策略/模型到本项目等。
+> 如果想要进一步修改本项目代码，请参考`Developer.md`（开发者指南），包括设置个性化数据集、迁移竞赛策略、提交策略/模型到本项目等。  
+>
+> 如果自动下载数据失败，可以手动下载，链接在nlper/utils/download.dataset_names中，然后更新train_file、val_file、test_file路径。
 
 安装依赖环境
 
@@ -67,9 +69,9 @@ python center_controller.py
 
 本项目涉及且已代码实现的基础模型（所有实验均在1块1080Ti上进行）
 
-|   Task   | Model Name |                          Description                           |  Acc  |
-| :------: | :--------: | :------------------------------------------------------------: | :---: |
-| 文本分类 |  BertCLF   | Bert + MLP，和`transformers.BertForSequenceClassification`类似 |  80   |
+|   Task   | Model Name |                         Description                          |
+| :------: | :--------: | :----------------------------------------------------------: |
+| 文本分类 |  BertCLF   | Bert + MLP，和`transformers.BertForSequenceClassification`类似 |
 
 
 ## 竞赛策略

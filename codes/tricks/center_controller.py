@@ -7,7 +7,7 @@ import os
 import multiprocessing as mp
 import argparse
 import importlib
-from nlper.utils import (
+from codes.nlper.utils import (
     read_data,
     Dict2Obj,
     seed_everything,

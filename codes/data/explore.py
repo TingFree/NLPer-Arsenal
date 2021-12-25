@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import Union, List
 from collections import Counter
-from nlper.utils import read_data, seed_everything
 from matplotlib.font_manager import FontProperties
+from codes.nlper.utils import read_data, seed_everything
 
 
 seed_everything()

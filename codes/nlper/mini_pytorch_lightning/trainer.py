@@ -5,10 +5,10 @@ r"""
 import os
 import torch
 from tqdm import tqdm
-from nlper.utils import set_devices
-from nlper.mini_pytorch_lightning.model import StandardModel
-from nlper.modules.utils import all_to_device
-from nlper.models.io import save_model, load_model
+from codes.nlper.utils import set_devices
+from codes.nlper.mini_pytorch_lightning.model import StandardModel
+from codes.nlper.modules.utils import all_to_device
+from codes.nlper.models.io import save_model, load_model
 
 
 class StandardTrainer():

@@ -6,9 +6,9 @@ import os
 from tqdm import tqdm
 import warnings
 import torch
-from nlper.models import load_model, save_model
-from nlper.utils import save_data, Dict2Obj
-from nlper.modules.utils import all_to_device
+from codes.nlper.models import load_model, save_model
+from codes.nlper.utils import save_data, Dict2Obj
+from codes.nlper.modules.utils import all_to_device
 
 
 class TrainerConfig():
@@ -34,7 +34,7 @@ class Trainer():
         self.config = config
         self.model = model.to(config.device)
         self.train_loader = config.train_loader
-        self.dev_loader = config.dev_loader
+        self.val_loader = config.val_loader
         self.test_loader = config.test_loader
         self.optimizer = config.optimizer
         self.scheduler = config.scheduler
@@ -53,8 +53,8 @@ class Trainer():
 
         best_score = 0
         for epoch in range(1, self.config.num_epochs + 1):
-            print(f'epoch:{epoch}')
             model.train()
+            total_loss, total = 0, 0
             with tqdm(enumerate(self.train_loader),
                       total=len(self.train_loader)) as pbar:
 
@@ -72,9 +72,11 @@ class Trainer():
                     if self.scheduler is not None:
                         self.scheduler.step()
                     self.optimizer.zero_grad()
-                    pbar.set_description('training')
+                    total_loss, total = total_loss + loss.item(), total + 1
+                    pbar.set_description(f'training {epoch}')
+                    pbar.set_postfix(avg_loss=f'{total_loss/total:.3f}')
 
-            avg_eval_loss = self.eval(self.dev_loader)
+            avg_eval_loss = self.eval(self.val_loader)
             print(f'eval epoch {epoch}', end=' ')
             self.metrics.print_values()  # print metric_dicts
             if self.metrics.return_target_score() > best_score:

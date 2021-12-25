@@ -1,6 +1,6 @@
 import torch
 import torch.nn.functional as F
-from nlper.models import LightningCLF
+from codes.nlper.models import LightningCLF
 
 
 class FGM():

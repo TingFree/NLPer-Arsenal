@@ -4,7 +4,7 @@ https://github.com/fastnlp/fastNLP/blob/master/fastNLP/modules/decoder/mlp.py
 """
 
 from torch import nn
-from nlper.modules.utils import initial_parameter
+from codes.nlper.modules.utils import initial_parameter
 
 
 class MLP(nn.Module):

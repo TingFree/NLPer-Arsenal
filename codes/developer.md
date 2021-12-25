@@ -18,7 +18,7 @@
 
   * 修改自己的数据格式为标准数据格式，参考`data/examples`下的数据集示例，然后将yaml配置文本中的`use_convert`设置为`False`
 
-  * 在`nlper/utils/format_convert.py`中添加自定义数据转换函数，要求输出数据为标准数据格式（见上表），具体可以参考该文件下`xxx_convert`的实现。然后在相应`xxx_handler.py`下的`convert_dataset`里加上`{dataset_name: convert_function}`
+  * 在`nlper/utils/format_convert.py`中添加自定义数据转换函数，要求输出数据为标准数据格式（见上表），具体可以参考该文件下`xxx_convert`的实现。然后在yaml配置文本中写上自定义`dataset_name`，之后在相应`xxx_handler.py`下的`convert_dataset`里加上`{dataset_name: convert_function}`这一映射
 
 * 修改模型
 

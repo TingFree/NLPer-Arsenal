@@ -10,10 +10,10 @@ from torch.optim import AdamW
 from torch.utils.data import DataLoader
 from transformers import AutoModel
 from transformers import DataCollatorWithPadding, get_linear_schedule_with_warmup
-from nlper.modules import MLP
-from nlper.utils import DatasetCLF, Dict2Obj
-from nlper.utils import load_nlp_data, save_data
-from nlper import mini_pytorch_lightning as mpl
+from codes.nlper.modules import MLP
+from codes.nlper.utils import DatasetCLF, Dict2Obj
+from codes.nlper.utils import load_nlp_data, save_data
+from codes.nlper import mini_pytorch_lightning as mpl
 
 
 class LightningCLF(mpl.StandardModel):

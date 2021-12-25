@@ -5,7 +5,7 @@ except:
         f'please install bitsandbytes before you use this trick, see README in detail'
     )
 from transformers import get_linear_schedule_with_warmup
-from nlper.models import LightningCLF
+from codes.nlper.models import LightningCLF
 
 
 class CLFModel(LightningCLF):

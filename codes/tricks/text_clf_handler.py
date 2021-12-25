@@ -3,21 +3,20 @@ r"""
 """
 import importlib
 import sys
+import os
 sys.path.append('..')
 
 from typing import Union
 import torch
 from transformers import AutoTokenizer
-from nlper.utils import Dict2Obj, format_convert
-from nlper.modules.metrics import Metrics
-from nlper import mini_pytorch_lightning as mpl
+from codes.nlper.utils import Dict2Obj, format_convert, download_dataset
+from codes.nlper.modules.metrics import Metrics
+from codes.nlper import mini_pytorch_lightning as mpl
 
 # 根据数据集名称，查找数据转换函数，按标准数据格式读取数据
 convert_dataset = {
-    'iflytek': format_convert.iflytek_convert,
-    'tnews': format_convert.tnews_convert,
-    'smp2020-ewect-usual': format_convert.smp2020_ewect_convert,
-    'smp2020-ewect-virus': format_convert.smp2020_ewect_convert
+    'text_clf/smp2020-ewect-usual': format_convert.smp2020_ewect_convert,
+    'text_clf/smp2020-ewect-virus': format_convert.smp2020_ewect_convert
 }
 
 
@@ -25,12 +24,24 @@ class TextCLFHandler():
     def __init__(self, configs: Union[dict, Dict2Obj], specialModels=None):
         self.configs = configs if isinstance(configs, Dict2Obj) else Dict2Obj(configs)
         self.specialModels = specialModels
+        self._build_data()
         self._build_metrics()
         self._build_model()
         self._build_trainer()
 
-    def _build_dataloader(self):
-        pass
+    def _build_data(self):
+        # 如果三者同时不存在
+        if not (
+                os.path.isfile(self.configs.train_file)
+                or os.path.isfile(self.configs.val_file)
+                or os.path.isfile(self.configs.test_file)
+        ):
+            # 自动下载数据集
+            is_over = download_dataset(self.configs.dataset_name, self.configs.dataset_cache_dir)
+            if not is_over:
+                print(f'please download dataset manually, and mask sure data file path is correct')
+                exit()
+
 
     def _build_optimizer(self):
         pass
@@ -39,13 +50,13 @@ class TextCLFHandler():
         metrics_dict = {}
         for metric_name in self.configs.metrics:
             if metric_name.lower() == 'p':
-                from nlper.modules.metrics import PMetric
+                from codes.nlper.modules.metrics import PMetric
                 metrics_dict['P'] = PMetric(average='macro')
             elif metric_name.lower() == 'r':
-                from nlper.modules.metrics import RMetric
+                from codes.nlper.modules.metrics import RMetric
                 metrics_dict['R'] = RMetric(average='macro')
             elif metric_name.lower() == 'f1':
-                from nlper.modules.metrics import F1Metric
+                from codes.nlper.modules.metrics import F1Metric
                 metrics_dict['F1'] = F1Metric(average='macro')
         self.metrics = Metrics(metrics_dict,
                                target_metric=self.configs.target_metric)
@@ -54,13 +65,13 @@ class TextCLFHandler():
         self.tokenizer = AutoTokenizer.from_pretrained(self.configs.pretrained_model)
 
         # 根据模型名自动加载在nlper.models.text_clf下的同名模型
-        module = importlib.import_module('nlper.models')
+        module = importlib.import_module('codes.nlper.models')
         model_name = self.configs.whole_model
         if hasattr(module, model_name):
             self.model = getattr(module, model_name)(self.configs)
         else:
             raise ValueError(
-                f'{model_name} not found in nlper.models.text_clf'
+                f'{model_name} not found in codes.nlper.models.text_clf'
             )
 
         # 对于非标准数据集，必须通过convert_fn转换
@@ -81,7 +92,7 @@ class TextCLFHandler():
                 metrics=self.metrics,
                 convert_fn=convert_fn)
         else:
-            from nlper.models import LightningCLF
+            from codes.nlper.models import LightningCLF
             self.lightningCLF = LightningCLF(self.model,
                                              self.tokenizer,
                                              self.configs,

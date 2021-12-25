@@ -3,7 +3,7 @@ r"""
 """
 
 import json
-from nlper.utils.io import read_data
+from codes.nlper.utils.io import read_data
 
 
 def iflytek_convert(datafile, load_label=True):

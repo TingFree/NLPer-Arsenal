@@ -1,6 +1,7 @@
 r"""
 文本分类任务之多分类教程，全流程直观展示，适合NLP入门人员
 """
+import os.path
 import sys
 sys.path.append('..')
 
@@ -12,12 +13,12 @@ from torch.utils.data import DataLoader
 from prettytable import PrettyTable
 from transformers import get_linear_schedule_with_warmup
 from transformers import BertModel, BertTokenizer, DataCollatorWithPadding
-from nlper.modules.mlp import MLP
-from nlper.utils import DatasetCLF
-from nlper.modules.trainer import Trainer
-from nlper.modules.metrics import Metrics, PMetric, RMetric, F1Metric
-from nlper.utils.format_convert import smp2020_ewect_convert
-from nlper.utils import seed_everything, set_devices, Dict2Obj
+from codes.nlper.modules.mlp import MLP
+from codes.nlper.utils import DatasetCLF
+from codes.nlper.modules.trainer import Trainer
+from codes.nlper.modules.metrics import Metrics, PMetric, RMetric, F1Metric
+from codes.nlper.utils.format_convert import smp2020_ewect_convert
+from codes.nlper.utils import seed_everything, set_devices, Dict2Obj, download_dataset
 
 
 class BertCLF(nn.Module):
@@ -42,8 +43,8 @@ if __name__ == '__main__':
                         default='bert-base-chinese',
                         help='the name or path of pretrained language model')
     parser.add_argument('--device_ids',
-                        default=[5],
-                        help='the GPU ID for running model, [-1] means using CPU')
+                        default=[0],
+                        help='the GPU ID for running model and we only support single gpu now, [-1] means using CPU')
     parser.add_argument('--seed',
                         default=1000,
                         help='random seed for reproduction')
@@ -52,11 +53,11 @@ if __name__ == '__main__':
                         default=6,
                         help='the number of class')
     parser.add_argument('--train_file',
-                        default='../data/smp2020-ewect/usual/train.tsv')
-    parser.add_argument('--dev_file',
-                        default='../data/smp2020-ewect/usual/dev.tsv')
+                        default='../data/smp2020-ewect-usual/train.tsv')
+    parser.add_argument('--val_file',
+                        default='../data/smp2020-ewect-usual/dev.tsv')
     parser.add_argument('--test_file',
-                        default='../data/smp2020-ewect/usual/test.tsv')
+                        default='../data/smp2020-ewect-usual/test.tsv')
     # train
     parser.add_argument('--is_train',
                         default=True,
@@ -113,45 +114,55 @@ if __name__ == '__main__':
     # load data
     print('load data')
     tokenizer = BertTokenizer.from_pretrained(args.pretrained_model)
-
-    train = smp2020_ewect_convert(args.train_file)
-    dev = smp2020_ewect_convert(args.dev_file)
-    test = smp2020_ewect_convert(args.test_file)
-    print(f'sentence number of train: {len(train)}')
-    print(f'sentence number of dev: {len(dev)}')
-    print(f'sentence number of test: {len(test)}')
+    # 如果三者同时不存在
+    if not (
+            os.path.isfile(args.train_file)
+            or os.path.isfile(args.val_file)
+            or os.path.isfile(args.test_file)
+    ):
+        # 自动下载数据集
+        is_over = download_dataset('text_clf/smp2020-ewect-usual', cache_dir='../data')
+        if not is_over:
+            print(f'please download dataset manually, and mask sure data file path is correct')
+            exit()
+    train_data = smp2020_ewect_convert(args.train_file)
+    val_data = smp2020_ewect_convert(args.val_file)
+    test_data = smp2020_ewect_convert(args.test_file)
+    print(f'sentence number of train: {len(train_data)}')
+    print(f'sentence number of dev: {len(val_data)}')
+    print(f'sentence number of test: {len(test_data)}')
 
     # padding
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
     # dataset
-    trainDataset = DatasetCLF(train,
-                              tokenizer,
-                              max_len=args.max_len)
-    devDataset = DatasetCLF(dev,
-                            tokenizer,
-                            max_len=args.max_len)
-    testDataset = DatasetCLF(test,
+    train_dataset = DatasetCLF(train_data,
+                               tokenizer,
+                               max_len=args.max_len)
+    val_dataset = DatasetCLF(val_data,
                              tokenizer,
                              max_len=args.max_len)
+    test_dataset = DatasetCLF(test_data,
+                              tokenizer,
+                              max_len=args.max_len)
 
     # dataloader
-    trainloader = DataLoader(trainDataset,
-                             batch_size=args.train_batch_size,
-                             shuffle=True,
-                             collate_fn=data_collator)
-    devloader = DataLoader(devDataset,
-                           batch_size=args.test_batch_size,
-                           shuffle=False,
-                           collate_fn=data_collator)
-    testloader = DataLoader(testDataset,
+    train_loader = DataLoader(train_dataset,
+                              batch_size=args.train_batch_size,
+                              shuffle=True,
+                              collate_fn=data_collator)
+    val_loader = DataLoader(val_dataset,
                             batch_size=args.test_batch_size,
                             shuffle=False,
                             collate_fn=data_collator)
+    test_loader = DataLoader(test_dataset,
+                             batch_size=args.test_batch_size,
+                             shuffle=False,
+                             collate_fn=data_collator)
 
-    print(f'batch number of train: {len(trainloader)}')
-    print(f'batch number of dev: {len(devloader)}')
-    print(f'batch number of test: {len(testloader)}')
+    print(f'batch number of train: {len(train_loader)}')
+    print(f'batch number of dev: {len(val_loader)}')
+    print(f'batch number of test: {len(test_loader)}')
     print('----------------------------------')
 
     # create model
@@ -174,7 +185,7 @@ if __name__ == '__main__':
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
         args.warmup_steps,
-        args.num_epochs * len(trainloader))
+        args.num_epochs * len(train_loader))
 
     # create evaluation metric
     precision_metric = PMetric(average='macro')
@@ -193,9 +204,9 @@ if __name__ == '__main__':
     trainer_config = Dict2Obj(vars(args))
     trainer_config.update({
         'task_name': 'text_clf',
-        'train_loader': trainloader,
-        'dev_loader': devloader,
-        'test_loader': testloader,
+        'train_loader': train_loader,
+        'val_loader': val_loader,
+        'test_loader': test_loader,
         'device': device,
         'loss_fn': F.cross_entropy,
         'optimizer': optimizer,
