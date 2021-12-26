@@ -53,12 +53,12 @@ python center_controller.py ---trick_name fgm --task_config default_configs/text
 
 
 
-|          task           |    dataset    | method  | GPU max mem (MiB) | running time |        score         |
-| :---------------------: | :-----------: | :-----: | :---------------: | :----------: | :------------------: |
-| text_clf (P/R/Macro F1) | smp2020-usual | default |      9357.06      |   00:31:36   | 0.7325/0.7513/0.7402 |
-|                         |               |   fgm   |      9325.06      |   01:17:33   | 0.7198/0.7429/0.7293 |
-|                         | smp2020-virus | default |     10853.06      |   00:17:34   | 0.6409/0.6442/0.6309 |
-|                         |               |   fgm   |     10817.06      |   00:44:48   | 0.6473/0.6598/0.6496 |
+|          task           |       dataset       | method  | GPU max mem (MiB) | running time |        score         |
+| :---------------------: | :-----------------: | :-----: | :---------------: | :----------: | :------------------: |
+| text_clf (P/R/Macro F1) | smp2020-ewect-usual | default |      9357.06      |   00:31:36   | 0.7325/0.7513/0.7402 |
+|                         |                     |   fgm   |      9325.06      |   01:17:33   | 0.7198/0.7429/0.7293 |
+|                         | smp2020-ewect-virus | default |     10853.06      |   00:17:34   | 0.6409/0.6442/0.6309 |
+|                         |                     |   fgm   |     10817.06      |   00:44:48   | 0.6473/0.6598/0.6496 |
 
 # references
 https://fyubang.com/2019/10/15/adversarial-train/

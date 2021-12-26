@@ -9,16 +9,16 @@ import shutil
 dataset_names = {
     'text_clf': {
         'smp2020-ewect-usual':[
-            "https://github.com/dbiir/UER-py/blob/master/datasets/smp2020-ewect/usual/train.tsv",
-            "https://github.com/dbiir/UER-py/blob/master/datasets/smp2020-ewect/usual/dev.tsv",
-            "https://github.com/dbiir/UER-py/blob/master/datasets/smp2020-ewect/usual/test.tsv",
-            "https://github.com/dbiir/UER-py/blob/master/datasets/smp2020-ewect/usual/labels.json"
+            "https://github.com/dbiir/UER-py/raw/master/datasets/smp2020-ewect/usual/train.tsv",
+            "https://github.com/dbiir/UER-py/raw/master/datasets/smp2020-ewect/usual/dev.tsv",
+            "https://github.com/dbiir/UER-py/raw/master/datasets/smp2020-ewect/usual/test.tsv",
+            "https://github.com/dbiir/UER-py/raw/master/datasets/smp2020-ewect/usual/labels.json"
         ],  # UER处理后的数据
         'smp2020-ewect-virus':[
-            "https://github.com/dbiir/UER-py/blob/master/datasets/smp2020-ewect/virus/train.tsv",
-            "https://github.com/dbiir/UER-py/blob/master/datasets/smp2020-ewect/virus/dev.tsv",
-            "https://github.com/dbiir/UER-py/blob/master/datasets/smp2020-ewect/virus/test.tsv",
-            "https://github.com/dbiir/UER-py/blob/master/datasets/smp2020-ewect/virus/labels.json"
+            "https://github.com/dbiir/UER-py/raw/master/datasets/smp2020-ewect/virus/train.tsv",
+            "https://github.com/dbiir/UER-py/raw/master/datasets/smp2020-ewect/virus/dev.tsv",
+            "https://github.com/dbiir/UER-py/raw/master/datasets/smp2020-ewect/virus/test.tsv",
+            "https://github.com/dbiir/UER-py/raw/master/datasets/smp2020-ewect/virus/labels.json"
         ]  # UER处理后的数据
     }
 }
@@ -54,16 +54,15 @@ def download_dataset(task_dataset_name, cache_dir='../../data'):
     for i, url in enumerate(dataset_names[task_name][dataset_name]):
         filename = filenames[i]
         filepath = os.path.join(root, filename)
-        filenames.append(filename)
         try:
-            res = requests.get(url, stream=True, timeout=5)  # 5s
+            res = requests.get(url, stream=True, timeout=7)  # 7s
             total_length = int(res.headers.get('content-length'))
             with open(filepath, 'wb') as f:
-                for trunk in tqdm(res.iter_content(chunk_size=1024), total=total_length//1024, desc=filename):
+                for trunk in tqdm(res.iter_content(chunk_size=1024), total=total_length//1024, ncols=80, desc=filename):
                     if trunk:
                         f.write(trunk)
         except:
-            print(f"timeout, you can manual download dataset from: {url} to '{filepath}'")
+            print(f"timeout, you can manual download dataset from: {url} to '{os.path.abspath(filepath)}'")
     download_files = os.listdir(root)
     lost = len(filenames) - len(set(filenames)&set(download_files))
     print(f"download over, {task_dataset_name} has been saved to {os.path.abspath(root)}, {lost} file lost")
