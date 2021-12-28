@@ -9,6 +9,7 @@ from torch import nn
 from torch.optim import AdamW
 from torch.utils.data import DataLoader
 from transformers import AutoModel
+from transformers.models.bert.modeling_bert import BertModel
 from transformers import DataCollatorWithPadding, get_linear_schedule_with_warmup
 from codes.nlper.modules import MLP
 from codes.nlper.utils import DatasetCLF, Dict2Obj
@@ -138,7 +139,17 @@ class BertCLF(nn.Module):
                        'tanh',
                        dropout=args.dropout)
 
-    def forward(self, input_ids, attention_mask, token_type_ids, *args, **kwargs):
+    def forward(self, input_ids, attention_mask, token_type_ids, return_pooler_output=False, **kwargs):
+        """
+
+        :param input_ids:
+        :param attention_mask:
+        :param token_type_ids:
+        :param return_pooler_output: 是否返回最后用于分类的句子表示
+        :return:
+        """
         outputs = self.bert(input_ids, attention_mask, token_type_ids)
         logits = self.clf(outputs[1])
+        if return_pooler_output:
+            return logits, outputs[1]
         return logits

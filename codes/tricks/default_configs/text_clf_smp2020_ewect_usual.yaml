@@ -26,7 +26,7 @@ is_train: True  # 是否在训练集和验证集上训练
 is_eval_test: True  # 是否对测试集计算metrics指标
 is_test: True  # 是否对测试集进行预测
 load_best: True  # 是否在测试集上使用最佳参数预测，False，使用最后epoch的参数
-max_len: 512
+max_len: 140
 seed: 1000  # None: cancel seed everything
 train_batch_size: 8
 val_batch_size: 8  # test_batch_size too

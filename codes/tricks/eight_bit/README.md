@@ -21,17 +21,17 @@ torch.nn.Embedding(...) ->  bnb.nn.StableEmbedding(...) # recommended for NLP mo
 
 ```shell
 cd tricks
-python center_controller.py --whole_model BertCLF --trick_name eight_bit --task_config default_configs/text_clf_s.yaml
+python center_controller.py --whole_model BertCLF --trick_name eight_bit --task_config default_configs/text_clf_sm.yaml
 ```
 
 
 
 |          task           |       dataset       | method  | GPU max mem (MiB) | running time |        score         |
 | :---------------------: | :-----------------: | :-----: | :---------------: | :----------: | :------------------: |
-| text_clf (P/R/Macro F1) | smp2020-ewect-usual | default |      9357.06      |   00:31:36   | 0.7325/0.7513/0.7402 |
-|                         |                     |  8bit   |      8741.06      |   00:27:36   | 0.7284/0.7308/0.7279 |
-|                         | smp2020-ewect-virus | default |     10853.06      |   00:17:34   | 0.6409/0.6442/0.6309 |
-|                         |                     |  8bit   |     10289.06      |   00:23:23   | 0.6617/0.6438/0.6493 |
+| text_clf (P/R/Macro F1) | smp2020-ewect-usual | default |      3623.06      |   00:38:21   | 0.7346/0.7293/0.7293 |
+|                         |                     |  8bit   |      2989.06      |   00:33:13   | 0.7282/0.7144/0.7172 |
+|                         | smp2020-ewect-virus | default |      5897.06      |   00:25:39   | 0.6662/0.6195/0.6380 |
+|                         |                     |  8bit   |      5333.06      |   00:12:45   | 0.6713/0.6186/0.6380 |
 
 
 

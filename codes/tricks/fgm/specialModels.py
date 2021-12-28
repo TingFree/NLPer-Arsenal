@@ -45,9 +45,8 @@ class CLFModel(LightningCLF):
         self.optimizer.zero_grad()
         loss.backward()
         self.fgm.attack()  # attack before run model
-        loss_adv = F.cross_entropy(
-            self.model(**batch).view(-1, self.configs.num_class),
-            labels.view(-1))
+        loss_adv = F.cross_entropy(self.model(**batch).view(-1, self.configs.num_class),
+                                   labels.view(-1))
         loss_adv.backward()
         self.fgm.restore()
         self.optimizer.step()

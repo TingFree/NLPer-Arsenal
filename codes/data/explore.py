@@ -34,8 +34,8 @@ def len_distribution(data: Union[List[str], List[List[str]]], title:str, tokeniz
     print(f'min: {np.min(instance_lens)}, max: {np.max(instance_lens)},'
           f'median: {np.median(instance_lens)}, mean: {np.mean(instance_lens):.2f}')
 
-    # 默认只覆盖98%的数据分布
-    p = 98
+    # 默认只覆盖99%的数据分布
+    p = 99
     boundary = np.percentile(instance_lens, p)
     print(f'set max_length to {int(boundary)} can cover {p}% data instances')
     plot_instance_lens = [len(ins[:int(boundary)]) for ins in data]
@@ -71,7 +71,7 @@ def label_distribution(data: List[Union[str, int]], title:str):
 
 
 if __name__ == '__main__':
-    raw_data = read_data('smp2020-ewect/usual/test.tsv')
+    raw_data = read_data('smp2020-ewect-usual/train.tsv')
     text, label = [], []
     label_map = {
         0: 'neutral',
@@ -84,5 +84,5 @@ if __name__ == '__main__':
     for idx, row in raw_data.iterrows():
         text.append(row['text_a'])
         label.append(label_map[row['label']])
-    len_distribution(text, title='smp2020 usual test')
-    label_distribution(label, title='smp2020 usual test')
+    len_distribution(text, title='smp2020 usual train')
+    label_distribution(label, title='smp2020 usual train')

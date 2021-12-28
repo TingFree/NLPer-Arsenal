@@ -84,7 +84,7 @@ class ProcessStatus():
 
     >>> gpu = 0  # 指定0号GPU，或者为None，不指定GPU
     >>> processStatus = ProcessStatus(gpu)
-    >>> p = mp.Process(target=processStatus.record_running_status, args=(0.5,))
+    >>> p = mp.Process(target=processStatus.record_running_status, args=(1,))
     >>> p.start()  # 开始执行监控进程
     >>> # 执行主进程，例如运行程序
     >>> p.terminate()  # 终结监控进程
@@ -104,10 +104,10 @@ class ProcessStatus():
             self.device_name = pynvml.nvmlDeviceGetName(handle).decode('utf-8')
             pynvml.nvmlShutdown()
 
-    def record_running_status(self, interval=0.5):
+    def record_running_status(self, interval=1):
         """供多进程调用，监控程序运行过程中的GPU、CPU、内存变化
 
-        :param interval: 记录间隔，默认 0.5s 记录一次
+        :param interval: 记录间隔，默认 1s 记录一次
         :return: 不间断运行，直至主进程内结束该子进程
         """
         pynvml.nvmlInit()
