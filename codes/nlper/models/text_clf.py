@@ -38,7 +38,8 @@ class LightningCLF(mpl.StandardModel):
 
     def validation_step(self, batch, batch_idx):
         labels = batch['labels']
-        logits = self.model(**batch)
+        outputs = self.model(**batch)
+        logits = outputs.logits
         loss = F.cross_entropy(logits.view(-1, self.configs.num_class),
                                labels.view(-1))
         batch_preds = logits.argmax(1).cpu().tolist()
@@ -51,15 +52,16 @@ class LightningCLF(mpl.StandardModel):
 
     def validation_epoch_end(self, outputs):
         epoch_preds, epoch_golds = [], []
-        for (batch_loss, batch_preds, batch_golds) in outputs:
-            epoch_preds += batch_preds
-            epoch_golds += batch_golds
+        for batch_outputs in outputs:
+            epoch_preds += batch_outputs.preds
+            epoch_golds += batch_outputs.golds
         self.metrics.scores(epoch_golds, epoch_preds)
         self.metrics.print_values()
         return self.metrics.return_target_score()
 
     def test_step(self, batch, batch_idx):
-        logits = self.model(**batch)
+        outputs = self.model(**batch)
+        logits = outputs.logits
         # prob, pred
         return LightningOutput(
             probs = F.softmax(logits, dim=-1).cpu().tolist(),
