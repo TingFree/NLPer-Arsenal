@@ -39,7 +39,8 @@ def read_data(file, f_type=None):
     """read data from file
 
     :param file: file path
-    :param f_type: one of ['txt', 'json', 'csv', 'tsv', 'yaml'], default: file postfix
+    :param f_type: one of ['txt', 'json', 'line_json','csv', 'tsv', 'yaml'], default: file postfix,
+    'line_json' means each line is json format
     :return: target data
     """
     # 根据文件后缀自动选择读取方式
@@ -50,6 +51,11 @@ def read_data(file, f_type=None):
     elif f_type == 'json':
         with open(file, encoding='utf-8') as f:
             data = json.load(f)
+    elif f_type == 'line_json':
+        data = []
+        with open(file, encoding='utf-8') as f:
+            for line in f:
+                data.append(json.loads(line))
     elif f_type == 'csv':
         data = pd.read_csv(file)
     elif f_type == 'tsv':
@@ -64,8 +70,10 @@ def read_data(file, f_type=None):
     return data
 
 
-def save_data(data, saved_path, f_type='txt'):
+def save_data(data, saved_path, f_type=None):
     create_parentDir(saved_path)
+    # 根据文件后缀自动选择保存方式
+    f_type = os.path.splitext(saved_path)[-1].replace('.', '') if not f_type else f_type
     with open(saved_path, 'w', encoding='utf-8') as f:
         if f_type == 'txt':
             for example in data:

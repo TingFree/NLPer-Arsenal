@@ -14,6 +14,7 @@ from transformers import DataCollatorWithPadding, get_linear_schedule_with_warmu
 from codes.nlper.modules import MLP
 from codes.nlper.utils import DatasetCLF, Dict2Obj
 from codes.nlper.utils import load_nlp_data, save_data
+from codes.nlper.modules.modeling_outputs import TextCLFOutput, LightningOutput
 from codes.nlper import mini_pytorch_lightning as mpl
 
 
@@ -29,10 +30,11 @@ class LightningCLF(mpl.StandardModel):
 
     def training_step(self, batch, batch_idx):
         labels = batch['labels']
-        logits = self.model(**batch)
+        outputs = self.model(**batch)
+        logits = outputs.logits
         loss = F.cross_entropy(logits.view(-1, self.configs.num_class),
                                labels.view(-1))
-        return loss,
+        return LightningOutput(loss=loss)
 
     def validation_step(self, batch, batch_idx):
         labels = batch['labels']
@@ -41,7 +43,11 @@ class LightningCLF(mpl.StandardModel):
                                labels.view(-1))
         batch_preds = logits.argmax(1).cpu().tolist()
         batch_golds = labels.cpu().tolist()
-        return loss, batch_preds, batch_golds
+        return LightningOutput(
+            loss=loss,
+            preds=batch_preds,
+            golds=batch_golds
+        )
 
     def validation_epoch_end(self, outputs):
         epoch_preds, epoch_golds = [], []
@@ -55,14 +61,16 @@ class LightningCLF(mpl.StandardModel):
     def test_step(self, batch, batch_idx):
         logits = self.model(**batch)
         # prob, pred
-        return F.softmax(logits, dim=-1).cpu().tolist(),\
-               logits.argmax(1).cpu().tolist()
+        return LightningOutput(
+            probs = F.softmax(logits, dim=-1).cpu().tolist(),
+            preds = logits.argmax(1).cpu().tolist()
+        )
 
     def test_epoch_end(self, outputs):
         probs, preds = [], []
-        for (batch_probs, batch_preds) in outputs:
-            probs += [' '.join([str(p) for p in prob]) for prob in batch_probs]
-            preds += batch_preds
+        for batch_outputs in outputs:
+            probs += [' '.join([str(p) for p in prob]) for prob in batch_outputs.probs]
+            preds += batch_outputs.preds
         save_data(probs, os.path.join(self.configs.out_dir, 'test_pred.probs.txt'))
         save_data(preds, os.path.join(self.configs.out_dir, 'test_pred.txt'))
 
@@ -139,17 +147,11 @@ class BertCLF(nn.Module):
                        'tanh',
                        dropout=args.dropout)
 
-    def forward(self, input_ids, attention_mask, token_type_ids, return_pooler_output=False, **kwargs):
-        """
-
-        :param input_ids:
-        :param attention_mask:
-        :param token_type_ids:
-        :param return_pooler_output: 是否返回最后用于分类的句子表示
-        :return:
-        """
+    def forward(self, input_ids, attention_mask, token_type_ids, **kwargs):
         outputs = self.bert(input_ids, attention_mask, token_type_ids)
         logits = self.clf(outputs[1])
-        if return_pooler_output:
-            return logits, outputs[1]
-        return logits
+
+        return TextCLFOutput(
+            logits = logits,
+            sequenceEmb = outputs[1]
+        )

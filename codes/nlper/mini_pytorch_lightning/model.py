@@ -4,6 +4,7 @@ r"""
 
 import torch
 from codes.nlper.modules.metrics import Metrics
+from codes.nlper.modules.modeling_outputs import LightningOutput
 from codes.nlper.utils import Dict2Obj
 
 
@@ -23,11 +24,11 @@ class StandardModel(torch.nn.Module):
 
     # required
     def training_step(self, batch, batch_idx):
-        """对训练的封装，处理一个batch，要求返回一个元组/列表，第一个是loss，其它自定义
+        """对训练的封装，处理一个batch，要求返回loss，其余自定义
 
         # :param batch: 一个batch_size大小的数据
         :param batch_idx: 该批次数据在整个数据中的顺序
-        :returns: loss,
+        :returns: LightningOutput(loss)
         """
         raise NotImplementedError()
 
@@ -51,13 +52,13 @@ class StandardModel(torch.nn.Module):
 
     # required
     def validation_step(self, batch, batch_idx):
-        """对验证的封装，处理一个batch，要求返回一个元组/列表，[loss, preds, golds, ...]，
-        前三位是固定的（如果没有重写validation_epoch_end的话），预测值和真实值用于计算指标，
+        """对验证的封装，处理一个batch， 要求返回loss, preds, golds, 其余可以自定义，
+        前三位是必须的（如果没有重写validation_epoch_end的话），预测值和真实值用于计算指标，
         要求符合相应metric的输入
 
         :param batch: 一个batch_size大小的数据
         :param batch_idx: 一个batch_size大小的数据
-        :returns: loss, preds, golds
+        :returns: LightningOutput(loss, preds, golds)
         """
         raise NotImplementedError()
 
@@ -78,16 +79,16 @@ class StandardModel(torch.nn.Module):
         :return: 目标指标值，用于early stop以及保存最佳模型，由metric.target而定
         """
         preds, golds = [], []
-        for (batch_loss, batch_preds, batch_golds, *batch_others) in outputs:
-            preds += batch_preds
-            golds += batch_golds
+        for batch_outputs in outputs:
+            preds += batch_outputs.preds
+            golds += batch_outputs.golds
         self.metrics.scores(golds, preds)
         self.metrics.print_values()
         return self.metrics.return_target_score()
 
     # required
     def test_step(self, batch, batch_idx):
-        """对测试的封装，处理一个batch，推荐返回预测值，但并不强制约束
+        """对预测的封装，处理一个batch，推荐返回预测值，但并不强制约束
 
         :param batch: 一个batch_size大小的数据
         :param batch_idx: 一个batch_size大小的数据
@@ -111,10 +112,7 @@ class StandardModel(torch.nn.Module):
         :param outputs: 列表，每一个元素都是training_step_end的返回值
         :return: mpl.Trainer不处理返回值
         """
-        preds = []
-        for batch_preds in outputs:
-            preds += batch_preds
-        return preds
+        return None
 
     # required
     def configure_optimizers(self):
@@ -142,7 +140,7 @@ class StandardModel(torch.nn.Module):
 
     # optional
     def val_dataloader(self):
-        """返回训练集数据迭代器
+        """返回开发集数据迭代器
 
         :return: torch.utils.data.DataLoader
         """
@@ -150,7 +148,7 @@ class StandardModel(torch.nn.Module):
 
     # optional
     def test_dataloader(self):
-        """返回训练集数据迭代器
+        """返回测试集数据迭代器
 
         :return: torch.utils.data.DataLoader
         """

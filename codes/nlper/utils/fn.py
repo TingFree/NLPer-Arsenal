@@ -312,6 +312,7 @@ class Dict2Obj():
                         self.__setattr__(key, value)
 
     def __getattr__(self, key):
+        """访问一个不存在的属性时，调用该函数"""
         if self._is_valid(key):
             self.__setattr__(key, Dict2Obj({}))
             return self.__getattribute__(key)

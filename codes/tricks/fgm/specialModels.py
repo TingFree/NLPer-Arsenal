@@ -1,6 +1,7 @@
 import torch
 import torch.nn.functional as F
 from codes.nlper.models import LightningCLF
+from codes.nlper.modules.modeling_outputs import LightningOutput
 
 
 class FGM():
@@ -39,17 +40,18 @@ class CLFModel(LightningCLF):
 
     def training_step(self, batch, batch_idx):
         labels = batch['labels']
-        logits = self.model(**batch)
-        loss = F.cross_entropy(logits.view(-1, self.configs.num_class),
+        outputs = self.model(**batch)
+        loss = F.cross_entropy(outputs.logits.view(-1, self.configs.num_class),
                                labels.view(-1))
         self.optimizer.zero_grad()
         loss.backward()
         self.fgm.attack()  # attack before run model
-        loss_adv = F.cross_entropy(self.model(**batch).view(-1, self.configs.num_class),
+        adv_outputs = self.model(**batch)
+        loss_adv = F.cross_entropy(adv_outputs.logits.view(-1, self.configs.num_class),
                                    labels.view(-1))
         loss_adv.backward()
         self.fgm.restore()
         self.optimizer.step()
         if self.scheduler:
             self.scheduler.step()
-        return loss,
+        return LightningOutput(loss=loss)

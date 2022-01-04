@@ -1,6 +1,7 @@
 import torch
 import torch.nn.functional as F
 from codes.nlper.models import LightningCLF
+from codes.nlper.modules.modeling_outputs import LightningOutput
 
 def get_simcse_loss(once_emb, twice_emb, t=0.05):
     """用于无监督SimCSE训练的loss
@@ -15,7 +16,7 @@ def get_simcse_loss(once_emb, twice_emb, t=0.05):
                         torch.arange(0, batch_size*2, step=2, dtype=torch.long).unsqueeze(1)],
                        dim=1).reshape([batch_size*2,]).to(once_emb.device)
 
-    batch_emb = torch.cat([once_emb, twice_emb], dim=1).reshape(batch_size*2, -1)  # [a,a1,b,b1,...]
+    batch_emb = torch.cat([once_emb, twice_emb], dim=1).reshape(batch_size*2, -1)  # [a1,a2,b1,b2,...]
     # 计算score和loss
     # L2标准化
     norm_emb = F.normalize(batch_emb, dim=1, p=2)
@@ -39,12 +40,12 @@ class CLFModel(LightningCLF):
     def training_step(self, batch, batch_idx):
         labels = batch['labels']
 
-        logits, once_emb = self.model(**batch, return_pooler_output=True)
-        _, twice_emb = self.model(**batch, return_pooler_output=True)
+        outputs1 = self.model(**batch)
+        outputs2 = self.model(**batch)
 
-        loss = F.cross_entropy(logits.view(-1, self.configs.num_class),
+        loss = F.cross_entropy(outputs1.logits.view(-1, self.configs.num_class),
                                labels.view(-1))
-        simcse_loss = get_simcse_loss(once_emb, twice_emb)
+        simcse_loss = get_simcse_loss(outputs1.sequenceEmb, outputs2.sequenceEmb)
         final_loss = loss + simcse_loss
 
-        return final_loss,
+        return LightningOutput(loss=final_loss)

@@ -18,7 +18,7 @@ def get_simcse_loss(once_emb, twice_emb, t=0.05):
     batch_size = once_emb.size(0)
     y_true = torch.cat([torch.arange(1, batch_size*2, step=2, dtype=torch.long).unsqueeze(1), torch.arange(0, batch_size*2, step=2, dtype=torch.long).unsqueeze(1)], dim=1).reshape([batch_size*2,]).to(once_emb.device)
 
-    batch_emb = torch.cat([once_emb, twice_emb], dim=1).reshape(batch_size*2, -1)  # [a,a1,b,b1,...]
+    batch_emb = torch.cat([once_emb, twice_emb], dim=1).reshape(batch_size*2, -1)  # [a1,a2,b1,b2,...]
     # 计算score和loss
     # L2标准化
     norm_emb = F.normalize(batch_emb, dim=1, p=2)
@@ -57,7 +57,7 @@ python center_controller.py ---trick_name unsup_s --task_config default_configs/
 | text_clf (P/R/Macro F1) | smp2020-ewect-usual |   default    |      3623.06      |   00:38:21   | 0.7346/0.7293/0.7293 |
 |                         |                     | unsup simcse |      4767.06      |   00:53:09   | 0.7327/0.7484/0.7394 |
 |                         | smp2020-ewect-virus |   default    |      5897.06      |   00:25:39   | 0.6662/0.6195/0.6380 |
-|                         |         0.1         | unsup simcse |      9287.06      |   00:38:12   | 0.6434/0.6431/0.6399 |
+|                         |                     | unsup simcse |      9287.06      |   00:38:12   | 0.6434/0.6431/0.6399 |
 
 
 

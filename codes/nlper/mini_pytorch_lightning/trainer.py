@@ -46,9 +46,9 @@ class StandardTrainer():
                       desc=f'train epoch: {epoch}') as t:
                 for batch_idx, batch in enumerate(train_loader):
                     batch = all_to_device(batch, self.device)
-                    batch_outputs = list(self.model.training_step(batch, batch_idx))  # tuple to list
+                    batch_outputs = self.model.training_step(batch, batch_idx)
                     # update gradient and lr --start
-                    loss = batch_outputs[0]
+                    loss = batch_outputs.loss
                     if self.model.auto_optimization:
                         loss /= accumulate_step
                         loss.backward()
@@ -58,7 +58,7 @@ class StandardTrainer():
                                 self.model.scheduler.step()
                             self.model.optimizer.zero_grad()
                     # update gradient and lr --end
-                    batch_outputs[0] = loss.item()  # detach
+                    batch_outputs.loss = loss.item()  # detach
                     batch_outputs = self.model.training_step_end(batch_outputs)
                     outputs.append(batch_outputs)
                     total_loss, total = total_loss + loss.item(), total + 1
@@ -130,8 +130,11 @@ class StandardTrainer():
                 t.update(1)
         self.model.test_epoch_end(outputs)
 
-    def _set_mode(self, mode):
-        # mode: 'train' or 'eval'
+    def _set_mode(self, mode:str):
+        """快速修改模型状态，同时根据状态自动决定是否计算梯度
+
+        :param mode: 'train' or 'eval'
+        """
         if mode == 'train':
             self.model.train()
             torch.set_grad_enabled(True)
