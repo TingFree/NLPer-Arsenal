@@ -9,6 +9,12 @@ import yaml
 
 
 def create_parentDir(path, exist_ok=True):
+    """递归创建path的父目录，例如path=L1/L2/L3/tmp.txt，则创建L1/L2/L3三级目录
+
+    :param path: 文件地址
+    :param exist_ok: True
+    :return:
+    """
     head, tail = os.path.split(path)
     if head and not os.path.exists(head):
         print(f'create {head} directory')

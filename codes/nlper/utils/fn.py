@@ -6,7 +6,6 @@ import random
 import time
 import multiprocessing as mp
 import psutil
-import pynvml
 import numpy as np
 import torch
 from prettytable import PrettyTable
@@ -96,6 +95,7 @@ class ProcessStatus():
         self.running_info = mp.Manager().list()
         self.gpu = gpu
         if gpu:
+            import pynvml
             pynvml.nvmlInit()
             handle = pynvml.nvmlDeviceGetHandleByIndex(gpu)
             gpu_info = pynvml.nvmlDeviceGetMemoryInfo(handle)
@@ -110,9 +110,10 @@ class ProcessStatus():
         :param interval: 记录间隔，默认 1s 记录一次
         :return: 不间断运行，直至主进程内结束该子进程
         """
-        pynvml.nvmlInit()
         start = self.start
         if self.gpu != None:  # 指定GPU的情况下
+            import pynvml
+            pynvml.nvmlInit()
             while True:
                 cur_time = time.time()
                 if cur_time - start >= interval:

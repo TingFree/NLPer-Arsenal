@@ -1,15 +1,15 @@
 task_name: 'text_clf'
 
 # data config
-dataset_name: text_clf/smp2020-ewect-virus  # 如果这个数据集名字在codes.nlper.utils.supported_task_dataset_names中，
-                                            # 则当train_file、val_file、test_file不存在时，自动下载到dataset_cache_dir目录里
-dataset_cache_dir: '../data'
+dataset_name: text_clf/smp2020-ewect-virus  # 如果这个数据集名字在codes.nlper.utils.corpus.dataset_names中，
+                                            # 当train_file、val_file、test_file文件不存在时，自动下载到dataset_cache_dir目录里
+dataset_cache_dir: '../data/smp2020-ewect-virus'
 use_convert: True  # 是否将数据转换成标准格式？对于非标准数据集，必须为True。标准数据格式可以参考data/example
 preprocess_method: None  # 是否对数据进行预处理，目前暂不支持
 num_class: 6
-train_file: '../data/smp2020-ewect-virus/train.tsv'  # 如果找不到该文件，则尝试根据dataset_name自动下载
-val_file: '../data/smp2020-ewect-virus/dev.tsv'  # 同train_file
-test_file: '../data/smp2020-ewect-virus/test.tsv'  # 同train_file
+train_file: 'train.tsv'  # required，这是相对于dataset_cache_dir的文件路径，如果找不到该文件，则尝试根据dataset_name自动下载。
+val_file: 'dev.tsv'  # required，同train_file
+test_file: 'test.tsv'  # optional，同train_file。如果不指定test_file，需要把is_test设置为False
 
 # model config
 model_type: 'bert'  # 选择dataset类时用到，非Bert类型时必须指定为None，否则指定为‘bert’
@@ -23,7 +23,7 @@ component_model:  # 指定具体的模型组件，如果指定了完整模型，
 
 # other config
 is_train: True  # 是否在训练集和验证集上训练
-is_eval_test: True  # 是否对测试集计算metrics指标
+is_eval_test: True  # 是否对测试集计算metrics指标，仅当test_file有标签时可以指定为True
 is_test: True  # 是否对测试集进行预测
 load_best: True  # 是否在测试集上使用最佳参数预测，False，使用最后epoch的参数
 max_len: 301

@@ -67,7 +67,7 @@ if __name__ == '__main__':
     if task_config.task_name == 'text_clf':
         taskHandler = TextCLFHandler(task_config, special_models)
     else:
-        raise AttributeError(f'your task name is {task_config.task_name} which is not supported yet')
+        raise ValueError(f'your task name is {task_config.task_name} which is not supported yet')
 
     # 训练，保存在验证集上指标最高的参数（best_model.bin），以及最后一轮的参数（last_model.bin）
     if task_config.is_train:

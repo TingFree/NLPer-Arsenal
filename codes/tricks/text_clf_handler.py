@@ -9,9 +9,10 @@ sys.path.append('..')
 from typing import Union
 import torch
 from transformers import AutoTokenizer
-from codes.nlper.utils import Dict2Obj, format_convert, download_dataset
+from codes.nlper.utils import Dict2Obj, format_convert
 from codes.nlper.modules.metrics import Metrics
 from codes.nlper import mini_pytorch_lightning as mpl
+from codes.nlper.utils.corpus import dataset_names
 
 # 根据数据集名称，查找数据转换函数，按标准数据格式读取数据
 convert_dataset = {
@@ -30,6 +31,11 @@ class TextCLFHandler():
         self._build_trainer()
 
     def _build_data(self):
+        # 补充完整地址
+        self.configs.train_file = os.path.join(self.configs.dataset_cache_dir, self.configs.train_file)
+        self.configs.val_file = os.path.join(self.configs.dataset_cache_dir, self.configs.val_file)
+        if self.configs.test_file:
+            self.configs.test_file = os.path.join(self.configs.dataset_cache_dir, self.configs.test_file)
         # 如果三者同时不存在
         if not (
                 os.path.isfile(self.configs.train_file)
@@ -37,11 +43,11 @@ class TextCLFHandler():
                 or os.path.isfile(self.configs.test_file)
         ):
             # 自动下载数据集
-            is_over = download_dataset(self.configs.dataset_name, self.configs.dataset_cache_dir)
+            corpus = dataset_names[self.configs.dataset_name](cache_dir=self.configs.dataset_cache_dir)
+            is_over = corpus.prepare_data()
             if not is_over:
-                print(f'please download dataset manually, and mask sure data file path is correct')
+                print(f'please download dataset manually, and make sure data file path is correct')
                 exit()
-
 
     def _build_optimizer(self):
         pass

@@ -18,7 +18,7 @@ from codes.nlper.utils import DatasetCLF
 from codes.nlper.modules.trainer import Trainer
 from codes.nlper.modules.metrics import Metrics, PMetric, RMetric, F1Metric
 from codes.nlper.utils.format_convert import smp2020_ewect_convert
-from codes.nlper.utils import seed_everything, set_devices, Dict2Obj, download_dataset
+from codes.nlper.utils import seed_everything, set_devices, Dict2Obj, dataset_names
 
 
 class BertCLF(nn.Module):
@@ -49,15 +49,23 @@ if __name__ == '__main__':
                         default=1000,
                         help='random seed for reproduction')
     # dataset
+    parser.add_argument('--dataset_name',
+                        default='text_clf/smp2020-ewect-usual',
+                        help='if you use custom dataset, change it to skip download logic')
+    parser.add_argument('--dataset_cache_dir',
+                        default='../data/smp2020-ewect-usual')
     parser.add_argument('--num_class',
                         default=6,
                         help='the number of class')
     parser.add_argument('--train_file',
-                        default='../data/smp2020-ewect-usual/train.tsv')
+                        default='train.tsv',
+                        help='relative path for dataset_cache_dir')
     parser.add_argument('--val_file',
-                        default='../data/smp2020-ewect-usual/dev.tsv')
+                        default='dev.tsv',
+                        help='relative path for dataset_cache_dir')
     parser.add_argument('--test_file',
-                        default='../data/smp2020-ewect-usual/test.tsv')
+                        default='test.tsv',
+                        help='relative path for dataset_cache_dir')
     # train
     parser.add_argument('--is_train',
                         default=True,
@@ -114,6 +122,10 @@ if __name__ == '__main__':
     # load data
     print('load data')
     tokenizer = BertTokenizer.from_pretrained(args.pretrained_model)
+    args.train_file = os.path.join(args.dataset_cache_dir, args.train_file)
+    args.val_file = os.path.join(args.dataset_cache_dir, args.val_file)
+    if args.test_file:
+        args.test_file = os.path.join(args.dataset_cache_dir, args.test_file)
     # 如果三者同时不存在
     if not (
             os.path.isfile(args.train_file)
@@ -121,9 +133,10 @@ if __name__ == '__main__':
             or os.path.isfile(args.test_file)
     ):
         # 自动下载数据集
-        is_over = download_dataset('text_clf/smp2020-ewect-usual', cache_dir='../data')
+        corpus = dataset_names[args.dataset_name](cache_dir=args.dataset_cache_dir)
+        is_over = corpus.prepare_data()
         if not is_over:
-            print(f'please download dataset manually, and mask sure data file path is correct')
+            print(f'please download dataset manually, and make sure data file path is correct')
             exit()
     train_data = smp2020_ewect_convert(args.train_file)
     val_data = smp2020_ewect_convert(args.val_file)
