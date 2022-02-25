@@ -4,9 +4,9 @@ NLP人军火库，主要收录NLP竞赛策略实现、各任务教程、经验�
 
 本项目主要包含以下内容：
 
-* NLPer-Arsenal-Code（2021.12）
+* [NLPer-Arsenal-Code](codes/readme.md) （2021.12）
   * 插件式验证NLP竞赛策略，并提供解耦实现，方便迁移到自己的模型中，[here](./codes/tricks) 
-  * NLP各任务教程，通过注释详细的baseline快速了解各个任务，[here](./codes/examples) 
+  * NLP各任务教程（文本分类/文本生成），通过注释详细的baseline快速了解各个任务，[here](./codes/examples) 
 * NLPer-Arsenal-Post（2021.03）
   * 往期竞赛总结，收录已经结束的竞赛，包括数据集、开源代码、选手方案，[here](#往期竞赛) 
   * 当前重点赛事与训练赛，记录当下正在进行的NLP赛事，[here](#当前赛事) 
