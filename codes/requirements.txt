@@ -1,5 +1,7 @@
 torch >= 1.6
 transformers >= 4.5
+scikit-learn
+rouge
 pyyaml
 pandas
 prettytable

@@ -89,7 +89,37 @@ class TextCLFOutput(ModelOutput):
 
     Args:
         logits: Tensor, [batch_size, num_labels], 模型最后的输出结果，用于计算损失，非概率值
-        sequenceEmb: Tensor, [batch_size, hidden_size], 最终用于分类的句子级表示
+        seqEmb: Tensor, [batch_size, hidden_size], 最终用于分类的句子级表示
     """
     logits: torch.Tensor = None
-    sequenceEmb: torch.Tensor = None
+    seqEmb: torch.Tensor = None
+
+
+class EncoderOutput(ModelOutput):
+    """
+    封装Encoder的输出
+
+    Args:
+        seqEmb: Tensor, [batch_size, seq_len, hidden_size]
+    """
+    seqEmb: torch.Tensor = None
+
+
+class DecoderOutput(ModelOutput):
+    """
+    封装Decoder的输出
+
+    Args:
+        last_hidden_state: Tensor, [batch_size, seq_len, hidden_size], 解码器的预测结果
+    """
+    last_hidden_state: torch.Tensor = None
+
+
+class TextGenOutput(ModelOutput):
+    """
+    封装TextGen模型的输出
+
+    Args:
+        pred: Tensor, [batch_size, seq_len, vocab_size], 用于计算loss
+
+    """

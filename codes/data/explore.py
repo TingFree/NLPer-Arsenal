@@ -71,18 +71,10 @@ def label_distribution(data: List[Union[str, int]], title:str):
 
 
 if __name__ == '__main__':
-    raw_data = read_data('smp2020-ewect-usual/train.tsv')
-    text, label = [], []
-    label_map = {
-        0: 'neutral',
-        1: 'angry',
-        2: 'happy',
-        3: 'sad',
-        4: 'fear',
-        5: 'surprise'
-    }
-    for idx, row in raw_data.iterrows():
-        text.append(row['text_a'])
-        label.append(label_map[row['label']])
-    len_distribution(text, title='smp2020 usual train')
-    label_distribution(label, title='smp2020 usual train')
+    raw_data = read_data('DuReaderQG/test.json', f_type='line_json')
+    src, tgt = [], []
+    for example in raw_data:
+        src.append(example['answer'] + example['context'])
+        tgt.append(example['question'])
+    len_distribution(src, title='DuReaderQG test src')
+    len_distribution(tgt, title='DuReaderQG test tgt')

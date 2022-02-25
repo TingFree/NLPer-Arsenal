@@ -7,7 +7,7 @@ from .fn import (
     ProcessStatus
 )
 from .io import read_data, load_nlp_data, save_data
-from .datasets import DatasetCLF
-from .format_convert import tnews_convert, iflytek_convert, smp2020_ewect_convert
+from .datasets import DatasetCLF, DatasetGen
+from .format_convert import tnews_convert, iflytek_convert, smp2020_ewect_convert, dureaderqg_convert
 
 from .corpus import BaseCorpus, Ewect20Usual, Ewect20Virus, dataset_names

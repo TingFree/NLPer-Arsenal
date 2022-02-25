@@ -59,6 +59,7 @@ def smp2020_ewect_convert(datafile, load_label=True):
     convert custom dataset to standard format, users should specialize it
 
     :param datafile: custom datafile
+    :param load_label: 是否加载标签
     :return: list of [text, label], label should be integer
     """
     raw_data = read_data(datafile, f_type='tsv')
@@ -69,4 +70,26 @@ def smp2020_ewect_convert(datafile, load_label=True):
     else:
         for idx, row in raw_data.iterrows():
             target.append([row['text_a']])
+    return target
+
+
+def dureaderqg_convert(datafile, load_label=True, sep='[SEP]'):
+    """将DuReaderQG数据转换成标准数据，返回list of [src, tgt]，如果没有tgt，则返回list of [src]
+
+    :param datafile: custom datafile, train/val/test.json path
+    :param load_label: 是否加载目标序列
+    :param sep: answer与context之间的分隔符
+    :return: list of [src, tgt] or [src]
+    """
+    raw_data = read_data(datafile, f_type='line_json')
+    target = []
+    if load_label:
+        for example in raw_data:
+            src = example['answer'] + ' ' + sep + ' ' + example['context']
+            tgt = example['question']
+            target.append([src, tgt])
+    else:
+        for example in raw_data:
+            src = example['answer'] + ' ' + sep + ' ' + example['context']
+            target.append([src])
     return target

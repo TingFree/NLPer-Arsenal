@@ -61,7 +61,7 @@ def read_data(file, f_type=None):
         data = []
         with open(file, encoding='utf-8') as f:
             for line in f:
-                data.append(json.loads(line))
+                data.append(json.loads(line.strip()))
     elif f_type == 'csv':
         data = pd.read_csv(file)
     elif f_type == 'tsv':
@@ -86,6 +86,9 @@ def save_data(data, saved_path, f_type=None):
                 f.write(str(example) + '\n')
         elif f_type == 'json':
             json.dump(data, f, ensure_ascii=False, indent=1)
+        elif f_type == 'line_json':
+            for example in data:
+                f.write(json.dumps(example, ensure_ascii=False) + '\n')
         else:
-            raise ValueError('f_type should be one of [txt, json]')
-    print(f'{f_type} data -> {saved_path} over')
+            raise ValueError('f_type should be one of [txt, json, line_json]')
+    print(f'data -> {saved_path} over')

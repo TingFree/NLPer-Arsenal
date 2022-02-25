@@ -45,7 +45,7 @@ class CLFModel(LightningCLF):
 
         loss = F.cross_entropy(outputs1.logits.view(-1, self.configs.num_class),
                                labels.view(-1))
-        simcse_loss = get_simcse_loss(outputs1.sequenceEmb, outputs2.sequenceEmb)
+        simcse_loss = get_simcse_loss(outputs1.seqEmb, outputs2.seqEmb)
         final_loss = loss + simcse_loss
 
         return LightningOutput(loss=final_loss)

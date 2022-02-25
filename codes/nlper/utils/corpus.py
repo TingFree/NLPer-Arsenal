@@ -6,6 +6,9 @@ import warnings
 import requests
 import zipfile, gzip, tarfile
 from tqdm import tqdm
+from codes.nlper.utils.io import read_data, save_data
+import random
+random.seed(1000)
 
 
 class BaseCorpus():
@@ -153,7 +156,7 @@ class BaseCorpus():
         structure = self.structure
         for name in names:
             file_path = os.path.join(self.cache_dir, name)
-            dirnames, basename = os.path.split(name)
+            dirnames, basename = os.path.split(name.strip('/'))
             if dirnames:
                 now_level = structure
                 for dirname in dirnames.split('/'):
@@ -214,7 +217,7 @@ class Ewect20Usual(BaseCorpus):
         if tag:
             print(f"downloads {self.dataset_name} -> '{os.path.abspath(self.cache_dir)}' over")
         else:
-            print(f"downloads {self.dataset_name} -> '{os.path.abspath(self.cache_dir)}' failed, some files lost, please check manually!")
+            print(f"downloads {self.dataset_name} -> '{os.path.abspath(self.cache_dir)}' failed, some files lost, please check manually! source data: https://github.com/dbiir/UER-py/tree/master/datasets/smp2020-ewect/usual")
         return tag
 
 
@@ -239,11 +242,43 @@ class Ewect20Virus(BaseCorpus):
         if tag:
             print(f"prepare {self.dataset_name} -> '{os.path.abspath(self.cache_dir)}' over")
         else:
-            print(f"prepare {self.dataset_name} -> '{os.path.abspath(self.cache_dir)}' failed, some files lost, please check manually!")
+            print(f"prepare {self.dataset_name} -> '{os.path.abspath(self.cache_dir)}' failed, some files lost, please check manually! source data: https://github.com/dbiir/UER-py/tree/master/datasets/smp2020-ewect/virus")
         return tag
 
 
+class DuReaderQG(BaseCorpus):
+    """
+    task_name: text_gen \n
+    dataset_name: DuReaderQG \n
+    cache_dir: ../../data
+    """
+    def __init__(self, task_name='text_gen', dataset_name='DuReaderQG', cache_dir='../../data'):
+        super(DuReaderQG, self).__init__(cache_dir)
+        self.task_name = task_name
+        self.dataset_name = dataset_name
+
+    def prepare_data(self):
+        dataset_url = "https://dataset-bj.cdn.bcebos.com/qianyan/DuReaderQG.zip"
+        tag = self.download_compressedFile(dataset_url)
+        if tag:
+            dev_data = read_data(os.path.join(self.cache_dir, self.dataset_name, 'dev.json'), f_type='line_json')
+            random.shuffle(dev_data)
+            val_data = dev_data[:492]
+            test_data = dev_data[492:]
+            print(f'split dev (984 sample) to val (492 sample) and test (492 sample)')
+            save_data(val_data, os.path.join(self.cache_dir, self.dataset_name, 'val.json'), f_type='line_json')
+            save_data(test_data, os.path.join(self.cache_dir, self.dataset_name, 'test.json'), f_type='line_json')
+        else:
+            print(f"prepare {self.dataset_name} -> '{os.path.abspath(self.cache_dir)}' failed, some files lost, please check manually! source data: https://dataset-bj.cdn.bcebos.com/qianyan/DuReaderQG.zip")
+            print(f"when you download {self.dataset_name} manually, split dev.json (984 sample) to val.json (492 sample) "
+                  f"and test.json (492 sample) with random seed 1000, code snippet as follow: \n"
+                  f"random.shuffle(dev) \n"
+                  f"val = dev[:492] \n"
+                  f"test = dev[492:]")
+        return tag
+
 dataset_names = {
     "text_clf/smp2020-ewect-usual": Ewect20Usual,
-    "text_clf/smp2020-ewect-virus": Ewect20Virus
+    "text_clf/smp2020-ewect-virus": Ewect20Virus,
+    "text_gen/DuReaderQG": DuReaderQG,
 }

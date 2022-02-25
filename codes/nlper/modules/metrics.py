@@ -7,17 +7,20 @@ import numpy as np
 from typing import Dict, Callable, Optional
 from sklearn.metrics import precision_score, recall_score, f1_score
 # from nltk.translate.bleu_score import corpus_bleu
-# from rouge import Rouge
+from rouge import Rouge
 
 
-def type_transfor(data, target_type):
+def type_transfor(data, target_type, in_type=None):
     """transform data into specific type(list, numpy and tensor)
 
     :param data: list, np.ndarray, torch.tensor
     :param target_type: list, np.ndarray, torch.tensor
+    :param in_type: data[0] type
     :return: new data with target type
     """
-    if isinstance(data, target_type):
+    if in_type and isinstance(data, target_type) and isinstance(data[0], in_type):
+        return data
+    if not in_type and isinstance(data, target_type):
         return data
     elif isinstance(data, list):
         if target_type is np.ndarray:
@@ -37,24 +40,25 @@ def type_transfor(data, target_type):
 
 
 class MetricBase():
-    def __init__(self, name: str, fun: Optional[Callable], data_type,
-                 **kwargs):
+    def __init__(self, name: str, fun: Optional[Callable], data_type, in_type=None, **kwargs):
         """
         封装基础的评估函数
 
         :param name: 自定义评估函数名
         :param fun: 函数
         :param data_type: 函数接受的数据类型
+        :param in_type: data[0]的数据类型
         :param kwargs: 函数的其它参数，非golds和preds
         """
         self.name = name
         self.metric = fun
         self.data_type = data_type
+        self.in_type = in_type
         self.kwargs = kwargs
 
     def score(self, golds, preds):
-        golds = type_transfor(golds, self.data_type)
-        preds = type_transfor(preds, self.data_type)
+        golds = type_transfor(golds, self.data_type, self.in_type)
+        preds = type_transfor(preds, self.data_type, self.in_type)
         return self.metric(golds, preds, **self.kwargs)
 
     def score_end(self, scores):
@@ -62,8 +66,7 @@ class MetricBase():
 
 
 class Metrics():
-    def __init__(self, metrics: Dict[str, MetricBase],
-                 target_metric: str):
+    def __init__(self, metrics: Dict[str, MetricBase], target_metric: str):
         """
         指定模型在训练与测试过程中用来评估性能的指标
 
@@ -83,13 +86,13 @@ class Metrics():
             )
         else:
             for name, value in self.metric_values.items():
-                print(f'{name}: {value:.6f}', end=' ')
-            print()
+                print(f'{name}: {value}')
 
     def scores(self, golds, preds) -> Dict[str, float]:
         for metric_name in self._metrics.keys():
             scores = self._metrics[metric_name].score_end(
-                self._metrics[metric_name].score(golds, preds))
+                self._metrics[metric_name].score(golds, preds)
+            )
             self.metric_values[metric_name] = scores
         return self.metric_values
 
@@ -100,6 +103,10 @@ class Metrics():
 
     def return_target_score(self):
         if self.target in self.metric_values.keys():
+            if self.target == 'rouge-1' or self.target == 'rouge-2':
+                return self.metric_values[self.target]['r']
+            if self.target == 'rouge-l':
+                return self.metric_values[self.target]['f']
             return self.metric_values[self.target]
 
 
@@ -130,15 +137,24 @@ class F1Metric(MetricBase):
         super(F1Metric, self).__init__(name, fun, data_type, **kwargs)
 
 
-# class RougeMetric(MetricBase):
-#     def __init__(self, name='rouge-l'):
-#         # golds: List[str]
-#         # preds: List[str]
-#         rouge = Rouge()
-#         super(RougeMetric, self).__init__(name, rouge.get_scores, list, avg=True)
-#
-#     def score_end(self, scores):
-#         return scores[self.name]
+class RougeMetric(MetricBase):
+    def __init__(self, name='rouge-l'):
+        """计算rouge-1/2/l指标，golds: List[str], preds:[str]，rouge-1/2侧重召回率，rouge-l侧重F1
+
+        :param name: rouge-1, rouge-2, rouge-l
+        """
+        assert name=='rouge-1' or name=='rouge-2' or name=='rouge-l'
+        rouge = Rouge()
+        super(RougeMetric, self).__init__(name, rouge.get_scores, list, str, avg=True)
+
+    def score(self, golds, preds):
+        golds = type_transfor(golds, self.data_type, self.in_type)
+        preds = type_transfor(preds, self.data_type, self.in_type)
+        return self.metric(preds, golds, **self.kwargs)
+
+    def score_end(self, scores):
+        # {'p':x, 'r':x, 'f':x}
+        return scores[self.name]
 #
 # class Bleu4Metric(MetricBase):
 #     def __init__(self, name='bleu-4'):

@@ -75,7 +75,7 @@ def initial_parameter(net, initial_method=None):
     net.apply(weights_init)
 
 
-def all_to_device(data: Union[torch.Tensor, List[torch.Tensor], Dict[str, torch.Tensor]],
+def all_to_device(data: Union[torch.Tensor, List[torch.Tensor], Dict[str, torch.Tensor], Dict[str, Dict[str, torch.Tensor]]],
                   device=torch.device('cpu')):
     if isinstance(data, torch.Tensor):
         data = data.to(device)
@@ -84,4 +84,7 @@ def all_to_device(data: Union[torch.Tensor, List[torch.Tensor], Dict[str, torch.
         for k in keys:
             if isinstance(data[k], torch.Tensor):
                 data[k] = data[k].to(device)
+            if isinstance(data[k], dict):
+                for inner_k in data[k].keys():
+                    data[k][inner_k] = data[k][inner_k].to(device)
     return data

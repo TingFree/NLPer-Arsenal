@@ -35,11 +35,11 @@ class Roberta2Transformer(nn.Module):
         self.fc_out = nn.Linear(roberta_config.hidden_size, roberta_config.vocab_size)
 
     def forward(self, encoded_src, encoded_tgt=None):
-        """teacher-forcing
+        """teacher-forcing training
 
         :param encoded_src: {'input_ids':[batch_size, src_len], 'token_type_ids':[batch_size, src_len],'attention_mask':[batch_size, src_len]}
         :param encoded_tgt: 和encoded_src类似
-        :return:
+        :return: [batch_size, tgt_len-1, voc_size]
         """
         if not encoded_tgt:
             return self.predict(encoded_src, self.max_tgt_len)
@@ -65,7 +65,7 @@ class Roberta2Transformer(nn.Module):
         embed_tgt = self.encoder.embeddings(input_ids=tgt_input_ids)
         decode_output = self.decoder(embed_tgt, memory, src_attention_mask==0)
         final = decode_output.last_hidden_state
-        # [batch_size, tgt_len, voc_size]
+        # [batch_size, tgt_len-1, voc_size]
         return self.fc_out(final)
 
     def predict(self, encoded_src, max_len=32):
@@ -224,7 +224,7 @@ if __name__ == '__main__':
     # create model
     print('create model')
     model = Roberta2Transformer(args).to(device)
-    # print(model)
+    print(model)
     print('----------------------------------')
 
     # create optimizer

@@ -39,74 +39,50 @@ class BertCLF(nn.Module):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # general
-    parser.add_argument('--pretrained_model',
-                        default='bert-base-chinese',
-                        help='the name or path of pretrained language model')
-    parser.add_argument('--device_ids',
-                        default=[0],
+    parser.add_argument('--device_ids', default=[0],
                         help='the GPU ID for running model and we only support single gpu now, [-1] means using CPU')
-    parser.add_argument('--seed',
-                        default=1000,
+    parser.add_argument('--seed', default=1000,
                         help='random seed for reproduction')
     # dataset
-    parser.add_argument('--dataset_name',
-                        default='text_clf/smp2020-ewect-usual',
-                        help='if you use custom dataset, change it to skip download logic')
-    parser.add_argument('--dataset_cache_dir',
-                        default='../data/smp2020-ewect-usual')
-    parser.add_argument('--num_class',
-                        default=6,
+    parser.add_argument('--dataset_name', default='text_clf/smp2020-ewect-usual',
+                        help="if train/val/test can't be found, automatic download")
+    parser.add_argument('--dataset_cache_dir', default='../data/smp2020-ewect-usual')
+    parser.add_argument('--num_class', default=6,
                         help='the number of class')
-    parser.add_argument('--train_file',
-                        default='train.tsv',
+    parser.add_argument('--train_file', default='train.tsv',
                         help='relative path for dataset_cache_dir')
-    parser.add_argument('--val_file',
-                        default='dev.tsv',
+    parser.add_argument('--val_file', default='dev.tsv',
                         help='relative path for dataset_cache_dir')
-    parser.add_argument('--test_file',
-                        default='test.tsv',
+    parser.add_argument('--test_file', default='test.tsv',
                         help='relative path for dataset_cache_dir')
     # train
-    parser.add_argument('--is_train',
-                        default=True,
+    parser.add_argument('--is_train', default=True,
                         help='whether to train')
-    parser.add_argument('--is_test',
-                        default=True,
+    parser.add_argument('--is_test', default=True,
                         help='whether to test')
-    parser.add_argument('--checkpoint',
-                        default='',
+    parser.add_argument('--pretrained_model', default='bert-base-chinese',
+                        help='the name or path of pretrained language model')
+    parser.add_argument('--checkpoint', default='',
                         help='continue to train from checkpoint')
-    parser.add_argument('--num_epochs',
-                        default=2,
+    parser.add_argument('--num_epochs', default=2,
                         help='the number of training epochs')
-    parser.add_argument('--max_len',
-                        default=512,
+    parser.add_argument('--max_len', default=512,
                         help='the upper bound of input sentence')
-    parser.add_argument('--train_batch_size',
-                        default=8)
-    parser.add_argument('--test_batch_size',
-                        default=8)
-    parser.add_argument('--lr',
-                        default=3e-5)
-    parser.add_argument("--warmup_steps",
-                        help="the number of steps to warm up optimizer",
-                        type=int,
-                        default=200)
-    parser.add_argument("--weight_decay",
-                        help="l2 reg",
-                        type=float,
-                        default=0.01)
-    parser.add_argument('--dropout',
-                        default=0.1)
+    parser.add_argument('--train_batch_size', default=8)
+    parser.add_argument('--test_batch_size', default=8)
+    parser.add_argument('--lr', default=3e-5)
+    parser.add_argument("--warmup_steps", type=int, default=200,
+                        help="the number of steps to warm up optimizer")
+    parser.add_argument("--weight_decay", type=float, default=0.01,
+                        help="l2 reg")
+    parser.add_argument('--dropout', default=0.1)
     # save
-    parser.add_argument('--best_model_path',
-                        default='saved/model.bin',
+    parser.add_argument('--best_model_path', default='saved/model.bin',
                         help='the path to save model with the highest performance')
-    parser.add_argument('--model_saved',
-                        default='saved/model.bin',
-                        help='the path of saved model')
-    parser.add_argument('--pred_saved',
-                        default='saved/pred.txt',
+    # parser.add_argument('--model_saved',
+    #                     default='saved/model.bin',
+    #                     help='the path of saved model')
+    parser.add_argument('--pred_saved', default='saved/pred.txt',
                         help='the path to save prediction of test')
     # print arguments
     args = parser.parse_args()
@@ -124,9 +100,8 @@ if __name__ == '__main__':
     tokenizer = BertTokenizer.from_pretrained(args.pretrained_model)
     args.train_file = os.path.join(args.dataset_cache_dir, args.train_file)
     args.val_file = os.path.join(args.dataset_cache_dir, args.val_file)
-    if args.test_file:
-        args.test_file = os.path.join(args.dataset_cache_dir, args.test_file)
-    # 如果三者同时不存在
+    args.test_file = os.path.join(args.dataset_cache_dir, args.test_file)
+    # 如果三者同时不存在（适用于第一次运行该代码）
     if not (
             os.path.isfile(args.train_file)
             or os.path.isfile(args.val_file)
@@ -149,29 +124,14 @@ if __name__ == '__main__':
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
     # dataset
-    train_dataset = DatasetCLF(train_data,
-                               tokenizer,
-                               max_len=args.max_len)
-    val_dataset = DatasetCLF(val_data,
-                             tokenizer,
-                             max_len=args.max_len)
-    test_dataset = DatasetCLF(test_data,
-                              tokenizer,
-                              max_len=args.max_len)
+    train_dataset = DatasetCLF(train_data, tokenizer, max_len=args.max_len)
+    val_dataset = DatasetCLF(val_data, tokenizer, max_len=args.max_len)
+    test_dataset = DatasetCLF(test_data, tokenizer, max_len=args.max_len)
 
     # dataloader
-    train_loader = DataLoader(train_dataset,
-                              batch_size=args.train_batch_size,
-                              shuffle=True,
-                              collate_fn=data_collator)
-    val_loader = DataLoader(val_dataset,
-                            batch_size=args.test_batch_size,
-                            shuffle=False,
-                            collate_fn=data_collator)
-    test_loader = DataLoader(test_dataset,
-                             batch_size=args.test_batch_size,
-                             shuffle=False,
-                             collate_fn=data_collator)
+    train_loader = DataLoader(train_dataset, batch_size=args.train_batch_size, shuffle=True, collate_fn=data_collator)
+    val_loader = DataLoader(val_dataset, batch_size=args.test_batch_size, shuffle=False, collate_fn=data_collator)
+    test_loader = DataLoader(test_dataset, batch_size=args.test_batch_size, shuffle=False, collate_fn=data_collator)
 
     print(f'batch number of train: {len(train_loader)}')
     print(f'batch number of dev: {len(val_loader)}')
@@ -198,7 +158,8 @@ if __name__ == '__main__':
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
         args.warmup_steps,
-        args.num_epochs * len(train_loader))
+        args.num_epochs * len(train_loader)
+    )
 
     # create evaluation metric
     precision_metric = PMetric(average='macro')
@@ -210,7 +171,7 @@ if __name__ == '__main__':
             recall_metric.name: recall_metric,
             f1_metric.name: f1_metric
         },
-        target_metric=f1_metric.name  # it is used for early stop or model saving
+        target_metric=f1_metric.name  # used for early stop and model saving
     )
 
     # load config

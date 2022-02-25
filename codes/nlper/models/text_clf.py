@@ -155,5 +155,5 @@ class BertCLF(nn.Module):
 
         return TextCLFOutput(
             logits = logits,
-            sequenceEmb = outputs[1]
+            seqEmb = outputs[1]
         )

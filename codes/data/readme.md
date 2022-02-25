@@ -9,7 +9,9 @@
 目录
 
 * 一、文本分类
-* 二、阅读理解
+* 二、文本生成
+* 三、句法分析
+* 四、阅读理解
 
 ## 一、文本分类
 
@@ -48,14 +50,13 @@
     <td> <img src=../assets/smp2020-ewect/length_distribution_usual_train.png></td>
     <td> <img src=../assets/smp2020-ewect/length_distribution_usual_dev.png></td>
     <td> <img src=../assets/smp2020-ewect/length_distribution_usual_test.png></td>
-    </tr></table>
-
-<table><tr>
+    </tr>
+    <tr>
     <td> <img src='../assets/smp2020-ewect/label_distribution_usual_train.png'> </td>
     <td> <img src='../assets/smp2020-ewect/label_distribution_usual_dev.png'> </td>
     <td> <img src='../assets/smp2020-ewect/label_distribution_usual_test.png'> </td>
-    </tr></table>
-
+    </tr>
+</table>
 
 
 
@@ -86,19 +87,63 @@
     <td> <img src=../assets/smp2020-ewect/length_distribution_virus_train.png></td>
     <td> <img src=../assets/smp2020-ewect/length_distribution_virus_dev.png></td>
     <td> <img src=../assets/smp2020-ewect/length_distribution_virus_test.png></td>
-    </tr></table>
-
-<table><tr>
+    </tr>
+    <tr>
     <td> <img src='../assets/smp2020-ewect/label_distribution_virus_train.png'> </td>
     <td> <img src='../assets/smp2020-ewect/label_distribution_virus_dev.png'> </td>
     <td> <img src='../assets/smp2020-ewect/label_distribution_virus_test.png'> </td>
-    </tr></table>
+    </tr>
+</table>
+
+
+
+## 二、文本生成
+
+### 1. DuReaderQG
+
+官网：https://www.luge.ai/#/luge/dataDetail?id=8
+
+任务描述：给定段落p和答案a，生成自然语言表述的问题q，且该问题符合段落和上下文的限制。
+
+```json
+{
+  "context": "欠条是永久有效的,未约定还款期限的借款合同纠纷,诉讼时效自债权人主张债权之日起计算,时效为2年。 根据《中华人民共和国民法通则》第一百三十五条:向人民法院请求保护民事权利的诉讼时效期间为二年,法律另有规定的除外。 第一百三十七条:诉讼时效期间从知道或者应当知道权利被侵害时起计算。但是,从权利被侵害之日起超过二十年的,人民法院不予保护。有特殊情况的,人民法院可以延长诉讼时效期间。 第六十二条第(四)项:履行期限不明确的,债务人可以随时履行,债权人也可以随时要求履行,但应当给对方必要的准备时间。",
+  "answer": "永久有效",
+  "question": "欠条的有效期是多久",
+  "id": 17
+}
+```
+
+数据规模：
+
+|          | train  | dev  | test |
+| :------: | :----: | :--: | :--: |
+|   官网   | 14,520 | 984  | 约1k |
+| 重新划分 | 14,520 | 492  | 492  |
+
+注：官网上只能下载train和dev，不包括标注的test，所以我们将dev划分为新的dev和test，便于之后的模型测试。
+
+<table>
+    <tr>
+        <td><img src=../assets/DuReaderQG/length_distribution_train_src.png></td>
+        <td><img src=../assets/DuReaderQG/length_distribution_val_src.png></td>
+        <td><img src=../assets/DuReaderQG/length_distribution_test_src.png></td>
+    </tr>
+    <tr>
+        <td><img src=../assets/DuReaderQG/length_distribution_train_tgt.png></td>
+        <td><img src=../assets/DuReaderQG/length_distribution_val_tgt.png></td>
+        <td><img src=../assets/DuReaderQG/length_distribution_test_tgt.png></td>
+    </tr>
+</table>
+
+
+
+## 三、句法分析
 
 
 
 
-
-## 二、阅读理解
+## 四、阅读理解
 
 ### 1. 抽取型阅读理解-cmrc2018
 
