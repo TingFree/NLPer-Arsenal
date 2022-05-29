@@ -13,7 +13,7 @@ from transformers.models.bert.modeling_bert import BertModel
 from transformers import DataCollatorWithPadding, get_linear_schedule_with_warmup
 from codes.nlper.modules import MLP
 from codes.nlper.utils import DatasetCLF, Dict2Obj
-from codes.nlper.utils import load_nlp_data, save_data
+from codes.nlper.utils import Reader, Writer
 from codes.nlper.modules.modeling_outputs import TextCLFOutput, LightningOutput
 from codes.nlper import mini_pytorch_lightning as mpl
 
@@ -73,8 +73,9 @@ class LightningCLF(mpl.StandardModel):
         for batch_outputs in outputs:
             probs += [' '.join([str(p) for p in prob]) for prob in batch_outputs.probs]
             preds += batch_outputs.preds
-        save_data(probs, os.path.join(self.configs.out_dir, 'test_pred.probs.txt'))
-        save_data(preds, os.path.join(self.configs.out_dir, 'test_pred.txt'))
+        writer = Writer()
+        writer.write_txt(probs, os.path.join(self.configs.out_dir, 'test_pred.probs.txt'))
+        writer.write_txt(preds, os.path.join(self.configs.out_dir, 'test_pred.txt'))
 
     def configure_optimizers(self):
         no_decay = ['bias', 'LayerNorm.bias', 'LayerNorm.weight']
@@ -95,6 +96,7 @@ class LightningCLF(mpl.StandardModel):
         """ check & load data, the format of each line is 'text label', separated by tab and 'label'
         must be int, such as 0~num_labels-1
         """
+        reader = Reader()
         train_file = self.configs.train_file
         val_file = self.configs.val_file
         test_file = self.configs.test_file
@@ -104,9 +106,9 @@ class LightningCLF(mpl.StandardModel):
             self._val_data = self.convert_fn(val_file, load_label=True)
             self._test_data = self.convert_fn(test_file, load_label=self.configs.is_eval_test)
         else:
-            self._train_data = load_nlp_data(train_file, task_name=self.configs.task_name)
-            self._val_data = load_nlp_data(val_file, task_name=self.configs.task_name)
-            self._test_data = load_nlp_data(test_file, task_name=self.configs.task_name)
+            self._train_data = reader.load_nlp_data(train_file, task_name=self.configs.task_name)
+            self._val_data = reader.load_nlp_data(val_file, task_name=self.configs.task_name)
+            self._test_data = reader.load_nlp_data(test_file, task_name=self.configs.task_name)
 
     def train_dataloader(self):
         self.train_data = DatasetCLF(self._train_data,

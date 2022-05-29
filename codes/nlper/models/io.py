@@ -3,7 +3,7 @@ r"""
 """
 
 import torch
-from codes.nlper.utils.io import create_parentDir
+from codes.nlper.utils import Writer
 
 
 def load_model(model, model_path, return_state_dict=False):
@@ -18,7 +18,7 @@ def load_model(model, model_path, return_state_dict=False):
 
 
 def save_model(model, model_path, optimizer=None, scheduler=None, epoch=None):
-    create_parentDir(model_path)
+    Writer().create_parentDir(model_path)
     state_dicts = {'epoch':epoch, 'model':None, 'optimizer':None, 'scheduler':None}
     if optimizer:
         state_dicts['optimizer'] = optimizer.state_dict()

@@ -3,12 +3,12 @@ r"""
 """
 
 import json
-from codes.nlper.utils.io import read_data
+from codes.nlper.utils.io import Reader
 
 
 def iflytek_convert(datafile, load_label=True):
     raw_data = [
-        json.loads(instance) for instance in read_data(datafile, 'txt')
+        json.loads(instance) for instance in Reader().read_txt(datafile)
     ]
     target_data = []
     if load_label:
@@ -39,7 +39,7 @@ def tnews_convert(datafile, load_label=True):
         '116': 14
     }
     raw_data = [
-        json.loads(instance) for instance in read_data(datafile, 'txt')
+        json.loads(instance) for instance in Reader().read_txt(datafile)
     ]
     target_datat = []
     if load_label:
@@ -62,7 +62,7 @@ def smp2020_ewect_convert(datafile, load_label=True):
     :param load_label: 是否加载标签
     :return: list of [text, label], label should be integer
     """
-    raw_data = read_data(datafile, f_type='tsv')
+    raw_data = Reader().read_table(datafile, f_type='tsv')
     target = []
     if load_label:
         for idx, row in raw_data.iterrows():
@@ -81,7 +81,7 @@ def dureaderqg_convert(datafile, load_label=True, sep='[SEP]'):
     :param sep: answer与context之间的分隔符
     :return: list of [src, tgt] or [src]
     """
-    raw_data = read_data(datafile, f_type='line_json')
+    raw_data = Reader().read_jsonl(datafile)
     target = []
     if load_label:
         for example in raw_data:

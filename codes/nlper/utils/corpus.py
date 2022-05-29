@@ -6,7 +6,7 @@ import warnings
 import requests
 import zipfile, gzip, tarfile
 from tqdm import tqdm
-from codes.nlper.utils.io import read_data, save_data
+from codes.nlper.utils.io import Reader, Writer
 import random
 random.seed(1000)
 
@@ -260,14 +260,15 @@ class DuReaderQG(BaseCorpus):
     def prepare_data(self):
         dataset_url = "https://dataset-bj.cdn.bcebos.com/qianyan/DuReaderQG.zip"
         tag = self.download_compressedFile(dataset_url)
+        reader, writer = Reader(), Writer()
         if tag:
-            dev_data = read_data(os.path.join(self.cache_dir, self.dataset_name, 'dev.json'), f_type='line_json')
+            dev_data = reader.read_jsonl(os.path.join(self.cache_dir, self.dataset_name, 'dev.json'))
             random.shuffle(dev_data)
             val_data = dev_data[:492]
             test_data = dev_data[492:]
             print(f'split dev (984 sample) to val (492 sample) and test (492 sample)')
-            save_data(val_data, os.path.join(self.cache_dir, self.dataset_name, 'val.json'), f_type='line_json')
-            save_data(test_data, os.path.join(self.cache_dir, self.dataset_name, 'test.json'), f_type='line_json')
+            writer.write_jsonl(val_data, os.path.join(self.cache_dir, self.dataset_name, 'val.json'))
+            writer.write_jsonl(test_data, os.path.join(self.cache_dir, self.dataset_name, 'test.json'))
         else:
             print(f"prepare {self.dataset_name} -> '{os.path.abspath(self.cache_dir)}' failed, some files lost, please check manually! source data: https://dataset-bj.cdn.bcebos.com/qianyan/DuReaderQG.zip")
             print(f"when you download {self.dataset_name} manually, split dev.json (984 sample) to val.json (492 sample) "

@@ -8,7 +8,7 @@ import multiprocessing as mp
 import argparse
 import importlib
 from codes.nlper.utils import (
-    read_data,
+    Reader,
     Dict2Obj,
     seed_everything,
     ProcessStatus
@@ -39,7 +39,7 @@ if __name__ == '__main__':
                         default='bert-base-chinese')
     args = parser.parse_args()
 
-    task_config = Dict2Obj(read_data(args.task_config))
+    task_config = Dict2Obj(Reader().read_yaml(args.task_config))
     task_config.trainer_args.gpus = [args.gpu]
     task_config.out_dir = args.out_dir
     task_config.pretrained_model = args.pretrained_model

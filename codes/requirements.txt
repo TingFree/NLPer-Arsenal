@@ -1,3 +1,4 @@
+python >= 3.8
 torch >= 1.6
 transformers >= 4.5
 scikit-learn
@@ -10,3 +11,4 @@ SciencePlots
 seaborn
 pynvml
 psutil
+openpyxl

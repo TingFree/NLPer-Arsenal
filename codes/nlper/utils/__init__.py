@@ -6,7 +6,7 @@ from .fn import (
     format_runTime,
     ProcessStatus
 )
-from .io import read_data, load_nlp_data, save_data
+from .io import Reader, Writer
 from .datasets import DatasetCLF, DatasetGen
 from .format_convert import tnews_convert, iflytek_convert, smp2020_ewect_convert, dureaderqg_convert
 

@@ -6,7 +6,7 @@ import os
 from tqdm import tqdm
 import torch
 from codes.nlper.models import load_model, save_model
-from codes.nlper.utils import save_data, Dict2Obj
+from codes.nlper.utils import Writer, Dict2Obj
 from codes.nlper.modules.utils import all_to_device
 
 
@@ -164,4 +164,4 @@ class Trainer():
         if with_golds:
             self.metrics.scores(references, predicts)
             self.metrics.print_values()
-        save_data(predicts, self.config.pred_saved, f_type='txt')
+        Writer().write_txt(predicts, self.config.pred_saved)

@@ -7,7 +7,7 @@ import seaborn as sns
 from typing import Union, List
 from collections import Counter
 from matplotlib.font_manager import FontProperties
-from codes.nlper.utils import read_data, seed_everything
+from codes.nlper.utils import Reader, seed_everything
 
 
 seed_everything()
@@ -71,7 +71,7 @@ def label_distribution(data: List[Union[str, int]], title:str):
 
 
 if __name__ == '__main__':
-    raw_data = read_data('DuReaderQG/test.json', f_type='line_json')
+    raw_data = Reader().read_jsonl('DuReaderQG/test.json')
     src, tgt = [], []
     for example in raw_data:
         src.append(example['answer'] + example['context'])
