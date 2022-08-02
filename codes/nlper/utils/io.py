@@ -112,7 +112,7 @@ class Reader:
             data = pd.read_csv(filepath, sep='\t', **tsv_kwargs)
         else:
             excel_kwargs = select_kwargs(kwargs, pd.read_excel)
-            data = pd.read_excel(filepath, **excel_kwargs)
+            data = pd.read_excel(filepath, **excel_kwargs, engine='openpyxl')
         print(f'{filepath} -> data, {len(data)} examples')
         return data
 
