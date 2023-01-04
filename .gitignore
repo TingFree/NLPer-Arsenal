@@ -1,6 +1,8 @@
 .idea
+data
 #.gitignore
 archive.md
+arsenal/python_test.py
 **/__pycache__
-codes/python_test.py
-codes/archive.py
+**/job_base.sh
+**/job_mpl.sh

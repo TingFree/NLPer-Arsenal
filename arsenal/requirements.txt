@@ -1,0 +1,16 @@
+python >= 3.8
+torch >= 1.9
+transformers == 4.24
+datasets >= 1.8
+accelerate
+scikit-learn
+rouge
+pyyaml
+pandas
+prettytable
+matplotlib
+SciencePlots
+seaborn
+pynvml
+psutil
+openpyxl
