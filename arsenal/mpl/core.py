@@ -10,8 +10,9 @@ import torch
 from accelerate import Accelerator
 from transformers import get_scheduler, PreTrainedTokenizerBase
 from accelerate.logging import get_logger
+from accelerate.utils import set_seed
 from evaluate import Metric, CombinedEvaluations
-from ..utils.fn import create_parentDir
+from ..utils.function import create_parentDir
 
 
 class MplModule(torch.nn.Module):
@@ -34,8 +35,8 @@ class MplModule(torch.nn.Module):
         self.model = model
         self.tokenizer = tokenizer
         self.metrics = metrics
-        # self.auto_optimization = True  # if False, you must manual update gradient in training_step
-
+        if config.seed is not None:
+            set_seed(config.seed)
 
     def __call__(self):
         self.forward()
@@ -450,7 +451,7 @@ class MplLogger():
         logging.basicConfig(
             filename=log_path,
             format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
-            datefmt="%m/%d/%Y %H:%M:%S",
+            datefmt="%Y/%m/%d %H:%M:%S",
             level=logging.INFO
         )
 

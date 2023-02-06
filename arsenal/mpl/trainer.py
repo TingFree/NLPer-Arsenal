@@ -10,8 +10,8 @@ import datasets
 import transformers
 from accelerate import Accelerator
 from accelerate.utils import set_seed, DistributedType
-from arsenal.nlper.utils import Reader, Writer, Timer
-from arsenal.nlper.mpl.core import MplModule, MplLogger
+from arsenal.mpl import MplModule, MplLogger
+from arsenal.utils import Reader, Writer, Timer
 
 
 reader, writer, timer = Reader(), Writer(), Timer()
@@ -34,9 +34,9 @@ class Trainer():
             show_terminal=True,
             save2file=True
         )
-
-        if args.seed is not None:
-            set_seed(args.seed)
+        # if args.seed is not None:
+        #     set_seed(args.seed)
+        self.mpl_logger.log(f"trainer.init random: {random.random()}")
         self.mpl_logger.log(self.accelerator.state)
         if self.accelerator.is_local_main_process:
             datasets.utils.logging.set_verbosity_warning()
@@ -49,10 +49,9 @@ class Trainer():
             os.makedirs(logging_dir, exist_ok=True)
         self.accelerator.wait_for_everyone()
 
-        # 注册mpl_model.tokenizer
         self.mpl_model.prepare_data(use_fp16=self.accelerator.use_fp16)
 
-    def fit(self, **kwargs):
+    def train(self, **kwargs):
         """训练模型，可以指定自定义参数覆盖默认设置，参数见arsenal.nlper.utils.options"""
         self._set_mode('train')
 
@@ -117,6 +116,8 @@ class Trainer():
         mpl_model.model, optimizer, train_dataloader, eval_dataloader, lr_scheduler = accelerator.prepare(
             mpl_model.model, optimizer, train_dataloader, eval_dataloader, lr_scheduler
         )
+        self.optimizer = optimizer
+        self.lr_scheduler = lr_scheduler
 
         # 更新训练步数
         num_update_steps_per_epoch = math.ceil(len(train_dataloader) / args.gradient_accumulation_steps)
@@ -133,7 +134,7 @@ class Trainer():
         experiment_config = vars(args)
         # TensorBoard cannot log Enums, need the raw value
         experiment_config["metrics"] = str(experiment_config['metrics'])
-        mpl_logger.log(experiment_config)
+        mpl_logger.log(f"experiment config: {experiment_config}")
         if args.with_tracking:
             accelerator.init_trackers("base-trainer", experiment_config)
 
@@ -195,7 +196,7 @@ class Trainer():
         training_over = False
         max_patience, cur_patience = args.patience, args.patience
         for epoch in range(starting_epoch, args.num_train_epochs):
-            # 调用eval时会改变状态，所以需要重新指定
+            # 调用evaluate时会改变状态，所以需要重新指定
             self._set_mode('train')
             timer.reset()
             epoch_outputs = []
@@ -209,14 +210,14 @@ class Trainer():
                 with accelerator.accumulate(mpl_model.model):
                     batch_outputs = mpl_model.training_step(batch)
                     loss = batch_outputs.loss
-                    # We keep track of the loss at each epoch
-                    total_loss += loss.detach().float().item()
-                    accelerator.backward(loss)
-                    optimizer.step()
-                    lr_scheduler.step()
                     optimizer.zero_grad()
-                    progress_bar.update(1)
-                    completed_steps += 1
+                    accelerator.backward(loss)
+                optimizer.step()
+                lr_scheduler.step()
+                progress_bar.update(1)
+                # We keep track of the loss at each epoch
+                total_loss += loss.detach().float().item()
+                completed_steps += 1
 
                 batch_outputs = mpl_model.training_step_end(batch_outputs)
                 epoch_outputs.append(batch_outputs)
@@ -231,7 +232,7 @@ class Trainer():
                             f"training step {completed_steps-checkpointing_steps}-{completed_steps}, "
                             f"train loss: {total_loss/(step+1)}, {timer.get_elapsed_time()}"
                         )
-                        eval_outputs = self.eval(eval_dataloader)
+                        eval_outputs = self.evaluate(eval_dataloader)
                         mpl_logger.log(
                             f"eval: {eval_outputs}, {timer.get_elapsed_time()}"
                         )
@@ -273,7 +274,7 @@ class Trainer():
                     f"training epoch {epoch}, train loss: {total_loss/len(train_dataloader)}, "
                     f"{timer.get_elapsed_time()}"
                 )
-                eval_outputs = self.eval(eval_dataloader)
+                eval_outputs = self.evaluate(eval_dataloader)
                 mpl_logger.log(
                     f"eval: {eval_outputs}, {timer.get_elapsed_time()}"
                 )
@@ -325,7 +326,16 @@ class Trainer():
         mpl_logger.log(f"training over, {timer.get_elapsed_time(start=running_start)}")
         accelerator.wait_for_everyone()
 
-    def eval(self, eval_loader, checkpoint_dir=None):
+    def train_loop(self, mpl_model, batch):
+        batch_outputs = mpl_model.training_step(batch)
+        loss = batch_outputs.loss
+        self.accelerator.backward(loss)
+        self.optimizer.step()
+        self.lr_scheduler.step()
+        self.optimizer.zero_grad()
+        return batch_outputs
+
+    def evaluate(self, eval_loader, checkpoint_dir=None):
         self._set_mode('eval')
         accelerator = self.accelerator
         mpl_model = self.mpl_model

@@ -1,3 +1,6 @@
+"""
+基于mpl结构实现的文本分类/回归代码
+"""
 import torch
 from transformers import (
     AutoTokenizer,
@@ -7,7 +10,7 @@ from transformers import (
 )
 from datasets import load_dataset
 from torch.utils.data import DataLoader
-from arsenal.nlper.mpl import MplModule, MplOutput
+from arsenal.mpl import MplModule, MplOutput
 
 
 class MplCLF(MplModule):

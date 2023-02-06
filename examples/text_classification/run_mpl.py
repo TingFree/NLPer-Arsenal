@@ -9,13 +9,18 @@ from transformers import (
     AutoTokenizer,
     AutoModelForSequenceClassification
 )
-from arsenal.nlper.mpl import Trainer
-from arsenal.nlper.models import MplCLF
-from arsenal.nlper.utils.options import parse_args
+from accelerate.utils import set_seed
+from arsenal.mpl import Trainer
+from arsenal.models import MplCLF
+from arsenal.utils.options import parse_args
+from arsenal.utils import Timer
 
 
 if __name__ == '__main__':
     args = parse_args(task='text-classification')
+    if args.seed:
+        set_seed(args.seed)
+    timer = Timer()
 
     config = AutoConfig.from_pretrained(args.model_name_or_path)
     tokenizer = AutoTokenizer.from_pretrained(
@@ -39,7 +44,7 @@ if __name__ == '__main__':
 
     if args.do_train:
         # 若不指定自定义参数，则默认使用arsenal.nlper.utils.options.py中的参数值以及终端指定的参数值
-        trainer.fit()
+        trainer.train()
 
     if args.do_predict:
         trainer.predict(
@@ -49,3 +54,5 @@ if __name__ == '__main__':
             cache_dir=args.cache_dir,
             checkpoint_dir=args.model_checkpoint
         )
+
+    print(f"run_mpl over, {timer.get_elapsed_time()}")

@@ -1,6 +1,5 @@
-from .fn import (
+from .function import (
     seed_everything,
-    set_devices,
     format_runTime,
     ProcessStatus,
     Dict2Obj,

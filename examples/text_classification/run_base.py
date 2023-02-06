@@ -472,7 +472,6 @@ def main():
         if args.with_tracking:
             experiment_config = vars(args)
             # TensorBoard cannot log Enums, need the raw value
-            experiment_config["lr_scheduler_type"] = experiment_config["lr_scheduler_type"].value
             accelerator.init_trackers("base-trainer", experiment_config)
 
         # Train!

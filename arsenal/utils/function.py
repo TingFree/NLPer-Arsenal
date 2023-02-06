@@ -1,13 +1,13 @@
-import warnings
-from typing import List
 import os
 import re
 import random
 import time
+import warnings
+from typing import List
 import multiprocessing as mp
 import psutil
-import numpy as np
 import torch
+import numpy as np
 from prettytable import PrettyTable
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
@@ -25,39 +25,15 @@ def create_parentDir(path: str, exist_ok=True):
         os.makedirs(head, exist_ok=exist_ok)
 
 
-def seed_everything(seed=1000):
+def seed_everything(seed:int):
     """seed everything to reproduce your experiments
 
-    :param int seed: default 1000
-    :return: None
+    :param seed: int
     """
     random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
-
-
-def set_devices(device_ids: List[int]):
-    """setting the global environment of CUDA
-
-    :param device_ids: list of device id, [-1] is cpu
-    :return: torch.device
-    """
-    if type(device_ids) != list:
-        raise TypeError(f'the gpus type should be List[int], not {type(device_ids)}')
-    if len(device_ids) > 1:
-        warnings.warn(f'we only support cpu or single gpu now, '
-                      f'but you input {len(device_ids)} device id, and only the first will be used')
-
-    os.environ['CUDA_VISIBLE_DEVICES'] = str(device_ids[0])
-
-    if device_ids[0] != -1:
-        print(f'Training on GPU {device_ids}')
-        return torch.device('cuda')
-    else:
-        print('Training on CPU')
-        return torch.device('cpu')
 
 
 def count_params(model, show=False):
@@ -308,6 +284,12 @@ class Dict2Obj():
 class Timer():
     """
     统计运行耗时
+
+    >>> timer = Timer()
+    >>> ...
+    >>> timer.reset()
+    >>> ...
+    >>> print(timer.get_elapsed_time())
     """
     def __init__(self):
         self.start = self.get_cur_time()

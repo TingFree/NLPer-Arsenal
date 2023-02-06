@@ -11,9 +11,9 @@ from transformers import (
     AutoTokenizer,
     AutoModelForSequenceClassification
 )
-from arsenal.nlper.models import MplCLF
-from arsenal.nlper.mpl import Trainer, MplOutput
-from arsenal.nlper.utils.options import get_parser, parse_args
+from arsenal.models import MplCLF
+from arsenal.mpl import Trainer, MplOutput
+from arsenal.utils.options import get_parser, parse_args
 
 
 def get_simcse_loss(once_emb, twice_emb, t=0.05):
@@ -78,7 +78,7 @@ if __name__ == '__main__':
 
     if args.do_train:
         # 若不指定自定义参数，则默认使用arsenal.nlper.utils.options.py中的参数值以及终端指定的参数值
-        trainer.fit()
+        trainer.train()
 
     if args.do_predict:
         trainer.predict(

@@ -6,7 +6,7 @@ import warnings
 import requests
 import zipfile, gzip, tarfile
 from tqdm import tqdm
-from arsenal.nlper.utils.io import Reader, Writer
+from arsenal.utils.io import Reader, Writer
 import random
 
 seed = 1000

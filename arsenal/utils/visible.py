@@ -7,7 +7,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
-from arsenal.nlper.utils import Reader, seed_everything
+from arsenal.utils import Reader, seed_everything
+
 
 seed_everything()
 font = FontProperties()
