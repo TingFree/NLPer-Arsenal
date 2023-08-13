@@ -1,9 +1,10 @@
 import os
 import re
 import random
+import math
 import time
 import warnings
-from typing import List
+from typing import List, Iterable, Callable
 import multiprocessing as mp
 import psutil
 import torch
@@ -25,7 +26,7 @@ def create_parentDir(path: str, exist_ok=True):
         os.makedirs(head, exist_ok=exist_ok)
 
 
-def seed_everything(seed:int):
+def seed_everything(seed: int):
     """seed everything to reproduce your experiments
 
     :param seed: int
@@ -48,7 +49,7 @@ def count_params(model, show=False):
     return num_params
 
 
-def format_runTime(seconds:float):
+def format_runTime(seconds: float):
     """format running time to `day hours:minutes:seconds`
 
     :param seconds: 通常来说是两次time.time()的差值
@@ -66,7 +67,41 @@ def format_runTime(seconds:float):
         return f'{d}d {h}:{m}:{s}'
 
 
-class ProcessStatus():
+def multi_process(data: Iterable, func: Callable, n_proc: int, *kwargs) -> List:
+    """多进程处理数据，要求数据之间无关联
+
+    :param data: 可迭代类型数据
+    :param func: 执行函数，要求处理传参data，同时接收进程号i
+    :param n_proc: 进程数
+    :param kwargs: 执行函数的参数
+    :return: 执行函数对所有数据的处理结果
+
+    >>> if __name__ == '__main__':
+    >>>     multi_process()
+    """
+    p = mp.Pool(n_proc)
+    data = list(data)
+    interval = len(data) / n_proc
+    func_res, final_res = [], []
+    for i in range(n_proc):
+        if i != n_proc-1:
+            data_piece = data[math.floor(interval * i):math.floor(interval * (i + 1))]
+        else:
+            data_piece = data[math.floor(interval * i):]
+        kwds = {
+            'data': data_piece,
+            'i': i
+        }
+        kwds.update(kwargs)
+        func_res.append(p.apply_async(func, kwds=kwds))
+    p.close()
+    p.join()
+    for res in func_res:
+        final_res += res.get()
+    return final_res
+
+
+class ProcessStatus:
     """记录程序运行过程中GPU/CPU/内存的全局使用情况（不一定是主进程的实际使用情况，暂未实现进程跟踪功能）
 
     >>> gpu = 0  # 指定0号GPU，或者为None，不指定GPU
@@ -78,7 +113,8 @@ class ProcessStatus():
     >>> processStatus.print_statisticAnalysis()  # 打印表信息
     >>> processStatus.plot_running_info()  # 打印图信息
     """
-    def __init__(self, gpu:int=None):
+
+    def __init__(self, gpu: int = None):
         self.start = time.time()
         self.running_info = mp.Manager().list()
         self.gpu = gpu
@@ -87,7 +123,7 @@ class ProcessStatus():
             pynvml.nvmlInit()
             handle = pynvml.nvmlDeviceGetHandleByIndex(gpu)
             gpu_info = pynvml.nvmlDeviceGetMemoryInfo(handle)
-            self.device_total_memory = round(gpu_info.total/1024**2)  # MiB
+            self.device_total_memory = round(gpu_info.total / 1024 ** 2)  # MiB
             self.driver_version = pynvml.nvmlSystemGetDriverVersion().decode('utf-8')
             self.device_name = pynvml.nvmlDeviceGetName(handle).decode('utf-8')
             pynvml.nvmlShutdown()
@@ -144,8 +180,10 @@ class ProcessStatus():
             table.add_row(['end time', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())])
             table.add_row(['running time', format_runTime(time.time() - start)])
             table.add_row(['device total memory', f'{self.device_total_memory} MiB'])
-            table.add_row(['device max used memory', f"{round(np.max([t['gpu_used'] for t in self.running_info]), 2)} MiB"])
-            table.add_row(['device avg util ratio', f"{round(np.mean([t['gpu_util'] for t in self.running_info]), 2)}%"])
+            table.add_row(
+                ['device max used memory', f"{round(np.max([t['gpu_used'] for t in self.running_info]), 2)} MiB"])
+            table.add_row(
+                ['device avg util ratio', f"{round(np.mean([t['gpu_util'] for t in self.running_info]), 2)}%"])
         else:  # 不指定GPU的情况下
             table.add_row(['start time', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(start))])
             table.add_row(['end time', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())])
@@ -171,7 +209,7 @@ class ProcessStatus():
         plt.style.use(['science', 'no-latex'])
         plt.figure(figsize=(12, 12), dpi=300)
 
-        cur_time = [item['cur_time']-self.start for item in self.running_info]
+        cur_time = [item['cur_time'] - self.start for item in self.running_info]
         cpu_util = [item['cpu_util'] for item in self.running_info]
         mem_util = [item['mem_util'] for item in self.running_info]
         mem_used = [item['mem_used'] for item in self.running_info]
@@ -179,7 +217,7 @@ class ProcessStatus():
         if self.gpu != None:
             gpu_used = [item['gpu_used'] for item in self.running_info]
             gpu_util = [item['gpu_util'] for item in self.running_info]
-            
+
             ax = plt.subplot(2, 1, 1)
             ax.plot(cur_time, gpu_util, label='gpu_util')
             ax.plot(cur_time, cpu_util, label='cpu_util')
@@ -220,7 +258,7 @@ class ProcessStatus():
             plt.savefig('./status.png')
 
 
-class Dict2Obj():
+class Dict2Obj:
     """
     将嵌套字典转换成对象，将关键字访问替换成属性访问
 
@@ -237,6 +275,7 @@ class Dict2Obj():
     >>>             #  'x3': 0.1, 'x4': {'x41': 'yyy'}}
     >>> print(t)  # str of t.toDict()
     """
+
     def __init__(self, init_dict=None):
         if init_dict:
             for key, value in init_dict.items():
@@ -281,7 +320,7 @@ class Dict2Obj():
         return target
 
 
-class Timer():
+class Timer:
     """
     统计运行耗时
 
@@ -291,6 +330,7 @@ class Timer():
     >>> ...
     >>> print(timer.get_elapsed_time())
     """
+
     def __init__(self):
         self.start = self.get_cur_time()
 
@@ -301,7 +341,7 @@ class Timer():
         """重置计时器"""
         self.start = self.get_cur_time()
 
-    def get_elapsed_time(self, start:float=None, reset=True):
+    def get_elapsed_time(self, start: float = None, reset=True):
         """统计当前时间与初始时间的差值，并格式化输出
 
         :param start: 初始时间，若不指定，则使用默认值
@@ -312,7 +352,7 @@ class Timer():
         cur_time = self.get_cur_time()
         start_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(start))
         end_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(cur_time))
-        elapsed_time = format_runTime(cur_time-start)
+        elapsed_time = format_runTime(cur_time - start)
 
         if reset:
             self.reset()
